@@ -110,6 +110,39 @@ No API key for any of them. Published as an Artifact the probe fails, the four c
 disabled with an explanation, and the map falls back to its vector styles - so the same file
 works in both places.
 
+
+## Deploying to Netlify
+
+`netlify.toml` publishes the **repository root**, not `docs/` — the map pages fetch
+`../outputs/*.geojson` and `../data/geo/*.geojson` at runtime, so serving `docs/` alone
+gives you a map with no precincts on it. `/` redirects to `/docs/index.html` and
+`/satellite` to the Leaflet page.
+
+```bash
+netlify deploy --prod
+```
+
+Deployed on Netlify the page is **not** sandboxed, so the four raster basemaps
+(satellite, streets, terrain, hillshade) switch on by themselves — same as running it
+locally, unlike the Artifact build where the CSP blocks tile fetches.
+
+Raw Overpass dumps (`data/geo/osm_*.json`, 3.3 MB) are gitignored. The derived
+`basemap.geojson` and `basemap.json` are committed, so nothing needs refetching to build.
+
+## The 3D scene
+
+`docs/index.html` has two view modes. **Plan** is the projected map. **3D scene** is a
+perspective camera over the same geometry — drag to orbit, shift-drag to pan, scroll to
+zoom, with top-down / bird's eye / low-oblique presets and a compass readout. Written as
+plain Canvas 2D with the projection and near-plane clipping done explicitly, because the
+Artifact sandbox forbids loading a mapping library and thirty boxes over ~1 100 ground
+vertices does not need one.
+
+Each precinct is its real footprint at ground scale, extruded to the storeys its density
+implies. The **solid volume is what current zoning permits as of right; the ghosted volume
+above it needs rezoning first** — on ten sites the whole building is ghosted. Height is
+exaggerated 26x or a 35 m block is invisible at metro scale.
+
 ## Spatial and racial inequality
 
 The model runs the same fourteen criteria under two weightings, because a weighted sum over land
