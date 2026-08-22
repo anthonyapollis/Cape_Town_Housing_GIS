@@ -1,0 +1,262 @@
+{
+  "sites_screened": 30,
+  "total_developable_ha": 1092.6,
+  "total_units_potential": 126380,
+  "social_units_potential": 82146,
+  "units_asofright": 44180,
+  "units_rezoning": 82200,
+  "ha_blocked_by_zoning": 541.0,
+  "sites_blocked_by_zoning": 10,
+  "zoning_by_redress": {
+    "High redress": {
+      "sites": 18.0,
+      "ha": 557.6,
+      "units": 78220.0,
+      "buildable_now": 15750.0,
+      "needs_rezoning": 62470.0,
+      "pct_blocked": 79.9
+    },
+    "Mid redress": {
+      "sites": 3.0,
+      "ha": 91.0,
+      "units": 14790.0,
+      "buildable_now": 5710.0,
+      "needs_rezoning": 9080.0,
+      "pct_blocked": 61.4
+    },
+    "Low redress": {
+      "sites": 9.0,
+      "ha": 444.0,
+      "units": 33370.0,
+      "buildable_now": 22720.0,
+      "needs_rezoning": 10650.0,
+      "pct_blocked": 31.9
+    }
+  },
+  "blocked_sites": [
+    {
+      "name": "Wingfield",
+      "zone": "TR2",
+      "dev_ha": 180.0,
+      "units_total": 25200,
+      "redress_index": 88,
+      "ownership": "National"
+    },
+    {
+      "name": "Ysterplaat",
+      "zone": "TR2",
+      "dev_ha": 95.0,
+      "units_total": 13300,
+      "redress_index": 86,
+      "ownership": "National"
+    },
+    {
+      "name": "Culemborg",
+      "zone": "TR2",
+      "dev_ha": 42.0,
+      "units_total": 7980,
+      "redress_index": 90,
+      "ownership": "National-Rail"
+    },
+    {
+      "name": "Athlone Power Station",
+      "zone": "GI2",
+      "dev_ha": 45.0,
+      "units_total": 6750,
+      "redress_index": 52,
+      "ownership": "City"
+    },
+    {
+      "name": "Ndabeni / Maitland",
+      "zone": "GI1",
+      "dev_ha": 34.0,
+      "units_total": 5100,
+      "redress_index": 80,
+      "ownership": "Mixed"
+    },
+    {
+      "name": "Epping Market",
+      "zone": "GI1",
+      "dev_ha": 28.0,
+      "units_total": 4200,
+      "redress_index": 74,
+      "ownership": "City"
+    },
+    {
+      "name": "Two Rivers / Oude Molen",
+      "zone": "OS2",
+      "dev_ha": 60.0,
+      "units_total": 4200,
+      "redress_index": 85,
+      "ownership": "Provincial"
+    },
+    {
+      "name": "Philippi East",
+      "zone": "AG",
+      "dev_ha": 52.0,
+      "units_total": 3640,
+      "redress_index": 22,
+      "ownership": "Mixed"
+    },
+    {
+      "name": "Helen Bowden",
+      "zone": "CO1",
+      "dev_ha": 3.1,
+      "units_total": 806,
+      "redress_index": 95,
+      "ownership": "Provincial"
+    },
+    {
+      "name": "Woodstock Hospital",
+      "zone": "CO1",
+      "dev_ha": 1.9,
+      "units_total": 494,
+      "redress_index": 84,
+      "ownership": "Provincial"
+    }
+  ],
+  "top10_units": 16760,
+  "tranche_units": {
+    "Tranche 1 (2027-2029)": 7912,
+    "Tranche 2 (2030-2033)": 51058,
+    "Tranche 3 (2034-2037)": 67410
+  },
+  "job_nodes": [
+    {
+      "name": "Cape Town CBD",
+      "lat": -33.9249,
+      "lon": 18.4241,
+      "jobs_k": 240
+    },
+    {
+      "name": "Bellville CBD",
+      "lat": -33.9006,
+      "lon": 18.6292,
+      "jobs_k": 130
+    },
+    {
+      "name": "Century City",
+      "lat": -33.892,
+      "lon": 18.51,
+      "jobs_k": 75
+    },
+    {
+      "name": "Epping Industria",
+      "lat": -33.933,
+      "lon": 18.545,
+      "jobs_k": 60
+    },
+    {
+      "name": "Airport Industria",
+      "lat": -33.969,
+      "lon": 18.601,
+      "jobs_k": 55
+    },
+    {
+      "name": "Montague Gardens",
+      "lat": -33.869,
+      "lon": 18.523,
+      "jobs_k": 45
+    },
+    {
+      "name": "Claremont",
+      "lat": -34.025,
+      "lon": 18.465,
+      "jobs_k": 40
+    },
+    {
+      "name": "Somerset West",
+      "lat": -34.08,
+      "lon": 18.85,
+      "jobs_k": 35
+    }
+  ],
+  "scenarios": {
+    "efficiency": {
+      "Job accessibility": 0.18,
+      "Transit access": 0.16,
+      "Developable land supply": 0.1,
+      "Land cost": 0.08,
+      "Bulk infrastructure": 0.1,
+      "Flood / water risk": 0.07,
+      "Terrain buildability": 0.04,
+      "Environmental constraint": 0.06,
+      "Contamination burden": 0.05,
+      "Social facility access": 0.06,
+      "Heat / green deficit": 0.03,
+      "Delivery complexity": 0.07,
+      "Spatial redress": 0.0,
+      "Displacement risk": 0.0
+    },
+    "redress": {
+      "Job accessibility": 0.14,
+      "Transit access": 0.13,
+      "Developable land supply": 0.08,
+      "Land cost": 0.04,
+      "Bulk infrastructure": 0.08,
+      "Flood / water risk": 0.06,
+      "Terrain buildability": 0.03,
+      "Environmental constraint": 0.05,
+      "Contamination burden": 0.04,
+      "Social facility access": 0.05,
+      "Heat / green deficit": 0.02,
+      "Delivery complexity": 0.05,
+      "Spatial redress": 0.17,
+      "Displacement risk": 0.06
+    }
+  },
+  "weights": {
+    "Job accessibility": 0.18,
+    "Transit access": 0.16,
+    "Developable land supply": 0.1,
+    "Land cost": 0.08,
+    "Bulk infrastructure": 0.1,
+    "Flood / water risk": 0.07,
+    "Terrain buildability": 0.04,
+    "Environmental constraint": 0.06,
+    "Contamination burden": 0.05,
+    "Social facility access": 0.06,
+    "Heat / green deficit": 0.03,
+    "Delivery complexity": 0.07,
+    "Spatial redress": 0.0,
+    "Displacement risk": 0.0
+  },
+  "stable_top10": [
+    "Founders Garden",
+    "Bellville CBD",
+    "District Six",
+    "Sir Lowrys Road",
+    "Pickwick Road",
+    "Conradie Park",
+    "Woodstock Hospital",
+    "Salt River Market"
+  ],
+  "biggest_climb_on_redress": {
+    "Dido Valley": -7,
+    "Two Rivers / Oude Molen": -5,
+    "Helen Bowden": -4,
+    "Wingfield": -4,
+    "Culemborg": -4,
+    "Prestwich Precinct": -3
+  },
+  "biggest_fall_on_redress": {
+    "Pickwick Road": 4,
+    "Woodstock Hospital": 4,
+    "Salt River Market": 4,
+    "Wallacedene / Kraaifontein": 4,
+    "Sir Lowrys Road": 3,
+    "Parow / Elsies River": 3
+  },
+  "top10_by_impact": {
+    "Bellville CBD": 3600,
+    "Wingfield": 25200,
+    "District Six": 5460,
+    "Ysterplaat": 13300,
+    "Conradie Park": 3520,
+    "Founders Garden": 528,
+    "Parow / Elsies River": 3640,
+    "Culemborg": 7980,
+    "Ndabeni / Maitland": 5100,
+    "Phoenix / Milnerton": 4400
+  }
+}

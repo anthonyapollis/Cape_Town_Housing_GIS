@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cape Town Housing Ground — Google Maps viewer</title>
+<!--
+  RUN THIS LOCALLY, NOT AS AN ARTIFACT.
+
+  Published Claude Artifacts run under a strict CSP that blocks every external
+  host, so the Google Maps JS API cannot load there. This page is the local
+  companion: it gives you real satellite imagery, Street View, and Google's
+  Photorealistic 3D Tiles over the same 30 precincts.
+
+  1. Get a Maps JavaScript API key: https://console.cloud.google.com/google/maps-apis
+     Enable "Maps JavaScript API". For the 3D view also enable "Map Tiles API".
+  2. Put the key in the URL:   google_maps.html?key=YOUR_KEY
+     (or paste it into the box the page shows you)
+  3. Serve the folder so fetch() works:
+        python -m http.server 8777          # from the repository root
+     then open http://localhost:8777/docs/google_maps.html?key=YOUR_KEY
+
+  Never commit the key. Restrict it to HTTP referrer localhost/* in the console.
+-->
+<style>
+  :root{--ink:#0F1A17;--ink2:#4E5F5A;--line:#D2DBD4;--plate:#fff;--t1:#00887A;--t2:#B4620F;--t3:#4B3FA8}
+  @media (prefers-color-scheme:dark){:root{--ink:#E4EDE9;--ink2:#9AAAA5;--line:#2C3A36;--plate:#18211F;
+    --t1:#19A895;--t2:#CE7A1C;--t3:#7B6CE0}}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;font-family:"IBM Plex Sans",system-ui,sans-serif;color:var(--ink)}
+  #app{display:grid;grid-template-columns:320px 1fr;height:100%}
+  @media (max-width:820px){#app{grid-template-columns:1fr;grid-template-rows:auto 1fr}}
+  aside{background:var(--plate);border-right:1px solid var(--line);padding:18px;overflow:auto}
+  h1{font-size:1.15rem;margin:0 0 4px;letter-spacing:-.02em}
+  p.sub{font-size:.82rem;color:var(--ink2);margin:0 0 16px;line-height:1.5}
+  label{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--ink2);margin:14px 0 5px;font-family:ui-monospace,monospace}
+  select,input,button{width:100%;padding:8px 10px;font:inherit;font-size:.85rem;
+    border:1px solid var(--line);border-radius:5px;background:var(--plate);color:var(--ink)}
+  button{cursor:pointer;background:var(--t1);color:#fff;border-color:var(--t1);font-weight:600;margin-top:10px}
+  #map{width:100%;height:100%;min-height:320px}
+  .site{padding:8px 10px;border:1px solid var(--line);border-radius:6px;margin-bottom:6px;
+    cursor:pointer;font-size:.82rem;display:flex;justify-content:space-between;gap:10px}
+  .site:hover{border-color:var(--t1)}
+  .site b{font-variant-numeric:tabular-nums;font-family:ui-monospace,monospace}
+  .err{background:#fdf0e8;border:1px solid var(--t2);color:var(--t2);padding:12px;
+    border-radius:6px;font-size:.82rem;line-height:1.5}
+  .note{font-size:.72rem;color:var(--ink2);margin-top:14px;line-height:1.5}
+</style>
+</head>
+<body>
+<div id="app">
+  <aside>
+    <h1>Cape Town Housing Ground</h1>
+    <p class="sub">Thirty screened precincts on real satellite imagery. Colour is delivery tranche;
+      circle area is dwelling yield.</p>
+    <div id="keybox"></div>
+    <label for="mode">Map type</label>
+    <select id="mode">
+      <option value="hybrid">Satellite + labels</option>
+      <option value="satellite">Satellite</option>
+      <option value="roadmap">Road map</option>
+      <option value="terrain">Terrain</option>
+    </select>
+    <label for="colour">Colour by</label>
+    <select id="colour">
+      <option value="tranche">Delivery tranche</option>
+      <option value="suitability">Suitability</option>
+      <option value="redress_index">Spatial redress</option>
+      <option value="displacement_risk">Displacement risk</option>
+    </select>
+    <button id="tilt">Tilt to 3D (45&deg;)</button>
+    <label>Precincts &mdash; by impact</label>
+    <div id="list"></div>
+    <p class="note">Criteria values are desktop estimates pending survey. Group Areas designations are
+      historical record. See the main atlas for the full methodology.</p>
+  </aside>
+  <div id="map"></div>
+</div>
+
+<script>
+const TRANCHE = {'Tranche 1 (2027-2029)':'#00887A','Tranche 2 (2030-2033)':'#B4620F',
+                 'Tranche 3 (2034-2037)':'#4B3FA8'};
+const SEQ = ['#D8EAE6','#A9D4CC','#6DB8AC','#2F9A8B','#00887A','#005F55'];
+let SITES = [], map = null, markers = [], info = null;
+
+const key = new URLSearchParams(location.search).get('key');
+
+function keyPrompt(msg){
+  document.getElementById('keybox').innerHTML =
+    `<div class="err">${msg}</div>
+     <label for="k">Maps JavaScript API key</label>
+     <input id="k" placeholder="AIza..." autocomplete="off">
+     <button id="go">Load map</button>`;
+  document.getElementById('go').onclick = () => {
+    const v = document.getElementById('k').value.trim();
+    if (v) location.search = '?key=' + encodeURIComponent(v);
+  };
+}
+
+async function loadSites(){
+  const res = await fetch('../outputs/candidate_sites.geojson');
+  if (!res.ok) throw new Error('candidate_sites.geojson not found — serve the repo root, ' +
+    'e.g. python -m http.server 8777, then open /docs/google_maps.html');
+  const gj = await res.json();
+  SITES = gj.features.map(f => ({...f.properties,
+    lat: f.geometry.coordinates[1], lon: f.geometry.coordinates[0]}));
+}
+
+function colourFor(d){
+  const mode = document.getElementById('colour').value;
+  if (mode === 'tranche') return TRANCHE[d.tranche];
+  const vs = SITES.map(s => s[mode]), lo = Math.min(...vs), hi = Math.max(...vs);
+  return SEQ[Math.min(5, Math.floor((d[mode] - lo) / (hi - lo || 1) * 6))];
+}
+
+function draw(){
+  markers.forEach(m => m.setMap(null));
+  markers = SITES.map(d => {
+    const c = new google.maps.Circle({
+      map, center: {lat: d.lat, lng: d.lon},
+      radius: 120 + Math.sqrt(d.units_total) * 9,
+      fillColor: colourFor(d), fillOpacity: .55,
+      strokeColor: colourFor(d), strokeOpacity: .95, strokeWeight: 2,
+      clickable: true,
+    });
+    c.addListener('click', () => open(d));
+    return c;
+  });
+}
+
+function open(d){
+  if (info) info.close();
+  info = new google.maps.InfoWindow({
+    position: {lat: d.lat, lng: d.lon},
+    content: `<div style="font:13px/1.5 system-ui;max-width:280px;color:#111">
+      <b style="font-size:15px">${d.name}</b><br>
+      Suitability #${d.rank} &middot; impact #${d.impact_rank}
+      &middot; redress #${d.rank_redress}<br>
+      <b>${d.units_total.toLocaleString()}</b> units on ${d.dev_ha} ha
+      (${d.units_social.toLocaleString()} sub-R3 500)<br>
+      ${d.dist_cbd_km} km to CBD &middot; ${d.dist_transit_km} km to transit<br>
+      <span style="color:#555">Group Areas: ${d.group_area_1950 || 'n/a'}</span><br>
+      <span style="color:#555">${d.tranche}</span></div>`,
+  });
+  info.open(map);
+  map.panTo({lat: d.lat, lng: d.lon});
+  if (map.getZoom() < 14) map.setZoom(15);
+}
+
+function buildList(){
+  document.getElementById('list').innerHTML = [...SITES]
+    .sort((a, b) => a.impact_rank - b.impact_rank)
+    .map(d => `<div class="site" data-id="${d.site_id}">
+      <span>${d.name}</span><b>${d.units_total.toLocaleString()}</b></div>`).join('');
+  document.querySelectorAll('.site').forEach(n => n.onclick = () =>
+    open(SITES.find(s => s.site_id === n.dataset.id)));
+}
+
+window.initMap = async function(){
+  try { await loadSites(); }
+  catch (e) { document.getElementById('keybox').innerHTML =
+    `<div class="err">${e.message}</div>`; return; }
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -33.95, lng: 18.58}, zoom: 11, mapTypeId: 'hybrid',
+    tilt: 0, mapTypeControl: false, streetViewControl: true,
+  });
+  draw(); buildList();
+  document.getElementById('mode').onchange = e => map.setMapTypeId(e.target.value);
+  document.getElementById('colour').onchange = draw;
+  document.getElementById('tilt').onclick = () => {
+    const t = map.getTilt() ? 0 : 45;
+    if (t && map.getZoom() < 16) map.setZoom(16);
+    map.setTilt(t);
+    document.getElementById('tilt').textContent = t ? 'Back to flat' : 'Tilt to 3D (45°)';
+  };
+};
+
+window.gm_authFailure = () => keyPrompt(
+  'Google rejected that API key. Check that Maps JavaScript API is enabled and that the ' +
+  'referrer restriction allows this origin.');
+
+if (!key) {
+  keyPrompt('No API key supplied. This page needs your own Google Maps JavaScript API key — ' +
+    'it is never sent anywhere but Google.');
+} else {
+  const s = document.createElement('script');
+  s.src = 'https://maps.googleapis.com/maps/api/js?key=' +
+          encodeURIComponent(key) + '&callback=initMap&v=weekly';
+  s.async = true;
+  s.onerror = () => keyPrompt('Could not reach the Google Maps API. Check your connection.');
+  document.head.appendChild(s);
+}
+</script>
+</body>
+</html>

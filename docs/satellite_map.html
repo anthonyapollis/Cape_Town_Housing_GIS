@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cape Town Housing Ground — satellite &amp; multi-layer map</title>
+<!--
+  RUN THIS LOCALLY. It needs internet at view time (tile servers + Leaflet CDN),
+  which a published Claude Artifact cannot have.
+
+      python -m http.server 8777          # from the repository root
+      open http://localhost:8777/docs/satellite_map.html
+
+  No API key. Esri World Imagery, OSM, CartoDB and OpenTopoMap are all free to
+  use under attribution, which the map keeps in the corner.
+-->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+  :root{--ground:#EDF0EC;--plate:#fff;--plate2:#F5F8F3;--line:#D2DBD4;--ink:#0F1A17;
+        --ink2:#4E5F5A;--ink3:#7C8C87;--t1:#00887A;--t2:#B4620F;--t3:#4B3FA8}
+  @media (prefers-color-scheme:dark){:root{--ground:#111917;--plate:#18211F;--plate2:#1E2A27;
+    --line:#2C3A36;--ink:#E4EDE9;--ink2:#9AAAA5;--ink3:#6E807B;--t1:#19A895;--t2:#CE7A1C;--t3:#7B6CE0}}
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;font-family:"IBM Plex Sans",system-ui,sans-serif;
+    color:var(--ink);background:var(--ground)}
+  #app{display:grid;grid-template-columns:326px 1fr;height:100%}
+  @media (max-width:860px){#app{grid-template-columns:1fr;grid-template-rows:auto 1fr}}
+  aside{background:var(--plate);border-right:1px solid var(--line);padding:20px;overflow:auto}
+  h1{font-family:Archivo,sans-serif;font-size:1.2rem;margin:0 0 3px;letter-spacing:-.025em}
+  p.sub{font-size:.82rem;color:var(--ink2);margin:0 0 4px;line-height:1.5}
+  .cap{font-family:"IBM Plex Mono",monospace;font-size:.64rem;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--ink3);margin:20px 0 7px;display:block}
+  select{width:100%;padding:8px 10px;font:inherit;font-size:.85rem;border:1px solid var(--line);
+    border-radius:6px;background:var(--plate2);color:var(--ink)}
+  .site{padding:7px 10px;border:1px solid var(--line);border-radius:6px;margin-bottom:5px;
+    cursor:pointer;font-size:.8rem;display:flex;justify-content:space-between;gap:10px;
+    align-items:center;background:var(--plate2)}
+  .site:hover{border-color:var(--t1)}
+  .site b{font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono",monospace;font-size:.75rem}
+  .site .rk{font-family:"IBM Plex Mono",monospace;color:var(--ink3);font-size:.7rem;min-width:2.4ch}
+  #map{height:100%;min-height:340px;background:var(--ground)}
+  .lg{display:flex;flex-wrap:wrap;gap:8px 14px;margin-top:9px}
+  .lg span{display:flex;align-items:center;gap:6px;font-size:.74rem;color:var(--ink2)}
+  .lg i{width:12px;height:12px;border-radius:3px;box-shadow:0 0 0 1px var(--line)}
+  .ramp{display:flex;height:10px;width:110px;border-radius:3px;overflow:hidden;
+    box-shadow:0 0 0 1px var(--line)}
+  .ramp i{flex:1;border-radius:0;box-shadow:none}
+  .note{font-size:.71rem;color:var(--ink3);margin-top:16px;line-height:1.5}
+  .err{background:var(--plate2);border:1px solid var(--t2);border-left-width:3px;color:var(--ink2);
+    padding:12px;border-radius:0 6px 6px 0;font-size:.82rem;line-height:1.5}
+  .leaflet-popup-content{font:13px/1.5 "IBM Plex Sans",system-ui;margin:12px 14px}
+  .leaflet-popup-content h3{font-family:Archivo,sans-serif;margin:0 0 6px;font-size:15px}
+  .leaflet-popup-content table{border-collapse:collapse}
+  .leaflet-popup-content td{padding:2px 0}
+  .leaflet-popup-content td:first-child{color:#5a6b66;padding-right:12px}
+  .leaflet-popup-content td:last-child{font-weight:600;font-variant-numeric:tabular-nums}
+</style>
+</head>
+<body>
+<div id="app">
+  <aside>
+    <h1>Cape Town Housing Ground</h1>
+    <p class="sub">Thirty screened precincts on real satellite imagery. Switch basemaps and
+      overlays from the control at the top right of the map.</p>
+    <div id="msg"></div>
+
+    <span class="cap">Colour precincts by</span>
+    <select id="colour">
+      <option value="tranche">Delivery tranche</option>
+      <option value="suitability">Suitability score</option>
+      <option value="impact_index">Impact index</option>
+      <option value="redress_index">Spatial redress</option>
+      <option value="displacement_risk">Displacement risk</option>
+      <option value="lst_anom_c">Summer heat anomaly</option>
+    </select>
+    <div class="lg" id="legend"></div>
+
+    <span class="cap">Size precincts by</span>
+    <select id="size">
+      <option value="units_total">Dwelling yield</option>
+      <option value="dev_ha">Developable hectares</option>
+      <option value="units_social">Sub-R3 500 units</option>
+      <option value="flat">Uniform</option>
+    </select>
+
+    <span class="cap">Precincts &mdash; by impact rank</span>
+    <div id="list"></div>
+
+    <p class="note">Criteria values are desktop estimates pending survey; Group Areas Act
+      designations are historical record. Imagery &copy; Esri and its providers; street and
+      vector data &copy; OpenStreetMap contributors (ODbL).</p>
+  </aside>
+  <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+const TRANCHE = {'Tranche 1 (2027-2029)': '#00887A',
+                 'Tranche 2 (2030-2033)': '#B4620F',
+                 'Tranche 3 (2034-2037)': '#4B3FA8'};
+const SEQ  = ['#D8EAE6', '#A9D4CC', '#6DB8AC', '#2F9A8B', '#00887A', '#005F55'];
+const HEAT = ['#F2E4D2', '#E2BC86', '#CD8F38', '#B4620F', '#7E3F06'];
+const RAMP_FOR = { displacement_risk: HEAT, lst_anom_c: HEAT };
+
+let SITES = [], map, siteLayer, catchLayer;
+
+const esri = a => 'https://server.arcgisonline.com/ArcGIS/rest/services/' + a +
+                  '/MapServer/tile/{z}/{y}/{x}';
+const ESRI_ATTR = 'Tiles &copy; Esri';
+const OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+
+function basemaps() {
+  const imagery = L.tileLayer(esri('World_Imagery'),
+    { maxZoom: 19, attribution: ESRI_ATTR + ' &mdash; Maxar, Earthstar Geographics' });
+  const labels = L.tileLayer(esri('Reference/World_Boundaries_and_Places'),
+    { maxZoom: 19, attribution: ESRI_ATTR, pane: 'shadowPane' });
+  return {
+    'Satellite + labels': L.layerGroup([imagery, labels]),
+    'Satellite': L.tileLayer(esri('World_Imagery'),
+      { maxZoom: 19, attribution: ESRI_ATTR + ' &mdash; Maxar, Earthstar Geographics' }),
+    'Streets (OSM)': L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+      { maxZoom: 19, attribution: OSM_ATTR }),
+    'Light': L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+      { maxZoom: 20, attribution: OSM_ATTR + ', &copy; CARTO' }),
+    'Dark': L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
+      { maxZoom: 20, attribution: OSM_ATTR + ', &copy; CARTO' }),
+    'Terrain': L.tileLayer('https://tile.opentopomap.org/{z}/{x}/{y}.png',
+      { maxZoom: 17, attribution: OSM_ATTR + ', SRTM | &copy; OpenTopoMap (CC-BY-SA)' }),
+    'Hillshade': L.tileLayer(esri('Elevation/World_Hillshade'),
+      { maxZoom: 16, attribution: ESRI_ATTR }),
+  };
+}
+
+const val = (d, k) => k === 'tranche' ? d.tranche : d[k];
+function colourFor(d) {
+  const k = document.getElementById('colour').value;
+  if (k === 'tranche') return TRANCHE[d.tranche];
+  const ramp = RAMP_FOR[k] || SEQ;
+  const vs = SITES.map(s => s[k]), lo = Math.min(...vs), hi = Math.max(...vs);
+  return ramp[Math.min(ramp.length - 1,
+    Math.floor((d[k] - lo) / (hi - lo || 1) * ramp.length))];
+}
+function radiusFor(d) {
+  const k = document.getElementById('size').value;
+  if (k === 'flat') return 260;
+  const vs = SITES.map(s => s[k]), hi = Math.max(...vs);
+  return 180 + Math.sqrt(d[k] / hi) * 900;
+}
+
+function popup(d) {
+  const row = (a, b) => `<tr><td>${a}</td><td>${b}</td></tr>`;
+  return `<h3>${d.name}</h3><table>
+    ${row('Suitability rank', '#' + d.rank + ' of 30')}
+    ${row('Under redress weighting', '#' + d.rank_redress +
+        (d.rank_shift ? ` (${d.rank_shift > 0 ? '+' : ''}${d.rank_shift})` : ''))}
+    ${row('Impact rank', '#' + d.impact_rank)}
+    ${row('Group Areas Act', d.group_area_1950 || 'n/a')}
+    ${row('Dwelling yield', d.units_total.toLocaleString() + ' units')}
+    ${row('Sub-R3 500 band', d.units_social.toLocaleString() + ' units')}
+    ${row('Developable land', d.dev_ha + ' ha')}
+    ${row('To CBD / transit', d.dist_cbd_km + ' km / ' + d.dist_transit_km + ' km')}
+    ${row('Tranche', d.tranche)}</table>`;
+}
+
+function drawSites() {
+  siteLayer.clearLayers();
+  catchLayer.clearLayers();
+  SITES.forEach(d => {
+    L.circle([d.lat, d.lon], { radius: 1000, color: '#00887A', weight: 1,
+      dashArray: '5 5', fillOpacity: .05, opacity: .55, interactive: false })
+      .addTo(catchLayer);
+    L.circle([d.lat, d.lon], {
+      radius: radiusFor(d), color: colourFor(d), weight: 2,
+      fillColor: colourFor(d), fillOpacity: .55,
+    }).bindPopup(popup(d)).bindTooltip(d.name, { direction: 'top' }).addTo(siteLayer);
+  });
+  drawLegend();
+}
+
+function drawLegend() {
+  const k = document.getElementById('colour').value, n = document.getElementById('legend');
+  if (k === 'tranche') {
+    n.innerHTML = Object.entries(TRANCHE).map(([t, c], i) =>
+      `<span><i style="background:${c}"></i>Tranche ${i + 1}</span>`).join('');
+    return;
+  }
+  const ramp = RAMP_FOR[k] || SEQ, vs = SITES.map(s => s[k]);
+  n.innerHTML = `<span>${Math.min(...vs).toFixed(1)}</span>
+    <span class="ramp">${ramp.map(c => `<i style="background:${c}"></i>`).join('')}</span>
+    <span>${Math.max(...vs).toFixed(1)}</span>`;
+}
+
+function buildList() {
+  document.getElementById('list').innerHTML = [...SITES]
+    .sort((a, b) => a.impact_rank - b.impact_rank)
+    .map(d => `<div class="site" data-id="${d.site_id}">
+      <span class="rk">${d.impact_rank}</span>
+      <span style="flex:1">${d.name}</span>
+      <b>${d.units_total.toLocaleString()}</b></div>`).join('');
+  document.querySelectorAll('.site').forEach(n => n.onclick = () => {
+    const d = SITES.find(s => s.site_id === n.dataset.id);
+    map.flyTo([d.lat, d.lon], 15, { duration: .8 });
+    siteLayer.eachLayer(l => {
+      const c = l.getLatLng();
+      if (Math.abs(c.lat - d.lat) < 1e-9 && Math.abs(c.lng - d.lon) < 1e-9) l.openPopup();
+    });
+  });
+}
+
+function vectorLayer(features, filter, style) {
+  return L.geoJSON({ type: 'FeatureCollection',
+    features: features.filter(f => f.properties.layer === filter) },
+    { style, interactive: false });
+}
+
+async function boot() {
+  let gj, base;
+  try {
+    [gj, base] = await Promise.all([
+      fetch('../outputs/candidate_sites.geojson').then(r => r.json()),
+      fetch('../data/geo/basemap.geojson').then(r => r.json()).catch(() => null),
+    ]);
+  } catch (e) {
+    document.getElementById('msg').innerHTML =
+      `<div class="err"><b>Could not load the data.</b> Serve the repository rather than
+       opening the file directly:<br><code>python -m http.server 8777</code> from the
+       repository root, then open <code>http://localhost:8777/docs/satellite_map.html</code>.</div>`;
+    return;
+  }
+
+  SITES = gj.features.map(f => ({ ...f.properties,
+    lat: f.geometry.coordinates[1], lon: f.geometry.coordinates[0] }));
+
+  map = L.map('map', { center: [-33.95, 18.58], zoom: 11, zoomControl: true });
+  const bases = basemaps();
+  bases['Satellite + labels'].addTo(map);
+
+  siteLayer = L.layerGroup().addTo(map);
+  catchLayer = L.layerGroup();
+  const overlays = { 'Precincts': siteLayer, '1 km catchments': catchLayer };
+
+  if (base) {
+    const f = base.features;
+    overlays['Municipal boundary'] = vectorLayer(f, 'municipal_boundary',
+      { color: '#4E5F5A', weight: 1.5, dashArray: '7 5', fill: false });
+    overlays['Coastline'] = vectorLayer(f, 'coastline', { color: '#00887A', weight: 1.5 });
+    overlays['Passenger rail'] = vectorLayer(f, 'rail', { color: '#B4620F', weight: 2, opacity: .8 });
+  }
+
+  L.control.layers(bases, overlays, { collapsed: false, position: 'topright' }).addTo(map);
+  L.control.scale({ imperial: false, position: 'bottomleft' }).addTo(map);
+
+  drawSites();
+  buildList();
+  document.getElementById('colour').onchange = drawSites;
+  document.getElementById('size').onchange = drawSites;
+}
+
+if (window.L) boot();
+else document.getElementById('msg').innerHTML =
+  `<div class="err"><b>Leaflet did not load.</b> This page needs internet access for the
+   map library and the tile servers.</div>`;
+</script>
+</body>
+</html>

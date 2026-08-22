@@ -1,0 +1,31 @@
+# The atlas fetches ../outputs/*.geojson and ../data/geo/*.geojson at runtime,
+# so the whole repository is the publish root and / redirects into docs/.
+[build]
+  publish = "."
+  command = ""
+
+[[redirects]]
+  from = "/"
+  to = "/docs/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/satellite"
+  to = "/docs/satellite_map.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+  for = "/outputs/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "/data/geo/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"

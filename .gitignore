@@ -1,0 +1,10 @@
+# Raw Overpass API dumps (3.3 MB). Derived basemap.geojson / basemap.json are
+# committed; refetch the raw responses with the queries in scripts/build_basemap.py
+# if you need to rebuild from source.
+data/geo/osm_*.json
+
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db
+.netlify/
