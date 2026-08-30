@@ -34,7 +34,9 @@ outputs/criteria_scores.csv   normalised 0-100 score per criterion per site
 outputs/sensitivity.csv       rank intervals over 5 000 weight draws
 outputs/candidate_sites.geojson  point layer for QGIS / ArcGIS / kepler.gl
 outputs/summary.json          headline figures
-docs/index.html               the interactive atlas (pan/zoom, full-screen, layer + style switches)
+docs/_atlas.body.html         the atlas SOURCE (body fragment) - edit this one
+docs/index.html               built: standalone document w/ viewport meta, for Netlify
+docs/_atlas.artifact.html     built: bare fragment, for publishing as an Artifact
 docs/satellite_map.html       Leaflet satellite/multi-layer map, no API key
 docs/google_maps.html         Google Maps + Street View, needs your own key
 ```
@@ -110,6 +112,20 @@ No API key for any of them. Published as an Artifact the probe fails, the four c
 disabled with an explanation, and the map falls back to its vector styles - so the same file
 works in both places.
 
+
+
+### Two builds, one source
+
+`docs/_atlas.body.html` is the source. `build_atlas_payload.py` emits both:
+
+- **`docs/index.html`** - a complete document with `<!doctype>`, `lang`, charset and a
+  **viewport meta**. Without that meta a phone lays the page out at 980 px and zooms out,
+  so this is the build Netlify must serve.
+- **`docs/_atlas.artifact.html`** - the same page as a bare body fragment, for publishing
+  as an Artifact, where the platform generates `<head>` and rejects one of ours. Because
+  that build gets no charset meta, the builder asserts the page is pure ASCII.
+
+Edit the source, never the outputs.
 
 ## Deploying to Netlify
 

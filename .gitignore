@@ -8,3 +8,6 @@ __pycache__/
 .DS_Store
 Thumbs.db
 .netlify/
+
+# Artifact build output; regenerate with build_atlas_payload.py
+docs/_atlas.artifact.html
