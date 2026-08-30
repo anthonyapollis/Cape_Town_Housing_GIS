@@ -1,0 +1,31 @@
+site_id,name,dist_transit_km_estimated,social_facility_estimated,elev_m_estimated,slope_pct_estimated,dist_transit_km_measured,social_facility_measured,elev_m_measured,slope_pct_measured,facilities_within_2km
+S01,Wingfield,1.4,58,18,1.2,1.23,54,18,0.0,10.2
+S02,Ysterplaat,1.1,62,12,1.0,1.09,56,19,2.67,10.8
+S03,Culemborg,0.5,55,6,0.8,1.13,64,0,0.0,13.9
+S04,Salt River Market,0.4,78,14,1.5,0.2,80,10,2.0,21.4
+S05,Woodstock Hospital,0.5,86,26,3.1,0.83,90,22,4.33,27.5
+S06,Pickwick Road,0.3,80,18,2.0,0.63,90,18,4.33,27.2
+S07,Founders Garden,0.6,88,10,2.4,0.35,92,22,5.0,28.6
+S08,Helen Bowden,0.9,84,8,1.8,1.83,64,7,3.67,14.2
+S09,Prestwich Precinct,0.8,82,9,1.6,1.3,76,25,5.0,19.8
+S10,District Six,0.7,80,42,5.2,0.85,100,16,5.33,33.5
+S11,Conradie Park,0.9,76,20,1.4,1.23,52,9,1.0,9.6
+S12,Two Rivers / Oude Molen,0.8,74,10,1.1,0.61,80,8,2.67,21.9
+S13,Ndabeni / Maitland,0.6,66,14,1.3,0.09,62,16,1.67,13.1
+S14,Epping Market,1.6,58,22,1.0,0.82,51,18,1.0,9.0
+S15,Athlone Power Station,1.2,62,16,1.2,1.44,77,11,2.33,20.2
+S16,Bellville CBD,0.3,80,120,2.2,0.87,74,80,0.67,18.8
+S17,Parow / Elsies River,0.7,70,60,1.8,0.13,65,39,0.67,14.6
+S18,Delft Symphony,2.8,52,34,0.9,4.56,79,37,0.67,21.3
+S19,Philippi East,1.9,44,26,0.8,1.44,57,29,1.0,11.1
+S20,Macassar,3.4,48,18,1.4,3.55,28,12,1.33,3.1
+S21,Kuyasa / Khayelitsha,1.1,54,20,0.7,1.04,96,23,1.67,30.8
+S22,Dido Valley,2.2,50,72,12.4,0.98,17,33,23.0,1.4
+S23,Imizamo Yethu,4.6,46,96,16.8,9.72,58,64,10.0,11.6
+S24,Sir Lowrys Road,0.4,84,24,2.6,0.6,92,8,6.0,28.6
+S25,Sir Lowrys Pass Village,5.2,42,88,4.6,4.19,0,87,0.67,0.5
+S26,Highlands Drive Mitchells Plain,1.5,58,24,0.8,0.95,87,29,2.67,25.7
+S27,Blue Downs / Kleinvlei,1.8,54,32,1.0,3.05,55,50,2.0,10.5
+S28,Atlantis Wesfleur,6.8,44,52,1.6,4.6,66,176,0.67,14.7
+S29,Wallacedene / Kraaifontein,1.3,56,110,1.5,0.57,60,101,0.33,12.4
+S30,Phoenix / Milnerton,1.7,60,10,1.1,1.59,50,17,1.0,8.8

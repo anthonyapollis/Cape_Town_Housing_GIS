@@ -205,6 +205,76 @@ def tranche(row):
     return "Tranche 3 (2034-2037)"
 
 
+# Columns still carrying an analyst estimate after measure_site_context.py has
+# replaced transit distance, facility access, elevation and slope with measurements.
+# Criteria whose source column is still an analyst estimate after
+# measure_site_context.py has replaced transit distance, facility access,
+# elevation and slope with measurements. NDVI/NDBI/impervious are estimates too
+# but feed no criterion -- they are reported, not scored -- so perturbing them
+# could not move a rank and they are left out.
+ESTIMATED_CRITERIA = [
+    "Bulk infrastructure", "Flood / water risk", "Environmental constraint",
+    "Contamination burden", "Heat / green deficit", "Delivery complexity",
+    "Spatial redress", "Displacement risk",
+]
+
+
+def _rank_desc(scores):
+    """Competition rank (1 = best) along each row of a 2-D score array."""
+    order = np.argsort(-scores, axis=1, kind="stable")
+    ranks = np.empty_like(order)
+    np.put_along_axis(ranks, order,
+                      np.tile(np.arange(1, scores.shape[1] + 1), (scores.shape[0], 1)),
+                      axis=1)
+    return ranks
+
+
+def input_sensitivity(df, n=2000, noise=0.15):
+    """Perturb the ESTIMATES, not the weights.
+
+    Weight sensitivity asks "what if we valued these things differently". This
+    asks the more uncomfortable question: the inputs are desktop judgements, so
+    what if they are simply wrong? Every still-estimated column is jittered by
+    +/-15% of its own range and the ranking recomputed.
+
+    Only the affected criteria are re-normalised -- the measured and derived
+    columns cannot move, so re-running the whole model per draw would be 2 000
+    times the work for the same answer.
+    """
+    labels = list(CRITERIA)
+    smat = df[["score::" + k for k in labels]].to_numpy()          # (30, 14)
+    w = np.array([SCENARIOS["efficiency"][k] for k in labels])
+    base_rank = df["rank_efficiency"].to_numpy()
+
+    draws = np.tile(smat, (n, 1, 1))                                # (n, 30, 14)
+    for label in ESTIMATED_CRITERIA:
+        col, direction = CRITERIA[label]
+        v = df[col].to_numpy(float)
+        lo, hi = v.min(), v.max()
+        span = (hi - lo) * noise
+        pert = np.clip(v + rng.uniform(-span, span, (n, v.size)), lo, hi)
+        mn = pert.min(axis=1, keepdims=True)
+        rng_ = np.where((mx := pert.max(axis=1, keepdims=True)) - mn == 0,
+                        1.0, mx - mn)
+        sc = (pert - mn) / rng_
+        if direction < 0:
+            sc = 1.0 - sc
+        draws[:, :, labels.index(label)] = sc * 100.0
+
+    scores = (draws * w).sum(axis=2)                                # (n, 30)
+    ranks = _rank_desc(scores)
+
+    return pd.DataFrame({
+        "site_id": df["site_id"].to_numpy(),
+        "name": df["name"].to_numpy(),
+        "rank_base": base_rank,
+        "in_rank_mean": ranks.mean(axis=0).round(2),
+        "in_rank_p05": np.percentile(ranks, 5, axis=0),
+        "in_rank_p95": np.percentile(ranks, 95, axis=0),
+        "in_pct_top10": (ranks <= 10).mean(axis=0).round(3),
+    })
+
+
 def sensitivity(df, smat, weights, n=5000, jitter=0.30):
     """Perturb weights +/- 30 percent (renormalised) and record rank stability."""
     ranks = np.zeros((n, len(df)))
@@ -288,6 +358,8 @@ def main():
         out / "criteria_scores.csv", index=False)
     sens = sensitivity(df, df[["score::" + k for k in CRITERIA]].to_numpy(), weights)
     sens.sort_values("rank_base").to_csv(out / "sensitivity.csv", index=False)
+    isens = input_sensitivity(df)
+    isens.sort_values("rank_base").to_csv(out / "input_sensitivity.csv", index=False)
     to_geojson(df, out / "candidate_sites.geojson")
 
     summary = {
@@ -310,6 +382,8 @@ def main():
         "scenarios": SCENARIOS,
         "weights": SCENARIOS["efficiency"],
         "stable_top10": sens[sens.pct_top10 >= 0.90]["name"].tolist(),
+        "stable_top10_inputs": isens[isens.in_pct_top10 >= 0.90]["name"].tolist(),
+        "input_rank_swing_mean": float((isens.in_rank_p95 - isens.in_rank_p05).mean().round(2)),
         "biggest_climb_on_redress": df.nsmallest(6, "rank_shift")[["name", "rank_shift"]]
             .set_index("name")["rank_shift"].to_dict(),
         "biggest_fall_on_redress": df.nlargest(6, "rank_shift")[["name", "rank_shift"]]

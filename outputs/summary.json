@@ -75,20 +75,20 @@
       "ownership": "Mixed"
     },
     {
-      "name": "Epping Market",
-      "zone": "GI1",
-      "dev_ha": 28.0,
-      "units_total": 4200,
-      "redress_index": 74,
-      "ownership": "City"
-    },
-    {
       "name": "Two Rivers / Oude Molen",
       "zone": "OS2",
       "dev_ha": 60.0,
       "units_total": 4200,
       "redress_index": 85,
       "ownership": "Provincial"
+    },
+    {
+      "name": "Epping Market",
+      "zone": "GI1",
+      "dev_ha": 28.0,
+      "units_total": 4200,
+      "redress_index": 74,
+      "ownership": "City"
     },
     {
       "name": "Philippi East",
@@ -115,7 +115,7 @@
       "ownership": "Provincial"
     }
   ],
-  "top10_units": 16760,
+  "top10_units": 44442,
   "tranche_units": {
     "Tranche 1 (2027-2029)": 7912,
     "Tranche 2 (2030-2033)": 51058,
@@ -227,36 +227,47 @@
     "District Six",
     "Sir Lowrys Road",
     "Pickwick Road",
-    "Conradie Park",
     "Woodstock Hospital",
+    "Conradie Park",
+    "Parow / Elsies River",
     "Salt River Market"
   ],
+  "stable_top10_inputs": [
+    "Founders Garden",
+    "Bellville CBD",
+    "District Six",
+    "Sir Lowrys Road",
+    "Pickwick Road",
+    "Woodstock Hospital",
+    "Conradie Park"
+  ],
+  "input_rank_swing_mean": 4.9,
   "biggest_climb_on_redress": {
-    "Dido Valley": -7,
-    "Two Rivers / Oude Molen": -5,
-    "Helen Bowden": -4,
-    "Wingfield": -4,
-    "Culemborg": -4,
-    "Prestwich Precinct": -3
+    "Culemborg": -8,
+    "Dido Valley": -8,
+    "Helen Bowden": -7,
+    "Two Rivers / Oude Molen": -7,
+    "Prestwich Precinct": -5,
+    "Wingfield": -4
   },
   "biggest_fall_on_redress": {
-    "Pickwick Road": 4,
-    "Woodstock Hospital": 4,
+    "Pickwick Road": 6,
+    "Woodstock Hospital": 6,
+    "Parow / Elsies River": 6,
+    "Atlantis Wesfleur": 5,
     "Salt River Market": 4,
-    "Wallacedene / Kraaifontein": 4,
-    "Sir Lowrys Road": 3,
-    "Parow / Elsies River": 3
+    "Highlands Drive Mitchells Plain": 4
   },
   "top10_by_impact": {
-    "Bellville CBD": 3600,
     "Wingfield": 25200,
     "District Six": 5460,
+    "Bellville CBD": 3600,
     "Ysterplaat": 13300,
     "Conradie Park": 3520,
-    "Founders Garden": 528,
     "Parow / Elsies River": 3640,
     "Culemborg": 7980,
+    "Founders Garden": 528,
     "Ndabeni / Maitland": 5100,
-    "Phoenix / Milnerton": 4400
+    "Atlantis Wesfleur": 5850
   }
 }

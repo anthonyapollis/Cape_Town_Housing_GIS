@@ -56,10 +56,13 @@ def build_payload():
     rank = pd.read_csv(ROOT / "outputs" / "site_rankings.csv")
     sens = pd.read_csv(ROOT / "outputs" / "sensitivity.csv")[
         ["site_id", "rank_p05", "rank_p95", "pct_top10"]]
+    isens = pd.read_csv(ROOT / "outputs" / "input_sensitivity.csv")[
+        ["site_id", "in_rank_p05", "in_rank_p95", "in_pct_top10"]]
     src = pd.read_csv(ROOT / "data" / "candidate_sites.csv")[SITE_COLS]
     crit = pd.read_csv(ROOT / "outputs" / "criteria_scores.csv").drop(columns=["name"])
 
-    df = rank.merge(sens, on="site_id").merge(src, on="site_id").merge(crit, on="site_id")
+    df = (rank.merge(sens, on="site_id").merge(isens, on="site_id")
+              .merge(src, on="site_id").merge(crit, on="site_id"))
     df.columns = [c.replace("score::", "s_") for c in df.columns]
 
     return {

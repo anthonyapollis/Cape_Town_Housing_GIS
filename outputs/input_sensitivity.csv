@@ -1,0 +1,31 @@
+site_id,name,rank_base,in_rank_mean,in_rank_p05,in_rank_p95,in_pct_top10
+S07,Founders Garden,1,1.03,1.0,1.0,1.0
+S16,Bellville CBD,2,2.03,2.0,3.0,1.0
+S10,District Six,3,2.94,2.0,3.0,1.0
+S24,Sir Lowrys Road,4,4.56,4.0,7.0,1.0
+S06,Pickwick Road,5,5.76,4.0,9.0,0.995
+S05,Woodstock Hospital,6,7.22,5.0,10.0,0.962
+S11,Conradie Park,7,7.64,5.0,11.0,0.942
+S01,Wingfield,8,8.1,5.0,11.0,0.888
+S17,Parow / Elsies River,9,8.15,5.0,11.0,0.875
+S04,Salt River Market,10,8.75,5.0,12.0,0.815
+S09,Prestwich Precinct,11,11.22,8.0,15.0,0.33
+S02,Ysterplaat,12,13.23,10.0,18.0,0.092
+S14,Epping Market,13,13.98,11.0,19.0,0.049
+S30,Phoenix / Milnerton,14,15.28,11.0,20.0,0.02
+S08,Helen Bowden,15,15.56,12.0,20.0,0.01
+S13,Ndabeni / Maitland,16,15.88,12.0,20.0,0.01
+S26,Highlands Drive Mitchells Plain,17,16.47,12.0,21.0,0.006
+S03,Culemborg,18,17.64,13.0,21.0,0.003
+S28,Atlantis Wesfleur,19,17.86,13.0,21.049999999999955,0.002
+S29,Wallacedene / Kraaifontein,20,18.27,14.0,22.0,0.0
+S21,Kuyasa / Khayelitsha,21,20.66,17.0,23.0,0.0
+S15,Athlone Power Station,22,21.46,19.0,24.0,0.0
+S27,Blue Downs / Kleinvlei,23,23.02,21.0,25.0,0.0
+S18,Delft Symphony,24,23.86,22.0,25.0,0.0
+S12,Two Rivers / Oude Molen,25,24.46,23.0,25.0,0.0
+S20,Macassar,26,26.53,26.0,28.0,0.0
+S22,Dido Valley,27,27.05,26.0,28.0,0.0
+S19,Philippi East,28,27.44,26.0,28.0,0.0
+S25,Sir Lowrys Pass Village,29,28.95,29.0,29.0,0.0
+S23,Imizamo Yethu,30,30.0,30.0,30.0,0.0

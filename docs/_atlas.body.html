@@ -332,15 +332,16 @@ footer{margin-top:70px; padding-top:22px; border-top:1px solid var(--line);
       quality actually delivers, and on whether building there undoes or repeats the removals.</p>
     <div class="flag">
       <span class="mark">Provenance</span>
-      <p><b>Read this before the numbers.</b> Site locations, employment nodes and every distance shown
-        are real and computed from coordinates. The twelve criteria values are <b>desktop analyst estimates</b>,
-        not measured rasters or municipal records &mdash; this is a screening layer for deciding where to spend
-        survey budget, not a feasibility study. The repository ships an Earth Engine script that replaces the
-        remote-sensing columns with measured Sentinel-2 / Landsat 9 / SRTM values; the methodology section
-        lists the authoritative source for every other column. Basemap geometry is real OpenStreetMap
-        data &mdash; the City of Cape Town municipal boundary, coastline and passenger rail network.
-        Group Areas Act designations are historical record; the redress and displacement scores built
-        on them are analyst judgements, and are meant to be argued with.</p>
+      <p><b>Read this before the numbers.</b> Six of the fourteen criteria are now
+        <b>measured</b>, not guessed: transit distance from 131 real OSM rail stations, social-facility
+        access from 1&nbsp;642 mapped schools, clinics and hospitals, terrain from SRTM 30&nbsp;m, plus
+        job accessibility and land supply computed from coordinates. <b>Eight remain desktop analyst
+        estimates</b> &mdash; flood, contamination, environmental sensitivity, bulk infrastructure,
+        delivery complexity, heat, and the two justice indices. This is a screening layer for deciding
+        where to spend survey budget, not a feasibility study. Basemap geometry is real OpenStreetMap
+        data. Group Areas Act designations are historical record; the redress and displacement scores
+        built on them are analyst judgements, and are meant to be argued with. Layer&nbsp;05 shows how
+        far the ranking moves when those remaining estimates are wrong.</p>
     </div>
     <div class="stats" id="stats"></div>
   </div>
@@ -620,8 +621,8 @@ footer{margin-top:70px; padding-top:22px; border-top:1px solid var(--line);
     <div>
       <p class="eyebrow">Layer 05 &middot; Time &amp; robustness</p>
       <h2>Does the ranking survive its own assumptions?</h2>
-      <p class="lede">A weighted-sum model is only as good as its weights. Five thousand random
-        re-weightings later, eight sites never leave the top ten.</p>
+      <p class="lede">A weighted-sum model is only as good as its weights <i>and</i> its inputs.
+        Both were tested. The inputs turn out to be the bigger risk.</p>
     </div>
   </div>
   <div class="chartgrid">
@@ -633,12 +634,12 @@ footer{margin-top:70px; padding-top:22px; border-top:1px solid var(--line);
         <div class="legend" id="lg-time"></div></div>
     </div>
     <div class="plate">
-      <div class="plate-hd"><h3>Rank stability under re-weighting</h3></div>
+      <div class="plate-hd"><h3>Rank stability</h3>
+        <div class="layerbar" id="sensmode" style="gap:6px"></div></div>
       <div class="plate-bd"><svg id="ch-sens" role="img"
-        aria-label="Rank interval for the top 16 precincts across 5000 random weight draws"
+        aria-label="Rank interval for the top 16 precincts under weight and input uncertainty"
         style="width:100%;height:auto;display:block"></svg>
-        <p class="note">Bar spans the 5th&ndash;95th percentile rank across 5&nbsp;000 draws with every
-          weight jittered &plusmn;30%. Dot is the base rank.</p></div>
+        <p class="note" id="sensnote"></p></div>
     </div>
   </div>
 </section>
@@ -652,6 +653,13 @@ footer{margin-top:70px; padding-top:22px; border-top:1px solid var(--line);
   </div>
   <div class="cols2">
     <div class="prose">
+      <h3>The estimates are a bigger risk than the weights</h3>
+      <p>Re-weighting the model &plusmn;30% leaves nine sites reliably in the top ten. Jittering the
+      remaining <i>estimated inputs</i> by only &plusmn;15% leaves <b>seven</b>, and moves the average
+      site <b>4.9 places</b>. Founders Garden, Bellville CBD and District Six are immovable; Prestwich
+      Precinct holds a top-ten place in barely a third of draws. Read the top of the table as a
+      shortlist, not an order of merit &mdash; and note that the fix is survey work, not more modelling.</p>
+
       <h3>Zoning, not land, is the binding constraint</h3>
       <p>Only <b>35% of the screened yield can be built under current zoning</b>. The other 82,200
       units need a rezoning first, and 541 hectares carry a zone permitting no housing whatsoever.
@@ -706,8 +714,10 @@ footer{margin-top:70px; padding-top:22px; border-top:1px solid var(--line);
       <ul>
         <li>Commission geotechnical and contamination survey on the <b>top four impact sites only</b> &mdash;
           that is where survey budget buys the most certainty per rand.</li>
-        <li>Run the Earth Engine script to replace the estimated NDVI, NDBI, LST and impervious columns
-          with measured values, then re-run the model and compare rank movement.</li>
+        <li>Four criteria have already been measured rather than estimated &mdash; transit distance,
+          facility access, elevation and slope. Doing so moved 18 of 30 sites and pushed Wingfield into
+          the top ten. Run the Earth Engine script to do the same for NDVI, NDBI, LST and impervious
+          cover, and expect comparable movement.</li>
         <li>Re-weight for a transit-led scenario (transit 0.28, job access 0.22) and see which Cape Flats
           sites move &mdash; that difference is the value of a corridor investment.</li>
       </ul>
@@ -762,7 +772,21 @@ footer{margin-top:70px; padding-top:22px; border-top:1px solid var(--line);
       <h3>Weights</h3>
       <div id="weights"></div>
 
-      <h3>Replacing the estimates with real data</h3>
+      <h3>What is measured, and what is still a guess</h3>
+      <p><b>Measured:</b> transit distance (nearest of 131 OSM rail stations and halts), social-facility
+      access (a weighted count of 1&nbsp;642 mapped schools, clinics, hospitals, doctors and pharmacies
+      within 1&nbsp;km and 2&nbsp;km), elevation and slope (SRTM 30&nbsp;m, slope from a 300&nbsp;m cross
+      around each site). <b>Derived:</b> job accessibility, distances, yield, tranche, both rankings.
+      <b>Still estimated:</b> flood risk, environmental sensitivity, contamination, bulk infrastructure,
+      delivery complexity, heat anomaly, spatial redress, displacement risk &mdash; eight of fourteen.</p>
+      <p>Measuring the first four changed things. Rank correlation between estimate and measurement ran
+      from +0.61 (facilities) to +0.79 (transit): directionally right, individually unreliable. The
+      correction that mattered most was systematic &mdash; <b>the estimates under-rated social facilities
+      across the Cape Flats</b>. Khayelitsha measures 96 out of 100 on facility access against a guess of
+      54; Mitchells Plain 87 against 58. The townships are not short of schools and clinics. What they
+      lack is work and a way to reach it, which is exactly what the job and transit criteria already say.</p>
+
+      <h3>Replacing the remaining estimates</h3>
       <ul>
         <li><b>Remote sensing</b> &mdash; <code>scripts/gee_remote_sensing.js</code> computes NDVI, NDBI,
           NDWI, BSI and an impervious fraction from Sentinel-2 SR summer composites; land-surface
@@ -772,8 +796,9 @@ footer{margin-top:70px; padding-top:22px; border-top:1px solid var(--line);
           zoning layers; national land from the DPWI immovable asset register.</li>
         <li><b>Flood</b> &mdash; the City's 1:100-year floodline layer and the Cape Flats Aquifer extent,
           in place of the elevation + NDWI proxy used here.</li>
-        <li><b>Transit</b> &mdash; PRASA station points and MyCiTi route/stop GTFS for a real network
-          distance rather than straight-line.</li>
+        <li><b>Transit</b> &mdash; now measured to the nearest OSM rail station, but still
+          straight-line. PRASA and MyCiTi GTFS would give a real network distance and, better, a
+          travel time.</li>
         <li><b>Terrain</b> &mdash; the City's 0.5&nbsp;m LiDAR DSM/DTM where a real massing model is needed;
           SRTM is only adequate at screening scale.</li>
         <li><b>Demand</b> &mdash; the housing needs register and StatsSA Census small-area data, to weight
@@ -2242,8 +2267,26 @@ function drawTime() {
 }
 
 /* ---------------- sensitivity ---------------- */
+/* Two uncertainty tests, same chart. Weights ask "what if we valued things
+   differently"; inputs ask "what if the desktop estimates are simply wrong".
+   The second is the harder question and the wider interval. */
+let sensMode = 'weights';
+const SENSMODE = {
+  weights: { label: 'Weights', p05: d => d.rank_p05, p95: d => d.rank_p95,
+    pct: d => d.pct_top10,
+    note: 'Bar spans the 5th\u201395th percentile rank across 5\u2009000 draws with every '
+        + 'weight jittered \u00B130% and renormalised. Dot is the base rank.' },
+  inputs: { label: 'Inputs', p05: d => d.in_rank_p05, p95: d => d.in_rank_p95,
+    pct: d => d.in_pct_top10,
+    note: 'Bar spans the 5th\u201395th percentile rank across 2\u2009000 draws with every '
+        + 'still-estimated criterion jittered \u00B115% of its range. Wider than the weight '
+        + 'test: what goes into the model matters more here than how it is weighted.' },
+};
+
 function drawSens() {
   const s = document.getElementById('ch-sens'), top = [...SITES].sort((a, b) => a.rank - b.rank).slice(0, 16);
+  const M_ = SENSMODE[sensMode];
+  document.getElementById('sensnote').innerHTML = M_.note;
   const W = 520, rh = 17, M = { t: 22, r: 20, b: 6, l: 152 }, H = M.t + top.length * rh + M.b;
   s.setAttribute('viewBox', `0 0 ${W} ${H}`); s.innerHTML = '';
   const iw = W - M.l - M.r, X = r => M.l + (r - 1) / 24 * iw;
@@ -2256,12 +2299,13 @@ function drawSens() {
   ax.appendChild(el('rect', { x: M.l, y: M.t - 4, width: X(10) - M.l, height: H - M.b - M.t + 4,
     fill: css('--seq-1'), opacity: .55 }));
   top.forEach((d, i) => {
-    const y = M.t + i * rh + rh / 2, stable = d.pct_top10 >= .9;
+    const y = M.t + i * rh + rh / 2, stable = M_.pct(d) >= .9;
     const t = el('text', { x: M.l - 10, y: y + 3.5, 'text-anchor': 'end' });
     t.setAttribute('style', 'font-family:"IBM Plex Sans",sans-serif;font-size:10.5px;fill:' +
       (stable ? css('--ink') : css('--ink-2')) + ';font-weight:' + (stable ? 600 : 400));
     t.textContent = d.name; s.appendChild(t);
-    s.appendChild(el('rect', { x: X(d.rank_p05), y: y - 4, width: Math.max(3, X(d.rank_p95) - X(d.rank_p05)),
+    s.appendChild(el('rect', { x: X(M_.p05(d)), y: y - 4,
+      width: Math.max(3, X(M_.p95(d)) - X(M_.p05(d))),
       height: 8, rx: 4, fill: stable ? css('--t1') : css('--seq-3'), opacity: .35 }));
     s.appendChild(el('circle', { cx: X(d.rank), cy: y, r: 4.5,
       fill: stable ? css('--t1') : css('--seq-3'), stroke: css('--plate'), 'stroke-width': 2 }));
@@ -2270,6 +2314,16 @@ function drawSens() {
     'font-family:"IBM Plex Mono",monospace;font-size:9px;fill:' + css('--ink-3'));
   s.appendChild(key);
 }
+
+document.getElementById('sensmode').innerHTML = Object.entries(SENSMODE)
+  .map(([k, v]) => `<button data-m="${k}" aria-pressed="${k === sensMode}">${v.label}</button>`).join('');
+document.getElementById('sensmode').onclick = e => {
+  const b = e.target.closest('button'); if (!b) return;
+  sensMode = b.dataset.m;
+  [...e.currentTarget.children].forEach(x =>
+    x.setAttribute('aria-pressed', x.dataset.m === sensMode));
+  drawSens();
+};
 
 /* ---------------- zoning: buildable now vs needs rezoning ---------------- */
 function drawZoning() {

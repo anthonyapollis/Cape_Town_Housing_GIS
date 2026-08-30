@@ -12,8 +12,11 @@ remote-sensing layer.
 | Site coordinates, employment nodes, all distances | **Real.** Computed from coordinates by haversine. |
 | Job accessibility index | **Derived.** Gravity model over eight weighted metro employment nodes. |
 | Suitability / impact / tranche / yield | **Derived** from the inputs below. |
-| Twelve criteria values (flood, contamination, bulk infra, complexity, land value, …) | **Desktop analyst estimates.** Not municipal records. |
-| NDVI, NDBI, LST anomaly, impervious %, slope, elevation | **Desktop estimates.** `scripts/gee_remote_sensing.js` replaces them with measured values. |
+| Transit distance | **Measured.** Nearest of 131 OSM `railway=station\|halt` points. |
+| Social-facility access | **Measured.** Weighted count of 1 642 mapped schools, clinics, hospitals, doctors and pharmacies within 1 km / 2 km. |
+| Elevation, slope | **Measured.** SRTM 30 m at the site; slope from a 300 m cross around it. |
+| Flood, environmental, contamination, bulk infra, delivery complexity, heat, redress, displacement | **Desktop analyst estimates** — eight of fourteen criteria. Not municipal records. |
+| NDVI, NDBI, impervious % | **Desktop estimates.** Reported, not scored. `scripts/gee_remote_sensing.js` replaces them. |
 | Basemap coastline, relief, rail lines | **Schematic**, hand-simplified. Site markers are at true coordinates. |
 
 This is a screening layer for deciding where to spend survey budget — not a feasibility study.
@@ -126,6 +129,47 @@ works in both places.
   that build gets no charset meta, the builder asserts the page is pure ASCII.
 
 Edit the source, never the outputs.
+
+
+## Measurement, and what it changed
+
+`scripts/measure_site_context.py` replaces four estimated columns with measurements from
+open data — no Google Earth Engine account needed:
+
+```bash
+python scripts/measure_site_context.py --fetch-dem   # network, ~30 s
+```
+
+Estimate-vs-measurement correlation ran from **+0.61** (facilities) to **+0.79** (transit):
+directionally right, individually unreliable. **18 of 30 sites moved rank**, up to 6 places,
+and Wingfield — the largest parcel in the study — climbed into the top ten.
+
+The correction that mattered was systematic: **the estimates under-rated social facilities
+across the Cape Flats.** Khayelitsha measures 96/100 against a guess of 54; Mitchells Plain
+87 against 58; Delft 79 against 52. The townships are not short of schools and clinics.
+What they lack is work and a way to reach it — which is what the job-access and transit
+criteria were already saying. Sir Lowry's Pass Village, by contrast, has **0.5** weighted
+facilities within 2 km and was scored 42.
+
+## Two uncertainty tests
+
+| Test | What it perturbs | Sites holding a top-10 place ≥90% of draws |
+|---|---|---|
+| `sensitivity.csv` | every **weight**, ±30%, 5 000 draws | 9 of 10 |
+| `input_sensitivity.csv` | every still-**estimated** criterion, ±15% of its range, 2 000 draws | 7 of 10 |
+
+Mean 5th–95th percentile rank swing under input noise is **4.9 places**. The inputs are a
+bigger source of uncertainty than the weights, which is an argument for survey budget rather
+than more modelling.
+
+## Tests
+
+```bash
+python -m pytest tests/ -q
+```
+
+26 invariants over the source data, weights, scoring, yield identities, zoning caps,
+sensitivity intervals and both built pages.
 
 ## Deploying to Netlify
 

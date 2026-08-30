@@ -1,0 +1,8 @@
+[out:json][timeout:240];
+(
+  node["railway"="station"](-34.42,18.26,-33.42,19.05);
+  node["railway"="halt"](-34.42,18.26,-33.42,19.05);
+  node["highway"="bus_stop"]["network"~"MyCiTi",i](-34.42,18.26,-33.42,19.05);
+  node["public_transport"="platform"]["network"~"MyCiTi",i](-34.42,18.26,-33.42,19.05);
+);
+out body;

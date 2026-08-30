@@ -2,30 +2,30 @@ site_id,name,rank_base,rank_mean,rank_p05,rank_p95,pct_top10
 S07,Founders Garden,1,1.0,1.0,1.0,1.0
 S16,Bellville CBD,2,2.0,2.0,2.0,1.0
 S10,District Six,3,3.0,3.0,3.0,1.0
-S24,Sir Lowrys Road,4,4.06,4.0,4.0,1.0
+S24,Sir Lowrys Road,4,4.16,4.0,5.0,1.0
 S06,Pickwick Road,5,5.19,5.0,6.0,1.0
-S11,Conradie Park,6,6.38,5.0,8.0,1.0
-S05,Woodstock Hospital,7,6.51,5.0,7.0,1.0
-S09,Prestwich Precinct,8,8.67,7.0,11.0,0.893
-S04,Salt River Market,9,9.15,8.0,11.0,0.947
-S08,Helen Bowden,10,10.72,9.0,12.0,0.447
-S17,Parow / Elsies River,11,10.69,9.0,12.0,0.357
-S01,Wingfield,12,10.66,8.0,12.0,0.354
-S02,Ysterplaat,13,12.98,13.0,13.0,0.001
-S30,Phoenix / Milnerton,14,14.99,14.0,17.0,0.0
-S13,Ndabeni / Maitland,15,14.93,14.0,17.0,0.0
-S03,Culemborg,16,16.07,14.0,19.0,0.0
-S14,Epping Market,17,16.2,15.0,17.0,0.0
-S26,Highlands Drive Mitchells Plain,18,18.14,17.0,19.0,0.0
-S29,Wallacedene / Kraaifontein,19,19.36,18.0,20.0,0.0
-S15,Athlone Power Station,20,20.0,18.0,22.0,0.0
-S27,Blue Downs / Kleinvlei,21,20.48,19.0,22.0,0.0
-S21,Kuyasa / Khayelitsha,22,22.36,21.0,23.0,0.0
-S12,Two Rivers / Oude Molen,23,23.06,21.0,24.0,0.0
-S18,Delft Symphony,24,23.42,22.0,24.0,0.0
-S28,Atlantis Wesfleur,25,25.93,25.0,28.0,0.0
-S20,Macassar,26,26.05,25.0,27.0,0.0
-S22,Dido Valley,27,26.06,25.0,27.0,0.0
-S19,Philippi East,28,27.92,27.0,28.0,0.0
+S05,Woodstock Hospital,6,6.92,6.0,9.0,1.0
+S11,Conradie Park,7,7.53,6.0,10.0,0.986
+S01,Wingfield,8,7.86,4.0,11.0,0.842
+S17,Parow / Elsies River,9,8.44,7.0,10.0,0.976
+S04,Salt River Market,10,9.31,8.0,10.0,0.969
+S09,Prestwich Precinct,11,11.2,8.0,15.0,0.219
+S02,Ysterplaat,12,12.5,11.0,15.0,0.005
+S14,Epping Market,13,13.56,12.0,16.0,0.0
+S30,Phoenix / Milnerton,14,15.23,13.0,17.0,0.0
+S08,Helen Bowden,15,15.68,12.0,20.0,0.0
+S13,Ndabeni / Maitland,16,16.34,14.0,19.0,0.0
+S26,Highlands Drive Mitchells Plain,17,16.12,12.0,19.0,0.0
+S03,Culemborg,18,18.17,15.0,21.0,0.0
+S28,Atlantis Wesfleur,19,17.73,12.0,21.0,0.004
+S29,Wallacedene / Kraaifontein,20,18.57,15.0,20.0,0.0
+S21,Kuyasa / Khayelitsha,21,20.85,19.0,22.0,0.0
+S15,Athlone Power Station,22,21.83,20.0,23.0,0.0
+S27,Blue Downs / Kleinvlei,23,23.0,22.0,24.0,0.0
+S18,Delft Symphony,24,24.17,23.0,25.0,0.0
+S12,Two Rivers / Oude Molen,25,24.65,23.0,25.0,0.0
+S20,Macassar,26,26.42,26.0,27.0,0.0
+S22,Dido Valley,27,26.99,26.0,28.0,0.0
+S19,Philippi East,28,27.58,26.0,28.0,0.0
 S25,Sir Lowrys Pass Village,29,29.0,29.0,29.0,0.0
 S23,Imizamo Yethu,30,30.0,30.0,30.0,0.0

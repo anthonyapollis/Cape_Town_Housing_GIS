@@ -1,0 +1,6 @@
+[out:json][timeout:300];
+(
+  node["amenity"~"^(school|clinic|hospital|doctors|pharmacy|kindergarten)$"](-34.42,18.26,-33.42,19.05);
+  way ["amenity"~"^(school|clinic|hospital|doctors|kindergarten)$"](-34.42,18.26,-33.42,19.05);
+);
+out center;
