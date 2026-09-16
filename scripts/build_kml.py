@@ -140,13 +140,18 @@ def main():
 </kml>
 """
     out = ROOT / "outputs"
-    (out / "cape_town_housing.kml").write_text(kml, encoding="utf-8")
+    (out / "cape_town_housing.kml").write_text(
+        kml, encoding="utf-8", newline="\n")
     # Fixed timestamp: a ZIP records mtime, so without this the KMZ is a new
     # file on every build and shows up as a spurious diff in every commit.
     with zipfile.ZipFile(out / "cape_town_housing.kmz", "w", zipfile.ZIP_DEFLATED) as z:
         info = zipfile.ZipInfo("doc.kml", date_time=(1980, 1, 1, 0, 0, 0))
         info.compress_type = zipfile.ZIP_DEFLATED
         info.external_attr = 0o644 << 16
+        # create_system is 0 on Windows and 3 on Unix, which changes the
+        # header bytes without changing the size. Pin it so the archive is
+        # identical whoever builds it.
+        info.create_system = 3
         z.writestr(info, kml)
     print(f"wrote {len(df)} precincts x 3 folders")
     print(" ", out / "cape_town_housing.kml")
