@@ -11,7 +11,7 @@
       python -m http.server 8777          # from the repository root
       open http://localhost:8777/docs/satellite_map.html
 
-  No API key. Esri World Imagery, OSM, CartoDB and OpenTopoMap are all free to
+  No API key. Esri World Imagery, Esri Canvas, OSM and OpenTopoMap are all free to
   use under attribution, which the map keeps in the corner.
 -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
@@ -121,10 +121,10 @@ function basemaps() {
       { maxZoom: 19, attribution: ESRI_ATTR + ' &mdash; Maxar, Earthstar Geographics' }),
     'Streets (OSM)': L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',
       { maxZoom: 19, attribution: OSM_ATTR }),
-    'Light': L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-      { maxZoom: 20, attribution: OSM_ATTR + ', &copy; CARTO' }),
-    'Dark': L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png',
-      { maxZoom: 20, attribution: OSM_ATTR + ', &copy; CARTO' }),
+    'Light': L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+      { maxNativeZoom: 16, maxZoom: 20, attribution: ESRI_ATTR }),
+    'Dark': L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+      { maxNativeZoom: 16, maxZoom: 20, attribution: ESRI_ATTR }),
     'Terrain': L.tileLayer('https://tile.opentopomap.org/{z}/{x}/{y}.png',
       { maxZoom: 17, attribution: OSM_ATTR + ', SRTM | &copy; OpenTopoMap (CC-BY-SA)' }),
     'Hillshade': L.tileLayer(esri('Elevation/World_Hillshade'),

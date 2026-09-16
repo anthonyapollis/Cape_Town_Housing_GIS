@@ -90,7 +90,7 @@ what the browser page cannot.
 | Output | Opens in | Gives you |
 |---|---|---|
 | `outputs/cape_town_housing.kml` / `.kmz` | Google Earth Pro, Google My Maps | True 3D extruded massing on real imagery + terrain, driven by Earth's time slider (2027-2037). Second folder extrudes by spatial-redress score. |
-| `docs/satellite_map.html` | Any browser, **no API key** | Leaflet + Esri World Imagery, OSM, CartoDB light/dark, OpenTopoMap, hillshade. Every vector layer as a toggleable overlay; colour-by and size-by controls. Serve the repo root, open `/docs/satellite_map.html`. |
+| `docs/satellite_map.html` | Any browser, **no API key** | Leaflet + Esri World Imagery, OSM, Esri light/dark canvas, OpenTopoMap, hillshade. Every vector layer as a toggleable overlay; colour-by and size-by controls. Serve the repo root, open `/docs/satellite_map.html`. |
 | `docs/google_maps.html` | Any browser, your own Maps JS API key | Street View on any precinct, plus 45 deg tilt. Run `python -m http.server 8777` from the repo root and open `/docs/google_maps.html?key=YOUR_KEY`. |
 | `scripts/build_qgis_project.py` | QGIS | Esri World Imagery + OSM + hillshade as XYZ layers, real boundary/coastline/rail vectors, 1 km catchments buffered in EPSG:32734, graduated renderers on suitability and redress. **Not executed — QGIS was not installed on the build machine. Treat the first run as a test.** |
 
