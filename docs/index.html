@@ -140,8 +140,11 @@ section{margin-top:64px}
 .layerbar button[aria-pressed="true"]{background:var(--t1); border-color:var(--t1); color:#fff}
 
 #mapbox{position:relative}
+/* Never let the plate run taller than the screen: a map you have to scroll to
+   see the bottom of is two maps. */
 #map{width:100%; height:auto; display:block; border-radius:6px; overflow:hidden;
-  touch-action:none; cursor:grab; background:var(--sea)}
+  touch-action:none; cursor:grab; background:var(--sea);
+  max-height:78vh; object-fit:contain}
 #map.dragging{cursor:grabbing}
 #map.style-ink{--land:#243330; --sea:#0C1517; --shore:#4E8C82; --line:#3A4A45}
 #map.style-blueprint{--land:#E8EFF4; --sea:#CFDDE8; --shore:#2E6E9E; --line:#9FBACF}
@@ -199,9 +202,9 @@ body.mapwide .wrap{max-width:1600px}
 
 /* Legend is three separated jobs, not one undifferentiated row: what colour
    means, what size means, and what the reference furniture is. */
-.legend{display:flex; flex-wrap:wrap; gap:22px; margin-top:16px; padding-top:15px;
+.legend{display:flex; flex-wrap:wrap; gap:14px 20px; margin-top:13px; padding-top:12px;
   border-top:1px solid var(--line-2); align-items:flex-start}
-.lgrp{display:flex; flex-direction:column; gap:8px; padding-left:20px;
+.lgrp{display:flex; flex-direction:column; gap:6px; padding-left:16px;
   border-left:1px solid var(--line-2)}
 .lgrp:first-child{padding-left:0; border-left:0}
 .lcap{font-family:"IBM Plex Mono",monospace; font-size:.62rem; letter-spacing:.14em;
@@ -220,6 +223,31 @@ body.mapwide .wrap{max-width:1600px}
   font-variant-numeric:tabular-nums}
 .sizekey{display:block}
 
+/* Control bar. Twenty chips in an open row cost 246px of plate -- more than a
+   quarter of it -- so the two sets you set once (overlays, basemap) fold into
+   disclosures and the two you actually toggle stay out. */
+.switchrow{padding:10px 16px; gap:10px 18px}
+.ctl{position:relative}
+.ctl > summary{
+  list-style:none; cursor:pointer; display:inline-flex; align-items:center; gap:7px;
+  font-family:"IBM Plex Mono",monospace; font-size:.66rem; letter-spacing:.08em;
+  text-transform:uppercase; padding:5px 10px; border:1px solid var(--line);
+  background:var(--plate-2); color:var(--ink-2); border-radius:5px; user-select:none;
+}
+.ctl > summary::-webkit-details-marker{display:none}
+.ctl > summary::after{content:"\25BE"; font-size:.7em; opacity:.6; transition:transform .15s}
+.ctl[open] > summary::after{transform:rotate(180deg)}
+.ctl > summary:hover{border-color:var(--t1); color:var(--ink)}
+.ctl[open] > summary{border-color:var(--t1); color:var(--ink)}
+.ctl .pop{
+  position:absolute; z-index:14; top:calc(100% + 6px); left:0; min-width:216px;
+  display:flex; flex-wrap:wrap; gap:6px; padding:12px; border-radius:8px;
+  background:var(--plate); border:1px solid var(--line); box-shadow:var(--shadow);
+}
+.ctl .count{font-variant-numeric:tabular-nums; color:var(--ink-3)}
+@media (max-width:640px){.ctl .pop{position:static; box-shadow:none; padding:10px 0 2px;
+  border:0; border-top:1px solid var(--line-2); border-radius:0; width:100%}}
+
 /* orientation furniture drawn into the map */
 .place-lbl{font-family:"IBM Plex Mono",monospace; font-weight:500; fill:var(--ink-3);
   letter-spacing:.11em; text-transform:uppercase; pointer-events:none; paint-order:stroke;
@@ -234,7 +262,8 @@ body.mapwide .wrap{max-width:1600px}
 .chip[disabled]{opacity:.42; cursor:not-allowed}
 #scene{width:100%; display:none; border-radius:6px; touch-action:none; cursor:grab}
 #scene.dragging{cursor:grabbing}
-body.mode3d #map, body.mode3d .scalebar, body.mode3d .zoomlabel{display:none}
+body.mode3d #map, body.mode3d .scalebar, body.mode3d .zoomlabel,
+body.mode3d #planhint{display:none}
 body.mode3d #scene{display:block}
 .compass{position:absolute; left:10px; top:10px; z-index:3; display:flex; gap:10px;
   align-items:center; background:var(--plate); border:1px solid var(--line);
@@ -242,7 +271,7 @@ body.mode3d #scene{display:block}
   font-family:"IBM Plex Mono",monospace; font-size:.64rem; color:var(--ink-3);
   font-variant-numeric:tabular-nums}
 .compass svg{display:block}
-.hint{position:absolute; left:10px; bottom:12px; z-index:3; background:var(--plate);
+.hint{position:absolute; left:10px; bottom:44px; z-index:3; background:var(--plate);
   border:1px solid var(--line); border-radius:6px; padding:5px 9px; box-shadow:var(--shadow);
   font-family:"IBM Plex Mono",monospace; font-size:.6rem; color:var(--ink-3); line-height:1.5}
 .northarrow{position:absolute; right:12px; bottom:12px; z-index:3; width:34px; height:42px;
@@ -260,6 +289,9 @@ body.mode3d #scene{display:block}
 .playbtn:hover{background:var(--t1); color:#fff}
 
 /* ============================ dossier ============================ */
+#critfold > summary::-webkit-details-marker{display:none}
+#critfold > summary::after{content:" \25BE"; opacity:.5}
+#critfold[open] > summary::after{content:" \25B4"}
 .dossier .kv{display:grid; grid-template-columns:auto 1fr; gap:4px 16px; font-size:.85rem; margin-bottom:16px}
 .dossier .kv dt{font-family:"IBM Plex Mono",monospace; font-size:.68rem; letter-spacing:.1em;
   text-transform:uppercase; color:var(--ink-3); padding-top:3px}
@@ -391,6 +423,9 @@ footer{margin-top:70px; padding-top:22px; border-top:1px solid var(--line);
           <div class="hint" id="scenehint" style="display:none">
             drag to orbit &middot; shift-drag to pan &middot; scroll to zoom
           </div>
+          <div class="hint" id="planhint">
+            scroll or double-click to zoom &middot; drag to pan
+          </div>
           <div class="scalebar" id="scalebar"><span>10 km</span><i style="width:60px"></i></div>
           <div class="attrib" id="attrib"></div>
           <svg class="northarrow" viewBox="0 0 34 42" aria-hidden="true">
@@ -415,11 +450,17 @@ footer{margin-top:70px; padding-top:22px; border-top:1px solid var(--line);
         <div class="legend" id="legend"></div>
       </div>
       <div class="switchrow">
-        <div class="grp"><span class="cap">Overlays</span><span id="overlays"></span></div>
-        <div class="grp"><span class="cap">View</span><span id="views"></span></div>
-        <div class="grp"><span class="cap">Symbols</span><span id="symbols"></span></div>
-        <div class="grp"><span class="cap">Basemap</span><span id="styles"></span></div>
-        <p class="tilenote" id="tilenote"></p>
+        <div class="grp"><span id="views"></span></div>
+        <div class="grp"><span id="symbols"></span></div>
+        <details class="ctl" id="ctl-overlays">
+          <summary>Layers <span class="count" id="ovcount"></span></summary>
+          <div class="pop" id="overlays"></div>
+        </details>
+        <details class="ctl" id="ctl-styles">
+          <summary>Basemap <span class="count" id="stname"></span></summary>
+          <div class="pop"><span id="styles"></span>
+            <p class="tilenote" id="tilenote" style="flex:1 0 100%;margin:4px 0 0"></p></div>
+        </details>
       </div>
       <div class="scrub">
         <button class="playbtn" id="play">Run programme</button>
@@ -440,8 +481,11 @@ footer{margin-top:70px; padding-top:22px; border-top:1px solid var(--line);
         <svg id="iso" role="img" aria-label="Isometric massing study for the selected precinct"
              style="width:100%;height:auto;display:block"></svg>
         <p class="note" id="iso-note"></p>
-        <p class="eyebrow" style="margin:22px 0 10px">Criteria scores &middot; 0&ndash;100</p>
-        <div id="d-crit"></div>
+        <details id="critfold" open>
+          <summary class="eyebrow" style="margin:20px 0 10px; cursor:pointer; list-style:none">
+            Criteria scores &middot; 0&ndash;100</summary>
+          <div id="d-crit"></div>
+        </details>
       </div>
     </div>
   </div>
@@ -925,7 +969,7 @@ document.getElementById('stats').innerHTML = [
   <div class="v">${v}</div><div class="s">${s}</div></div>`).join('');
 
 /* ---------------- projection ---------------- */
-const B = { w: 18.30, e: 18.98, n: -33.47, s: -34.36 };
+const B = { w: 18.29, e: 18.96, n: -33.50, s: -34.26 };
 const my = la => Math.log(Math.tan(Math.PI / 4 + la * Math.PI / 360));
 const MW = 1000, MH = Math.round(MW * (my(B.n) - my(B.s)) / ((B.e - B.w) * Math.PI / 180));
 const px = lo => (lo - B.w) / (B.e - B.w) * MW;
@@ -1296,8 +1340,8 @@ function drawMap() {
   const gline = a => gg.appendChild(el('line', Object.assign(a,
     { stroke: css('--grat'), 'stroke-width': 1, opacity: .55,
       'vector-effect': 'non-scaling-stroke' })));
-  for (let i = 183; i <= 190; i++) { const x = px(i / 10); gline({ x1: x, x2: x, y1: 0, y2: MH }); }
-  for (let i = -344; i <= -334; i++) { const y = py(i / 10); gline({ x1: 0, x2: MW, y1: y, y2: y }); }
+  for (let i = 183; i <= 189; i++) { const x = px(i / 10); gline({ x1: x, x2: x, y1: 0, y2: MH }); }
+  for (let i = -342; i <= -335; i++) { const y = py(i / 10); gline({ x1: 0, x2: MW, y1: y, y2: y }); }
 
   layer('l-catch');
   layer('l-jobs');
@@ -1508,8 +1552,7 @@ function drawLegend() {
     stroke="${css('--ink-2')}" stroke-width="1.6"/></svg>Employment node</span>`);
   if (OVERLAYS.catch.on) ref.push(`<span class="item"><i class="sw"
     style="background:transparent;border:1.5px dashed ${css('--t1')};box-shadow:none"></i>1 km catchment</span>`);
-  ref.push(`<span class="desc">Boundary, coastline and rail are OpenStreetMap.
-    Scroll or double-click to zoom, drag to pan.</span>`);
+  ref.push(`<span class="desc">Boundary, coastline and rail: OpenStreetMap.</span>`);
 
   const in3d = document.body.classList.contains('mode3d');
   const sizeGrp = (in3d || symbolMode === 'blocks')
@@ -1611,6 +1654,7 @@ document.getElementById('overlays').onclick = e => {
   if (k === 'catch' || k === 'jobs' || k === 'places') paintSites();
   syncOverlays();
   drawLegend();
+  syncCtlLabels();
 };
 function renderStyleChips() {
   const vec = Object.entries(STYLES).map(([k, v]) =>
@@ -1667,7 +1711,7 @@ document.getElementById('styles').onclick = e => {
   mapStyle = b.dataset.s;
   [...e.currentTarget.children].forEach(x =>
     x.setAttribute('aria-pressed', x.dataset.s === mapStyle));
-  drawMap(); drawLegend();
+  drawMap(); drawLegend(); syncCtlLabels();
 };
 
 /* ---------------- 3D buildings -------------------------------------------
@@ -2069,6 +2113,18 @@ function scene3dFocus(d) {
   scene.tx = b.cx; scene.ty = b.cy;
   scene.dist = Math.min(scene.dist, 420);
   drawScene();
+}
+
+document.addEventListener('click', e => {
+  document.querySelectorAll('.ctl[open]').forEach(d => {
+    if (!d.contains(e.target)) d.open = false;
+  });
+});
+function syncCtlLabels() {
+  const on = Object.values(OVERLAYS).filter(o => o.on).length;
+  document.getElementById('ovcount').textContent = on + '/' + Object.keys(OVERLAYS).length;
+  document.getElementById('stname').textContent =
+    (STYLES[mapStyle] || (TILES[mapStyle] || {}).label || mapStyle);
 }
 
 /* ---------------- tooltip ---------------- */
@@ -2480,7 +2536,7 @@ document.getElementById('play').onclick = e => {
 function renderAll() { drawMap(); drawLegend(); drawTable(); drawDossier(); drawIso();
   drawTime(); drawSens(); drawShift(); drawZoning(); buildBoxes(); drawScene(); }
 sel = SITES.find(d => d.impact_rank === 1) || SITES[0];
-renderAll(); setYear(2027);
+renderAll(); setYear(2027); syncCtlLabels();
 probeTiles().then(ok => { tilesOK = ok; renderStyleChips(); });
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', renderAll);
 addEventListener('resize', () => { drawSens(); drawShift(); drawZoning(); drawScene(); });
