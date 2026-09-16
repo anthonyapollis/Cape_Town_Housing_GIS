@@ -141,8 +141,13 @@ def main():
 """
     out = ROOT / "outputs"
     (out / "cape_town_housing.kml").write_text(kml, encoding="utf-8")
-    with zipfile.ZipFile(out / "cape_town_housing.kmz", "w", zipfile.ZIP_DEFLATED) as z:
-        z.writestr("doc.kml", kml)
+    # Fixed timestamp: a ZIP records mtime, so without this the KMZ is a new
+    # file on every build and shows up as a spurious diff in every commit.
+    with zipfile.ZipFile(out / "cape_town_housing.kmz", "w", zipfile.ZIP_DEFLATED) as z:
+        info = zipfile.ZipInfo("doc.kml", date_time=(1980, 1, 1, 0, 0, 0))
+        info.compress_type = zipfile.ZIP_DEFLATED
+        info.external_attr = 0o644 << 16
+        z.writestr(info, kml)
     print(f"wrote {len(df)} precincts x 3 folders")
     print(" ", out / "cape_town_housing.kml")
     print(" ", out / "cape_town_housing.kmz")

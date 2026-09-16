@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: pip install --quiet pandas numpy pytest
+
+      - name: Invariants
+        run: python -m pytest tests/ -q
+
+      # The repo commits generated files so the site and the Power BI model work
+      # straight from a clone. That only holds if they are actually what the
+      # scripts produce -- otherwise someone has hand-edited an output and the
+      # next build will silently revert them.
+      - name: Generated files match their sources
+        run: |
+          python scripts/suitability_model.py > /dev/null
+          python scripts/build_atlas_payload.py > /dev/null
+          python scripts/build_powerbi_model.py > /dev/null
+          python scripts/build_kml.py > /dev/null
+          if ! git diff --quiet; then
+            echo "::error::A generated file differs from what the build scripts produce."
+            echo "Edit the source (see AGENTS.md), re-run the pipeline, and commit the outputs."
+            git --no-pager diff --stat
+            exit 1
+          fi
+
+      - name: Atlas is pure ASCII
+        run: |
+          python - <<'PY'
+          import pathlib, sys
+          p = pathlib.Path("docs/_atlas.artifact.html")
+          bad = [c for c in p.read_text(encoding="utf-8") if ord(c) > 127]
+          if bad:
+              sys.exit(f"{len(bad)} non-ASCII chars in the Artifact build: "
+                       "it gets no charset meta, so these render as mojibake.")
+          print("clean")
+          PY
