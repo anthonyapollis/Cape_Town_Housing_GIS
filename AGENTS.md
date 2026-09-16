@@ -3,6 +3,9 @@
 Guardrails for anyone â€” human or agent â€” changing this project. Most of these
 encode a mistake that has already been made once.
 
+**Looking for something to work on?** The prioritised backlog, with acceptance
+criteria for each task, is in [`CODEX_TASKS.md`](CODEX_TASKS.md).
+
 ## The build pipeline
 
 Run in this order. Later steps consume earlier outputs.

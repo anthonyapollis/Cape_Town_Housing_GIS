@@ -72,3 +72,10 @@ Pages 25–30 cover household rent, utility and transport costs; housing deliver
 - [LinkedIn pack ZIP](downloads/LinkedIn-Launch-Pack.zip): the standalone promotional materials and editable layouts.
 
 The publication is edition 3 (September 2026). Pages 25–30 distinguish dated rental-market observations, illustrative household budgets, current legal guidance and policy proposals. The original GitHub-hosted portfolio links in the LinkedIn article may point to other revisions; this branch contains the edition shown here.
+
+
+## Companion maps and contributions
+
+The companion `docs/satellite_map.html` uses keyless Esri canvas and street tiles, with native zoom limits, following the upstream basemap fix. Its satellite and other layers remain available.
+
+Read [AGENTS.md](AGENTS.md) for build constraints and [CODEX_TASKS.md](CODEX_TASKS.md) for the prioritised improvement backlog.
