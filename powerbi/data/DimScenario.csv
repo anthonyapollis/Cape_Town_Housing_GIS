@@ -1,0 +1,3 @@
+scenario,scenario_key,description
+Efficiency,efficiency,Land economics only; blind to Group Areas history.
+Redress,redress,Adds spatial redress and displacement risk as criteria.

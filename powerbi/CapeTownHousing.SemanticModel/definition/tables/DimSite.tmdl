@@ -1,0 +1,98 @@
+table DimSite
+
+	column site_id
+		dataType: string
+		sourceColumn: site_id
+		summarizeBy: none
+
+	column name
+		dataType: string
+		sourceColumn: name
+		summarizeBy: none
+
+	column subregion
+		dataType: string
+		sourceColumn: subregion
+		summarizeBy: none
+
+	column typology
+		dataType: string
+		sourceColumn: typology
+		summarizeBy: none
+
+	column ownership
+		dataType: string
+		sourceColumn: ownership
+		summarizeBy: none
+
+	column zone
+		dataType: string
+		sourceColumn: zone
+		summarizeBy: none
+
+	column zoning_note
+		dataType: string
+		sourceColumn: zoning_note
+		summarizeBy: none
+
+	column height_storeys
+		dataType: int64
+		sourceColumn: height_storeys
+		summarizeBy: none
+
+	column asofright_u_ha
+		dataType: int64
+		sourceColumn: asofright_u_ha
+		summarizeBy: none
+
+	column group_area_1950
+		dataType: string
+		sourceColumn: group_area_1950
+		summarizeBy: none
+
+	column lat
+		dataType: double
+		sourceColumn: lat
+		summarizeBy: none
+
+	column lon
+		dataType: double
+		sourceColumn: lon
+		summarizeBy: none
+
+	column zone_class
+		dataType: string
+		sourceColumn: zone_class
+		summarizeBy: none
+
+	column tranche
+		dataType: string
+		sourceColumn: tranche
+		summarizeBy: none
+
+	column publicly_owned
+		dataType: boolean
+		sourceColumn: publicly_owned
+		summarizeBy: none
+
+	column zoning_blocked
+		dataType: boolean
+		sourceColumn: zoning_blocked
+		summarizeBy: none
+
+	column land_type
+		dataType: string
+		sourceColumn: land_type
+		summarizeBy: none
+
+	partition DimSite = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents(DataFolder & "DimSite.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {}, "en-US")
+				in
+				    Typed

@@ -1,0 +1,3 @@
+expression DataFolder = "." meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: datafolder-param
+

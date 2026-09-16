@@ -1,0 +1,46 @@
+table FactRanking
+
+	column site_id
+		dataType: string
+		sourceColumn: site_id
+		summarizeBy: none
+
+	column scenario
+		dataType: string
+		sourceColumn: scenario
+		summarizeBy: none
+
+	column rank
+		dataType: int64
+		sourceColumn: rank
+		summarizeBy: none
+
+	column score
+		dataType: double
+		sourceColumn: score
+		formatString: "0.0"
+		summarizeBy: none
+
+	measure 'Rank Efficiency' = CALCULATE ( MIN ( FactRanking[rank] ), DimScenario[scenario] = "Efficiency" )
+		formatString: 0
+		displayFolder: Scenarios
+
+	measure 'Rank Redress' = CALCULATE ( MIN ( FactRanking[rank] ), DimScenario[scenario] = "Redress" )
+		formatString: 0
+		displayFolder: Scenarios
+
+	/// Negative means the site climbs once Group Areas history is priced in.
+	measure 'Rank Shift' = [Rank Redress] - [Rank Efficiency]
+		formatString: +0;-0;0
+		displayFolder: Scenarios
+	partition FactRanking = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents(DataFolder & "FactRanking.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {}, "en-US")
+				in
+				    Typed

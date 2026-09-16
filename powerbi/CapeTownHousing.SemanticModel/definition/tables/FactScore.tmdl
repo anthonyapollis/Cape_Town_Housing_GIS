@@ -1,0 +1,42 @@
+table FactScore
+
+	column site_id
+		dataType: string
+		sourceColumn: site_id
+		summarizeBy: none
+
+	column criterion
+		dataType: string
+		sourceColumn: criterion
+		summarizeBy: none
+
+	column score
+		dataType: double
+		sourceColumn: score
+		formatString: "0.0"
+		summarizeBy: none
+
+	/// Mean normalised 0-100 criterion score in the current filter context.
+	measure 'Avg Score' = AVERAGE ( FactScore[score] )
+		formatString: 0.0
+		displayFolder: Scoring
+
+	/// Efficiency-weighted suitability.
+	measure 'Weighted Score' = SUMX ( VALUES ( DimCriterion[criterion] ), [Avg Score] * CALCULATE ( SELECTEDVALUE ( DimCriterion[weight_efficiency] ) ) )
+		formatString: 0.0
+		displayFolder: Scoring
+
+	measure 'Weighted Score Redress' = SUMX ( VALUES ( DimCriterion[criterion] ), [Avg Score] * CALCULATE ( SELECTEDVALUE ( DimCriterion[weight_redress] ) ) )
+		formatString: 0.0
+		displayFolder: Scoring
+	partition FactScore = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents(DataFolder & "FactScore.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {}, "en-US")
+				in
+				    Typed

@@ -1,0 +1,45 @@
+table FactDelivery
+
+	column site_id
+		dataType: string
+		sourceColumn: site_id
+		summarizeBy: none
+
+	column year
+		dataType: int64
+		sourceColumn: year
+		summarizeBy: none
+
+	column units_released
+		dataType: int64
+		sourceColumn: units_released
+		formatString: "#,0"
+		summarizeBy: sum
+
+	column under_construction
+		dataType: int64
+		sourceColumn: under_construction
+		summarizeBy: none
+
+	measure 'Units Released' = SUM ( FactDelivery[units_released] )
+		formatString: #,0
+		displayFolder: Delivery
+
+	measure 'Cumulative Units' = CALCULATE ( [Units Released], FILTER ( ALL ( DimYear[year] ), DimYear[year] <= MAX ( DimYear[year] ) ) )
+		formatString: #,0
+		displayFolder: Delivery
+
+	measure 'Pct Of Pipeline Delivered' = DIVIDE ( [Cumulative Units], CALCULATE ( [Total Units], ALL ( DimSite ) ) )
+		formatString: 0%
+		displayFolder: Delivery
+	partition FactDelivery = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents(DataFolder & "FactDelivery.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {}, "en-US")
+				in
+				    Typed

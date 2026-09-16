@@ -1,0 +1,15 @@
+criterion,criterion_group,direction,source_column,provenance,weight_efficiency,weight_redress
+Job accessibility,Access,Benefit,job_access_idx,Derived,0.18,0.14
+Transit access,Access,Cost,dist_transit_km,Measured,0.16,0.13
+Developable land supply,Capacity,Benefit,dev_ha,Derived,0.1,0.08
+Land cost,Capacity,Cost,land_value_r_m2,Derived,0.08,0.04
+Bulk infrastructure,Servicing,Benefit,bulk_infra,Estimated,0.1,0.08
+Flood / water risk,Constraint,Cost,flood_risk,Estimated,0.07,0.06
+Terrain buildability,Constraint,Cost,slope_pct,Measured,0.04,0.03
+Environmental constraint,Constraint,Cost,enviro_sensitivity,Estimated,0.06,0.05
+Contamination burden,Constraint,Cost,contamination,Estimated,0.05,0.04
+Social facility access,Access,Benefit,social_facility,Measured,0.06,0.05
+Heat / green deficit,Constraint,Cost,lst_anom_c,Estimated,0.03,0.02
+Delivery complexity,Constraint,Cost,delivery_complexity,Estimated,0.07,0.05
+Spatial redress,Spatial justice,Benefit,redress_index,Estimated,0.0,0.17
+Displacement risk,Spatial justice,Cost,displacement_risk,Estimated,0.0,0.06

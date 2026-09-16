@@ -1,0 +1,421 @@
+site_id,criterion,score
+S07,Job accessibility,100.0
+S16,Job accessibility,75.7
+S10,Job accessibility,72.7
+S24,Job accessibility,44.7
+S06,Job accessibility,22.4
+S05,Job accessibility,26.6
+S11,Job accessibility,14.7
+S01,Job accessibility,21.6
+S17,Job accessibility,15.3
+S04,Job accessibility,20.9
+S09,Job accessibility,45.0
+S02,Job accessibility,21.0
+S14,Job accessibility,26.0
+S30,Job accessibility,29.2
+S08,Job accessibility,32.1
+S13,Job accessibility,16.7
+S26,Job accessibility,3.9
+S03,Job accessibility,41.5
+S28,Job accessibility,0.0
+S29,Job accessibility,3.2
+S21,Job accessibility,3.1
+S15,Job accessibility,12.2
+S27,Job accessibility,3.7
+S18,Job accessibility,7.5
+S12,Job accessibility,16.1
+S20,Job accessibility,1.7
+S22,Job accessibility,0.8
+S19,Job accessibility,6.7
+S25,Job accessibility,2.0
+S23,Job accessibility,3.7
+S07,Transit access,97.3
+S16,Transit access,91.9
+S10,Transit access,92.1
+S24,Transit access,94.7
+S06,Transit access,94.4
+S05,Transit access,92.3
+S11,Transit access,88.2
+S01,Transit access,88.2
+S17,Transit access,99.6
+S04,Transit access,98.9
+S09,Transit access,87.4
+S02,Transit access,89.6
+S14,Transit access,92.4
+S30,Transit access,84.4
+S08,Transit access,81.9
+S13,Transit access,100.0
+S26,Transit access,91.1
+S03,Transit access,89.2
+S28,Transit access,53.2
+S29,Transit access,95.0
+S21,Transit access,90.1
+S15,Transit access,86.0
+S27,Transit access,69.3
+S18,Transit access,53.6
+S12,Transit access,94.6
+S20,Transit access,64.1
+S22,Transit access,90.8
+S19,Transit access,86.0
+S25,Transit access,57.4
+S23,Transit access,0.0
+S07,Developable land supply,0.7
+S16,Developable land supply,9.4
+S10,Developable land supply,22.8
+S24,Developable land supply,0.9
+S06,Developable land supply,0.0
+S05,Developable land supply,0.4
+S11,Developable land supply,11.6
+S01,Developable land supply,100.0
+S17,Developable land supply,13.9
+S04,Developable land supply,2.5
+S09,Developable land supply,0.2
+S02,Developable land supply,52.5
+S14,Developable land supply,15.0
+S30,Developable land supply,10.5
+S08,Developable land supply,1.1
+S13,Developable land supply,18.3
+S26,Developable land supply,21.7
+S03,Developable land supply,22.8
+S28,Developable land supply,49.7
+S29,Developable land supply,19.5
+S21,Developable land supply,16.1
+S15,Developable land supply,24.5
+S27,Developable land supply,26.2
+S18,Developable land supply,31.8
+S12,Developable land supply,32.9
+S20,Developable land supply,36.2
+S22,Developable land supply,4.9
+S19,Developable land supply,28.4
+S25,Developable land supply,12.8
+S23,Developable land supply,3.8
+S07,Land cost,5.8
+S16,Land cost,42.0
+S10,Land cost,20.3
+S24,Land cost,12.9
+S06,Land cost,23.3
+S05,Land cost,18.0
+S11,Land cost,35.7
+S01,Land cost,63.0
+S17,Land cost,51.5
+S04,Land cost,27.7
+S09,Land cost,0.8
+S02,Land cost,52.8
+S14,Land cost,55.6
+S30,Land cost,60.3
+S08,Land cost,0.0
+S13,Land cost,46.9
+S26,Land cost,76.8
+S03,Land cost,37.9
+S28,Land cost,100.0
+S29,Land cost,80.1
+S21,Land cost,85.2
+S15,Land cost,66.0
+S27,Land cost,78.8
+S18,Land cost,76.2
+S12,Land cost,43.9
+S20,Land cost,83.1
+S22,Land cost,49.1
+S19,Land cost,81.2
+S25,Land cost,86.5
+S23,Land cost,41.2
+S07,Bulk infrastructure,100.0
+S16,Bulk infrastructure,80.0
+S10,Bulk infrastructure,80.0
+S24,Bulk infrastructure,90.0
+S06,Bulk infrastructure,87.5
+S05,Bulk infrastructure,90.0
+S11,Bulk infrastructure,75.0
+S01,Bulk infrastructure,55.0
+S17,Bulk infrastructure,70.0
+S04,Bulk infrastructure,85.0
+S09,Bulk infrastructure,92.5
+S02,Bulk infrastructure,60.0
+S14,Bulk infrastructure,65.0
+S30,Bulk infrastructure,50.0
+S08,Bulk infrastructure,95.0
+S13,Bulk infrastructure,70.0
+S26,Bulk infrastructure,30.0
+S03,Bulk infrastructure,75.0
+S28,Bulk infrastructure,35.0
+S29,Bulk infrastructure,30.0
+S21,Bulk infrastructure,25.0
+S15,Bulk infrastructure,60.0
+S27,Bulk infrastructure,25.0
+S18,Bulk infrastructure,20.0
+S12,Bulk infrastructure,55.0
+S20,Bulk infrastructure,15.0
+S22,Bulk infrastructure,30.0
+S19,Bulk infrastructure,10.0
+S25,Bulk infrastructure,0.0
+S23,Bulk infrastructure,5.0
+S07,Flood / water risk,94.3
+S16,Flood / water risk,88.6
+S10,Flood / water risk,100.0
+S24,Flood / water risk,85.7
+S06,Flood / water risk,82.9
+S05,Flood / water risk,91.4
+S11,Flood / water risk,74.3
+S01,Flood / water risk,41.4
+S17,Flood / water risk,68.6
+S04,Flood / water risk,71.4
+S09,Flood / water risk,80.0
+S02,Flood / water risk,51.4
+S14,Flood / water risk,62.9
+S30,Flood / water risk,40.0
+S08,Flood / water risk,77.1
+S13,Flood / water risk,57.1
+S26,Flood / water risk,28.6
+S03,Flood / water risk,31.4
+S28,Flood / water risk,60.0
+S29,Flood / water risk,22.9
+S21,Flood / water risk,14.3
+S15,Flood / water risk,45.7
+S27,Flood / water risk,34.3
+S18,Flood / water risk,25.7
+S12,Flood / water risk,0.0
+S20,Flood / water risk,37.1
+S22,Flood / water risk,94.3
+S19,Flood / water risk,8.6
+S25,Flood / water risk,20.0
+S23,Flood / water risk,77.1
+S07,Terrain buildability,78.3
+S16,Terrain buildability,97.1
+S10,Terrain buildability,76.8
+S24,Terrain buildability,73.9
+S06,Terrain buildability,81.2
+S05,Terrain buildability,81.2
+S11,Terrain buildability,95.7
+S01,Terrain buildability,100.0
+S17,Terrain buildability,97.1
+S04,Terrain buildability,91.3
+S09,Terrain buildability,78.3
+S02,Terrain buildability,88.4
+S14,Terrain buildability,95.7
+S30,Terrain buildability,95.7
+S08,Terrain buildability,84.0
+S13,Terrain buildability,92.7
+S26,Terrain buildability,88.4
+S03,Terrain buildability,100.0
+S28,Terrain buildability,97.1
+S29,Terrain buildability,98.6
+S21,Terrain buildability,92.7
+S15,Terrain buildability,89.9
+S27,Terrain buildability,91.3
+S18,Terrain buildability,97.1
+S12,Terrain buildability,88.4
+S20,Terrain buildability,94.2
+S22,Terrain buildability,0.0
+S19,Terrain buildability,95.7
+S25,Terrain buildability,97.1
+S23,Terrain buildability,56.5
+S07,Environmental constraint,78.9
+S16,Environmental constraint,94.7
+S10,Environmental constraint,92.1
+S24,Environmental constraint,97.4
+S06,Environmental constraint,100.0
+S05,Environmental constraint,100.0
+S11,Environmental constraint,84.2
+S01,Environmental constraint,69.7
+S17,Environmental constraint,92.1
+S04,Environmental constraint,96.1
+S09,Environmental constraint,71.1
+S02,Environmental constraint,76.3
+S14,Environmental constraint,89.5
+S30,Environmental constraint,57.9
+S08,Environmental constraint,89.5
+S13,Environmental constraint,81.6
+S26,Environmental constraint,68.4
+S03,Environmental constraint,86.8
+S28,Environmental constraint,44.7
+S29,Environmental constraint,71.1
+S21,Environmental constraint,78.9
+S15,Environmental constraint,76.3
+S27,Environmental constraint,63.2
+S18,Environmental constraint,73.7
+S12,Environmental constraint,0.0
+S20,Environmental constraint,34.2
+S22,Environmental constraint,21.1
+S19,Environmental constraint,15.8
+S25,Environmental constraint,39.5
+S23,Environmental constraint,26.3
+S07,Contamination burden,94.1
+S16,Contamination burden,70.6
+S10,Contamination burden,85.3
+S24,Contamination burden,73.5
+S06,Contamination burden,67.6
+S05,Contamination burden,76.5
+S11,Contamination burden,79.4
+S01,Contamination burden,35.3
+S17,Contamination burden,61.8
+S04,Contamination burden,55.9
+S09,Contamination burden,82.4
+S02,Contamination burden,44.1
+S14,Contamination burden,26.5
+S30,Contamination burden,82.4
+S08,Contamination burden,88.2
+S13,Contamination burden,20.6
+S26,Contamination burden,94.1
+S03,Contamination burden,8.8
+S28,Contamination burden,76.5
+S29,Contamination burden,94.1
+S21,Contamination burden,88.2
+S15,Contamination burden,0.0
+S27,Contamination burden,91.2
+S18,Contamination burden,91.2
+S12,Contamination burden,76.5
+S20,Contamination burden,70.6
+S22,Contamination burden,97.1
+S19,Contamination burden,82.4
+S25,Contamination burden,100.0
+S23,Contamination burden,94.1
+S07,Social facility access,92.0
+S16,Social facility access,74.0
+S10,Social facility access,100.0
+S24,Social facility access,92.0
+S06,Social facility access,90.0
+S05,Social facility access,90.0
+S11,Social facility access,52.0
+S01,Social facility access,54.0
+S17,Social facility access,65.0
+S04,Social facility access,80.0
+S09,Social facility access,76.0
+S02,Social facility access,56.0
+S14,Social facility access,51.0
+S30,Social facility access,50.0
+S08,Social facility access,64.0
+S13,Social facility access,62.0
+S26,Social facility access,87.0
+S03,Social facility access,64.0
+S28,Social facility access,66.0
+S29,Social facility access,60.0
+S21,Social facility access,96.0
+S15,Social facility access,77.0
+S27,Social facility access,55.0
+S18,Social facility access,79.0
+S12,Social facility access,80.0
+S20,Social facility access,28.0
+S22,Social facility access,17.0
+S19,Social facility access,57.0
+S25,Social facility access,0.0
+S23,Social facility access,58.0
+S07,Heat / green deficit,42.9
+S16,Heat / green deficit,17.1
+S10,Heat / green deficit,34.3
+S24,Heat / green deficit,14.3
+S06,Heat / green deficit,17.1
+S05,Heat / green deficit,20.0
+S11,Heat / green deficit,54.3
+S01,Heat / green deficit,37.1
+S17,Heat / green deficit,25.7
+S04,Heat / green deficit,14.3
+S09,Heat / green deficit,40.0
+S02,Heat / green deficit,51.4
+S14,Heat / green deficit,0.0
+S30,Heat / green deficit,42.9
+S08,Heat / green deficit,48.6
+S13,Heat / green deficit,11.4
+S26,Heat / green deficit,34.3
+S03,Heat / green deficit,2.9
+S28,Heat / green deficit,65.7
+S29,Heat / green deficit,37.1
+S21,Heat / green deficit,25.7
+S15,Heat / green deficit,22.9
+S27,Heat / green deficit,40.0
+S18,Heat / green deficit,31.4
+S12,Heat / green deficit,85.7
+S20,Heat / green deficit,60.0
+S22,Heat / green deficit,100.0
+S19,Heat / green deficit,45.7
+S25,Heat / green deficit,71.4
+S23,Heat / green deficit,94.3
+S07,Delivery complexity,51.5
+S16,Delivery complexity,66.7
+S10,Delivery complexity,0.0
+S24,Delivery complexity,45.5
+S06,Delivery complexity,78.8
+S05,Delivery complexity,42.4
+S11,Delivery complexity,100.0
+S01,Delivery complexity,30.3
+S17,Delivery complexity,63.6
+S04,Delivery complexity,60.6
+S09,Delivery complexity,18.2
+S02,Delivery complexity,27.3
+S14,Delivery complexity,54.5
+S30,Delivery complexity,69.7
+S08,Delivery complexity,9.1
+S13,Delivery complexity,48.5
+S26,Delivery complexity,75.8
+S03,Delivery complexity,21.2
+S28,Delivery complexity,87.9
+S29,Delivery complexity,72.7
+S21,Delivery complexity,51.5
+S15,Delivery complexity,39.4
+S27,Delivery complexity,78.8
+S18,Delivery complexity,72.7
+S12,Delivery complexity,6.1
+S20,Delivery complexity,57.6
+S22,Delivery complexity,33.3
+S19,Delivery complexity,12.1
+S25,Delivery complexity,60.6
+S23,Delivery complexity,15.2
+S07,Spatial redress,91.1
+S16,Spatial redress,82.2
+S10,Spatial redress,100.0
+S24,Spatial redress,86.7
+S06,Spatial redress,81.1
+S05,Spatial redress,82.2
+S11,Spatial redress,85.6
+S01,Spatial redress,86.7
+S17,Spatial redress,62.2
+S04,Spatial redress,80.0
+S09,Spatial redress,92.2
+S02,Spatial redress,84.4
+S14,Spatial redress,71.1
+S30,Spatial redress,53.3
+S08,Spatial redress,94.4
+S13,Spatial redress,77.8
+S26,Spatial redress,17.8
+S03,Spatial redress,88.9
+S28,Spatial redress,0.0
+S29,Spatial redress,13.3
+S21,Spatial redress,15.6
+S15,Spatial redress,46.7
+S27,Spatial redress,15.6
+S18,Spatial redress,11.1
+S12,Spatial redress,83.3
+S20,Spatial redress,8.9
+S22,Spatial redress,75.6
+S19,Spatial redress,13.3
+S25,Spatial redress,6.7
+S23,Spatial redress,66.7
+S07,Displacement risk,78.9
+S16,Displacement risk,63.2
+S10,Displacement risk,92.1
+S24,Displacement risk,15.8
+S06,Displacement risk,10.5
+S05,Displacement risk,0.0
+S11,Displacement risk,89.5
+S01,Displacement risk,97.4
+S17,Displacement risk,60.5
+S04,Displacement risk,5.3
+S09,Displacement risk,73.7
+S02,Displacement risk,94.7
+S14,Displacement risk,92.1
+S30,Displacement risk,73.7
+S08,Displacement risk,81.6
+S13,Displacement risk,76.3
+S26,Displacement risk,84.2
+S03,Displacement risk,100.0
+S28,Displacement risk,92.1
+S29,Displacement risk,81.6
+S21,Displacement risk,68.4
+S15,Displacement risk,71.1
+S27,Displacement risk,86.8
+S18,Displacement risk,78.9
+S12,Displacement risk,68.4
+S20,Displacement risk,86.8
+S22,Displacement risk,94.7
+S19,Displacement risk,50.0
+S25,Displacement risk,89.5
+S23,Displacement risk,63.2

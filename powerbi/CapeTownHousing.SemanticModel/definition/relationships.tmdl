@@ -1,0 +1,27 @@
+relationship FactSite_site_id_to_DimSite
+	fromColumn: FactSite.site_id
+	toColumn: DimSite.site_id
+
+relationship FactScore_site_id_to_DimSite
+	fromColumn: FactScore.site_id
+	toColumn: DimSite.site_id
+
+relationship FactScore_criterion_to_DimCriterion
+	fromColumn: FactScore.criterion
+	toColumn: DimCriterion.criterion
+
+relationship FactRanking_site_id_to_DimSite
+	fromColumn: FactRanking.site_id
+	toColumn: DimSite.site_id
+
+relationship FactRanking_scenario_to_DimScenario
+	fromColumn: FactRanking.scenario
+	toColumn: DimScenario.scenario
+
+relationship FactDelivery_site_id_to_DimSite
+	fromColumn: FactDelivery.site_id
+	toColumn: DimSite.site_id
+
+relationship FactDelivery_year_to_DimYear
+	fromColumn: FactDelivery.year
+	toColumn: DimYear.year

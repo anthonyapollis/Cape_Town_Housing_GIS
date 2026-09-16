@@ -1,0 +1,50 @@
+table DimCriterion
+
+	column criterion
+		dataType: string
+		sourceColumn: criterion
+		summarizeBy: none
+
+	column criterion_group
+		dataType: string
+		sourceColumn: criterion_group
+		summarizeBy: none
+
+	column direction
+		dataType: string
+		sourceColumn: direction
+		summarizeBy: none
+
+	column source_column
+		dataType: string
+		sourceColumn: source_column
+		summarizeBy: none
+
+	column provenance
+		dataType: string
+		sourceColumn: provenance
+		summarizeBy: none
+
+	column weight_efficiency
+		dataType: double
+		sourceColumn: weight_efficiency
+		formatString: "0.00"
+		summarizeBy: none
+
+	column weight_redress
+		dataType: double
+		sourceColumn: weight_redress
+		formatString: "0.00"
+		summarizeBy: none
+
+	partition DimCriterion = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents(DataFolder & "DimCriterion.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {}, "en-US")
+				in
+				    Typed

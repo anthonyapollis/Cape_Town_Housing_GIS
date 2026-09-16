@@ -171,6 +171,42 @@ python -m pytest tests/ -q
 26 invariants over the source data, weights, scoring, yield identities, zoning caps,
 sensitivity intervals and both built pages.
 
+
+## Power BI
+
+`scripts/build_powerbi_model.py` reshapes the wide model outputs into a star schema and
+emits a TMDL semantic model:
+
+```bash
+python scripts/build_powerbi_model.py
+```
+
+| Table | Rows | Grain |
+|---|---|---|
+| `DimSite` | 30 | one per precinct: subregion, typology, ownership, zone, zone class, Group Areas designation, tranche |
+| `DimCriterion` | 14 | criterion, group, direction, **provenance** (measured / derived / estimated), both scenario weights |
+| `DimYear` | 11 | 2027–2037 tagged with its tranche window |
+| `DimScenario` | 2 | efficiency / redress |
+| `FactSite` | 30 | yields, areas, distances, ranks, both sensitivity intervals |
+| `FactScore` | 420 | site × criterion — the unpivot that makes a criterion slicer possible |
+| `FactRanking` | 60 | site × scenario |
+| `FactDelivery` | 330 | site × year, units released |
+
+**23 measures** ship inside the TMDL (Capacity, Zoning, Scoring, Scenarios, Delivery,
+Robustness) and are mirrored to `measures.dax`. Both are generated from one list in the
+build script, so they cannot drift apart.
+
+The DAX is **validated, not assumed** — every expression was accepted by the Analysis
+Services engine, and a fresh folder connection reloads all 23 measures from disk.
+
+To open: `powerbi/CapeTownHousing.pbip` in Power BI Desktop (enable *Preview features →
+Power BI Project (.pbip)*). Set the `DataFolder` parameter to the `powerbi/data` path,
+then Refresh. The CSVs are committed, so nothing needs regenerating first.
+
+**Not built:** the report pages. `report.json` is a version-specific format I have no way
+to test here, so the repo ships the model and lets Power BI Desktop author the visuals —
+rather than a report file that might not open.
+
 ## Deploying to Netlify
 
 `netlify.toml` publishes the **repository root**, not `docs/` — the map pages fetch

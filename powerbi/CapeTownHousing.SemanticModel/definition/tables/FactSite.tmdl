@@ -1,0 +1,238 @@
+table FactSite
+
+	column site_id
+		dataType: string
+		sourceColumn: site_id
+		summarizeBy: none
+
+	column dev_ha
+		dataType: double
+		sourceColumn: dev_ha
+		formatString: "#,0.0"
+		summarizeBy: sum
+
+	column density_u_ha
+		dataType: int64
+		sourceColumn: density_u_ha
+		summarizeBy: none
+
+	column units_total
+		dataType: int64
+		sourceColumn: units_total
+		formatString: "#,0"
+		summarizeBy: sum
+
+	column units_social
+		dataType: int64
+		sourceColumn: units_social
+		formatString: "#,0"
+		summarizeBy: sum
+
+	column units_asofright
+		dataType: int64
+		sourceColumn: units_asofright
+		formatString: "#,0"
+		summarizeBy: sum
+
+	column units_rezoning
+		dataType: int64
+		sourceColumn: units_rezoning
+		formatString: "#,0"
+		summarizeBy: sum
+
+	column dist_cbd_km
+		dataType: double
+		sourceColumn: dist_cbd_km
+		summarizeBy: none
+
+	column dist_bellville_km
+		dataType: double
+		sourceColumn: dist_bellville_km
+		summarizeBy: none
+
+	column dist_transit_km
+		dataType: double
+		sourceColumn: dist_transit_km
+		summarizeBy: none
+
+	column impact_rank
+		dataType: int64
+		sourceColumn: impact_rank
+		summarizeBy: none
+
+	column impact_index
+		dataType: double
+		sourceColumn: impact_index
+		formatString: "0.0"
+		summarizeBy: none
+
+	column rank_shift
+		dataType: int64
+		sourceColumn: rank_shift
+		summarizeBy: none
+
+	column redress_index
+		dataType: int64
+		sourceColumn: redress_index
+		summarizeBy: none
+
+	column displacement_risk
+		dataType: int64
+		sourceColumn: displacement_risk
+		summarizeBy: none
+
+	column social_facility
+		dataType: int64
+		sourceColumn: social_facility
+		summarizeBy: none
+
+	column slope_pct
+		dataType: double
+		sourceColumn: slope_pct
+		summarizeBy: none
+
+	column elev_m
+		dataType: int64
+		sourceColumn: elev_m
+		summarizeBy: none
+
+	column lst_anom_c
+		dataType: double
+		sourceColumn: lst_anom_c
+		summarizeBy: none
+
+	column flood_risk
+		dataType: int64
+		sourceColumn: flood_risk
+		summarizeBy: none
+
+	column contamination
+		dataType: int64
+		sourceColumn: contamination
+		summarizeBy: none
+
+	column bulk_infra
+		dataType: int64
+		sourceColumn: bulk_infra
+		summarizeBy: none
+
+	column enviro_sensitivity
+		dataType: int64
+		sourceColumn: enviro_sensitivity
+		summarizeBy: none
+
+	column delivery_complexity
+		dataType: int64
+		sourceColumn: delivery_complexity
+		summarizeBy: none
+
+	column land_value_r_m2
+		dataType: int64
+		sourceColumn: land_value_r_m2
+		summarizeBy: none
+
+	column rank_p05
+		dataType: double
+		sourceColumn: rank_p05
+		summarizeBy: none
+
+	column rank_p95
+		dataType: double
+		sourceColumn: rank_p95
+		summarizeBy: none
+
+	column pct_top10
+		dataType: double
+		sourceColumn: pct_top10
+		formatString: "0%"
+		summarizeBy: none
+
+	column in_rank_p05
+		dataType: double
+		sourceColumn: in_rank_p05
+		summarizeBy: none
+
+	column in_rank_p95
+		dataType: double
+		sourceColumn: in_rank_p95
+		summarizeBy: none
+
+	column in_pct_top10
+		dataType: double
+		sourceColumn: in_pct_top10
+		formatString: "0%"
+		summarizeBy: none
+
+	/// Dwelling units the land could carry at the assumed typology density.
+	measure 'Total Units' = SUM ( FactSite[units_total] )
+		formatString: #,0
+		displayFolder: Capacity
+
+	/// Units targeted at the sub-R3 500/month band (65% of yield).
+	measure 'Social Units' = SUM ( FactSite[units_social] )
+		formatString: #,0
+		displayFolder: Capacity
+
+	measure 'Developable Ha' = SUM ( FactSite[dev_ha] )
+		formatString: #,0.0
+		displayFolder: Capacity
+
+	measure 'Site Count' = DISTINCTCOUNT ( FactSite[site_id] )
+		formatString: #,0
+		displayFolder: Capacity
+
+	/// Units per developable hectare.
+	measure 'Avg Density' = DIVIDE ( [Total Units], [Developable Ha] )
+		formatString: #,0
+		displayFolder: Capacity
+
+	/// Units possible under current zoning, with no rezoning.
+	measure 'Buildable Now' = SUM ( FactSite[units_asofright] )
+		formatString: #,0
+		displayFolder: Zoning
+
+	measure 'Needs Rezoning' = SUM ( FactSite[units_rezoning] )
+		formatString: #,0
+		displayFolder: Zoning
+
+	measure '% Blocked By Zoning' = DIVIDE ( [Needs Rezoning], [Total Units] )
+		formatString: 0.0%
+		displayFolder: Zoning
+
+	/// Hectares whose zone permits no residential use at all.
+	measure 'Ha Blocked' = CALCULATE ( [Developable Ha], KEEPFILTERS ( DimSite[zoning_blocked] = TRUE ) )
+		formatString: #,0.0
+		displayFolder: Zoning
+
+	measure 'Blocked Sites' = CALCULATE ( [Site Count], KEEPFILTERS ( DimSite[zoning_blocked] = TRUE ) )
+		formatString: #,0
+		displayFolder: Zoning
+
+	measure 'Climbs Under Redress' = CALCULATE ( [Site Count], KEEPFILTERS ( FactSite[rank_shift] < 0 ) )
+		formatString: #,0
+		displayFolder: Scenarios
+
+	/// Mean 5th-95th percentile rank interval under weight noise.
+	measure 'Rank Swing Weights' = AVERAGEX ( FactSite, FactSite[rank_p95] - FactSite[rank_p05] )
+		formatString: 0.0
+		displayFolder: Robustness
+
+	/// Same, under estimate noise. Wider than the weight test.
+	measure 'Rank Swing Inputs' = AVERAGEX ( FactSite, FactSite[in_rank_p95] - FactSite[in_rank_p05] )
+		formatString: 0.0
+		displayFolder: Robustness
+
+	measure 'Stable Top Ten' = CALCULATE ( [Site Count], KEEPFILTERS ( FactSite[pct_top10] >= 0.9 ) )
+		formatString: #,0
+		displayFolder: Robustness
+	partition FactSite = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents(DataFolder & "FactSite.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {}, "en-US")
+				in
+				    Typed

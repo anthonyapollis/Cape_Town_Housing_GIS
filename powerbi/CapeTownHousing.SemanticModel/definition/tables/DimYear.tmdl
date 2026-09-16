@@ -1,0 +1,28 @@
+table DimYear
+
+	column year
+		dataType: int64
+		sourceColumn: year
+		summarizeBy: none
+
+	column tranche
+		dataType: string
+		sourceColumn: tranche
+		summarizeBy: none
+
+	column tranche_no
+		dataType: int64
+		sourceColumn: tranche_no
+		summarizeBy: none
+
+	partition DimYear = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents(DataFolder & "DimYear.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {}, "en-US")
+				in
+				    Typed

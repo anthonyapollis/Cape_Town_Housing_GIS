@@ -1,0 +1,28 @@
+table DimScenario
+
+	column scenario
+		dataType: string
+		sourceColumn: scenario
+		summarizeBy: none
+
+	column scenario_key
+		dataType: string
+		sourceColumn: scenario_key
+		summarizeBy: none
+
+	column description
+		dataType: string
+		sourceColumn: description
+		summarizeBy: none
+
+	partition DimScenario = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(
+				        File.Contents(DataFolder & "DimScenario.csv"),
+				        [Delimiter = ",", Encoding = 65001, QuoteStyle = QuoteStyle.Csv]),
+				    Promoted = Table.PromoteHeaders(Source, [PromoteAllScalars = true]),
+				    Typed = Table.TransformColumnTypes(Promoted, {}, "en-US")
+				in
+				    Typed
