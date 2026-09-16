@@ -261,3 +261,8 @@ either ranking on its own.
 `data/geo/osm_*.json` are raw Overpass API downloads (coastline, admin_level=6 boundary, rail).
 `scripts/build_basemap.py` stitches, simplifies and clips them. Basemap data (c) OpenStreetMap
 contributors, ODbL.
+
+## Contributing
+
+Read [`AGENTS.md`](AGENTS.md) for the build pipeline and constraints, and
+[`CODEX_TASKS.md`](CODEX_TASKS.md) for the prioritised improvement backlog.
