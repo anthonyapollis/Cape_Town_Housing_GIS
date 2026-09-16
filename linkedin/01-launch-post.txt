@@ -1,0 +1,26 @@
+# LinkedIn launch post
+
+A useful analysis should help someone ask a better question — and see what to investigate next.
+
+That’s the idea behind my Cape Town Housing Opportunity Atlas, a portfolio project bringing together Python, GIS, scenario analysis and visual storytelling.
+
+The project explores 30 candidate precincts against 14 criteria, with two ranking lenses: efficiency and spatial redress.
+
+I’ve developed the work into a connected set of outputs:
+
+• An interactive atlas with site comparisons and local context.
+• A reproducible Python workflow for scoring, scenarios and sensitivity analysis.
+• A Power BI semantic model with a star schema and DAX measures.
+• A 30-page illustrated report, an EPUB and a browser reading edition.
+
+The report also explores expensive rents, household budgets, practical housing solutions and the trade-offs around rent controls. It separates current rules, published evidence and proposals for further evaluation.
+
+One of the most useful lessons: changing the decision priorities can change the shortlist. Showing that shift clearly is part of the analysis.
+
+This is a desktop screening study. It makes assumptions and evidence gaps visible; it does not establish development approvals or delivery feasibility.
+
+I’m open to remote roles and freelance/contract projects involving data analytics, GIS, BI modelling and reporting.
+
+If your team needs someone who can connect the data, the map and the explanation, message me on LinkedIn. I’d be happy to share the atlas and report.
+
+#DataAnalytics #GIS #PowerBI #DataVisualization #RemoteWork

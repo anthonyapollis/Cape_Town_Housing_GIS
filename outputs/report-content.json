@@ -1,0 +1,2773 @@
+[
+  {
+    "page": 1,
+    "title": "Cape Town. A closer look.",
+    "kicker": "Housing opportunity report",
+    "blocks": [
+      {
+        "type": "heading",
+        "text": "A closer look.",
+        "size": 52
+      },
+      {
+        "type": "paragraph",
+        "html": "Better located homes. Better connected lives.<br/>A housing opportunity report: 30 candidate precincts, rental affordability and practical policy choices.",
+        "size": 12
+      },
+      {
+        "type": "map",
+        "page": 1,
+        "box": [
+          224,
+          345,
+          340,
+          390
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "30",
+        "size": 48
+      },
+      {
+        "type": "paragraph",
+        "html": "CANDIDATE<br/>PRECINCTS",
+        "size": 9
+      },
+      {
+        "type": "heading",
+        "text": "14",
+        "size": 48
+      },
+      {
+        "type": "paragraph",
+        "html": "SCREENING<br/>CRITERIA",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "MAPS / AFFORDABILITY / POLICY / EVIDENCE",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "September 2026 edition. Desktop screening, not a feasibility study.<br/>OSM geography: 30 August 2026 snapshot. Model inputs are partly estimated.",
+        "size": 8
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "title": "A guide to the report.",
+    "kicker": "Contents",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "Follow a question, move between the evidence, and return to the index. Page numbers are clickable.",
+        "size": 10
+      },
+      {
+        "type": "text",
+        "text": "Executive summary",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "3",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Decision pathways and recommendations",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "4",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Scope and analytical method",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "5",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Criteria, weights and provenance",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "6",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Metro map",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "7",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Inner-city map",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "8",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Rail access and housing capacity",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "9",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Efficiency and redress rankings",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "10",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Ranking uncertainty",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "11",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Site profiles: Founders Garden / Bellville / Wingfield",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "12",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Capacity concentration",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "15",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Regional portfolio",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "16",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Evidence gaps and decision gates",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "17",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Verification programme",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "18",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Complete site directory",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "19",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Methods and limitations",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "21",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Sources and references",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "22",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Alphabetical site index",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "23",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Subject index",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "24",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Rental affordability and household budgets",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "25",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Housing challenges and evidence gaps",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "26",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Solutions and delivery trade-offs",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "27",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Rent controls and tenant protection",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "28",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Implementation and outcome dashboard",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "29",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Policy sources",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "30",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Reading formats: this indexed PDF, a reflowable EPUB and a browser edition. The interactive atlas remains the place to filter and inspect sites.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 3,
+    "title": "Where the evidence points.",
+    "kicker": "Executive summary",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "The screening identifies different kinds of opportunity. It does not establish a development-ready pipeline.",
+        "size": 10
+      },
+      {
+        "type": "metric",
+        "value": "126,380",
+        "label": "modelled homes across 30 precincts"
+      },
+      {
+        "type": "metric",
+        "value": "14 / 30",
+        "label": "within 1 km of mapped rail"
+      },
+      {
+        "type": "metric",
+        "value": "7",
+        "label": "stable top-ten sites"
+      },
+      {
+        "type": "text",
+        "text": "1 / Access and capacity answer different questions.",
+        "size": 13
+      },
+      {
+        "type": "paragraph",
+        "html": "Founders Garden ranks first in both lenses, with 528 modelled homes. Wingfield accounts for 25,200 homes (19.9% of the total), but its efficiency rank is eighth and its input top-ten stability is 88.8%. Neither measure alone is a delivery recommendation.",
+        "size": 10
+      },
+      {
+        "type": "text",
+        "text": "2 / The shortlist depends on contested inputs.",
+        "size": 13
+      },
+      {
+        "type": "paragraph",
+        "html": "Seven sites retain an efficiency top-ten place in at least 90% of input-noise draws. Nine do so under weight changes. The average input-driven 5th-95th percentile rank span is 4.9 places. Input verification deserves priority over further fine-tuning of weights.",
+        "size": 10
+      },
+      {
+        "type": "text",
+        "text": "3 / Proximity is useful, but incomplete.",
+        "size": 13
+      },
+      {
+        "type": "paragraph",
+        "html": "The 14 precincts within 1 km of mapped rail contain 36,462 modelled homes. This says nothing about service operation, barriers, walking routes or station capacity. Nearby facility counts likewise do not measure places available to new households.",
+        "size": 10
+      },
+      {
+        "type": "heading",
+        "text": "Recommended decision",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "Progress a small, mixed verification shortlist across access, scale and redress. Release further investigation effort only when parcel, tenure, hazard and servicing evidence supports it.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "All headline results refer to the existing 30-site model and the saved OSM snapshot; they are not independently verified supply forecasts.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 4,
+    "title": "Three investigation pathways.",
+    "kicker": "Recommendations",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "These are proposed evidence-gathering tracks, not an approved priority list or funded delivery programme.",
+        "size": 10
+      },
+      {
+        "type": "heading",
+        "text": "01 / Access-led verification",
+        "size": 17
+      },
+      {
+        "type": "text",
+        "text": "Founders Garden / Bellville CBD",
+        "size": 10
+      },
+      {
+        "type": "paragraph",
+        "html": "Both remain in the efficiency top ten throughout the estimated-input simulations. Founders Garden ranks 1 in both lenses; Bellville ranks 2 for efficiency and 3 for redress.",
+        "size": 9.5
+      },
+      {
+        "type": "paragraph",
+        "html": "Next evidence: Confirm parcel extent and tenure, current occupancy, pedestrian connections and engineering headroom. Strong access cannot substitute for these checks.",
+        "size": 9.5
+      },
+      {
+        "type": "heading",
+        "text": "02 / Strategic capacity",
+        "size": 17
+      },
+      {
+        "type": "text",
+        "text": "Wingfield / Ysterplaat",
+        "size": 10
+      },
+      {
+        "type": "paragraph",
+        "html": "Together these two precincts contribute 38,500 modelled homes, approximately 30% of the portfolio. Their large assumed areas make the portfolio sensitive to land availability and usable extent.",
+        "size": 9.5
+      },
+      {
+        "type": "paragraph",
+        "html": "Next evidence: Resolve land-release and ownership assumptions, map constraints and investigate remediation and bulk services before treating modelled yield as achievable.",
+        "size": 9.5
+      },
+      {
+        "type": "heading",
+        "text": "03 / Redress-sensitive review",
+        "size": 17
+      },
+      {
+        "type": "text",
+        "text": "Culemborg / Helen Bowden / District Six",
+        "size": 10
+      },
+      {
+        "type": "paragraph",
+        "html": "Culemborg moves from rank 18 to 10 under redress; Helen Bowden moves from 15 to 8. District Six ranks 3 for efficiency and 2 for redress. These sites illustrate why one weighting is insufficient.",
+        "size": 9.5
+      },
+      {
+        "type": "paragraph",
+        "html": "Next evidence: Verify occupancy, restitution and tenure context through appropriate records and engagement. Test whether proposed housing would improve access without causing displacement.",
+        "size": 9.5
+      },
+      {
+        "type": "paragraph",
+        "html": "Selection logic is explicit: stable access leaders, the two largest capacity inputs, and sites with material redress movement or a strong redress rank.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 5,
+    "title": "What this study can answer.",
+    "kicker": "Scope & method",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "A comparative desktop screening of 30 candidate precincts across Cape Town, using an existing MCDA model.",
+        "size": 10
+      },
+      {
+        "type": "heading",
+        "text": "Decision question",
+        "size": 15
+      },
+      {
+        "type": "paragraph",
+        "html": "Which candidate precincts justify closer investigation when geographic access, land supply, delivery burdens and spatial redress are considered together?",
+        "size": 10
+      },
+      {
+        "type": "text",
+        "text": "01 / Assemble the candidate set",
+        "size": 11
+      },
+      {
+        "type": "paragraph",
+        "html": "The source CSV provides location, area, ownership, typology and criterion inputs. This is a supplied candidate set; it is not an exhaustive inventory of municipal land.",
+        "size": 9.5
+      },
+      {
+        "type": "text",
+        "text": "02 / Derive access and normalise criteria",
+        "size": 11
+      },
+      {
+        "type": "paragraph",
+        "html": "Job access uses eight employment nodes and assumed job weights. Rail distance is computed from coordinates. Fourteen criteria are normalised within the 30-site set; cost criteria are reversed.",
+        "size": 9.5
+      },
+      {
+        "type": "text",
+        "text": "03 / Apply two value choices",
+        "size": 11
+      },
+      {
+        "type": "paragraph",
+        "html": "Efficiency and redress each sum to 100% weight. Both use the same candidate set. Relative scores cannot be compared directly with a different city or a different candidate universe.",
+        "size": 9.5
+      },
+      {
+        "type": "text",
+        "text": "04 / Separate yield from suitability",
+        "size": 11
+      },
+      {
+        "type": "paragraph",
+        "html": "Modelled homes equal assumed developable hectares multiplied by typology density. The separate impact measure combines suitability and the logarithm of housing yield; it is not a financial return.",
+        "size": 9.5
+      },
+      {
+        "type": "text",
+        "text": "05 / Stress-test and inspect",
+        "size": 11
+      },
+      {
+        "type": "paragraph",
+        "html": "Weight and input perturbations test rank stability. The atlas adds named station proximity and unweighted facility context. It does not run a transport network or engineering feasibility model.",
+        "size": 9.5
+      },
+      {
+        "type": "paragraph",
+        "html": "Analytical unit: a precinct point. Spatial extents, developable area and rights require parcel-level validation. No travel-time, cost-benefit or demand model is claimed.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 6,
+    "title": "What carries the weight.",
+    "kicker": "Criteria & assumptions",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "Weights sum to 100% in each lens. All normalised scores run from 0 to 100 within this candidate set.",
+        "size": 10
+      },
+      {
+        "type": "table",
+        "headers": [
+          "CRITERION",
+          "EVIDENCE BASIS",
+          "EFF.",
+          "REDRESS"
+        ],
+        "rows": [
+          [
+            "Job accessibility",
+            "Derived; assumed job weights",
+            "18%",
+            "14%"
+          ],
+          [
+            "Transit access",
+            "Measured straight-line proximity",
+            "16%",
+            "13%"
+          ],
+          [
+            "Developable land supply",
+            "Input; area unverified",
+            "10%",
+            "8%"
+          ],
+          [
+            "Land cost",
+            "Input; land value unverified",
+            "8%",
+            "4%"
+          ],
+          [
+            "Bulk infrastructure",
+            "Desktop estimate",
+            "10%",
+            "8%"
+          ],
+          [
+            "Flood / water risk",
+            "Desktop estimate",
+            "7%",
+            "6%"
+          ],
+          [
+            "Terrain buildability",
+            "Derived from SRTM samples",
+            "4%",
+            "3%"
+          ],
+          [
+            "Environmental constraint",
+            "Desktop estimate",
+            "6%",
+            "5%"
+          ],
+          [
+            "Contamination burden",
+            "Desktop estimate",
+            "5%",
+            "4%"
+          ],
+          [
+            "Social facility access",
+            "Derived from mapped facilities",
+            "6%",
+            "5%"
+          ],
+          [
+            "Heat / green deficit",
+            "Desktop estimate",
+            "3%",
+            "2%"
+          ],
+          [
+            "Delivery complexity",
+            "Desktop estimate",
+            "7%",
+            "5%"
+          ],
+          [
+            "Spatial redress",
+            "Desktop estimate",
+            "0%",
+            "17%"
+          ],
+          [
+            "Displacement risk",
+            "Desktop estimate",
+            "0%",
+            "6%"
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "html": "Eight qualitative criteria remain desktop estimates. The six other criteria include derivations from inputs whose accuracy still needs checking; they should not all be read as field measurements.",
+        "size": 9.5
+      },
+      {
+        "type": "paragraph",
+        "html": "Source: suitability_model.py and summary.json. Weights are the existing project choices; this report does not claim an independently validated AHP elicitation.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 7,
+    "title": "One city. Many trade-offs.",
+    "kicker": "01 / Metro geography",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "Candidate points shown on OSM municipal, coastal and rail geometry. Numbers are efficiency ranks.",
+        "size": 10
+      },
+      {
+        "type": "map",
+        "page": 7,
+        "box": [
+          44,
+          187,
+          507.27599999999995,
+          481
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Ranks 1-10",
+        "size": 8
+      },
+      {
+        "type": "text",
+        "text": "Ranks 11-20",
+        "size": 8
+      },
+      {
+        "type": "text",
+        "text": "Ranks 21-30",
+        "size": 8
+      },
+      {
+        "type": "paragraph",
+        "html": "The inner-city concentration is enlarged on the next page. The metro view retains peripheral sites so their distance from central employment is visible.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Map: OpenStreetMap contributors, ODbL. Points are precinct coordinates; neither markers nor municipal outlines are parcel boundaries.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 8,
+    "title": "Read the close-up.",
+    "kicker": "02 / Inner-city detail",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "The dense central cluster needs its own scale. Ranks refer to the efficiency lens.",
+        "size": 10
+      },
+      {
+        "type": "map",
+        "page": 8,
+        "box": [
+          44,
+          189,
+          507.27599999999995,
+          313
+        ]
+      },
+      {
+        "type": "text",
+        "text": "01  Founders Garden",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "04  Sir Lowrys Road",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "06  Woodstock Hospital",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "11  Prestwich Precinct",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "18  Culemborg",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "03  District Six",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "05  Pickwick Road",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "10  Salt River Market",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "15  Helen Bowden",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "25  Two Rivers / Oude Molen",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Small central sites can score strongly on access while contributing less housing capacity than large strategic precincts. Location and scale need separate readings.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Source: saved precinct coordinates and OSM geometry. Rank numbers are identifiers on this plate, not measures of buildability.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 9,
+    "title": "Access is not the same as scale.",
+    "kicker": "03 / Geo intelligence",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "The green band marks sites within 1 km of a mapped rail point, measured in a straight line.",
+        "size": 10
+      },
+      {
+        "type": "image",
+        "path": "visuals/access-and-capacity.png"
+      },
+      {
+        "type": "heading",
+        "text": "14 of 30 precincts fall within the 1 km rail threshold.",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "Founders Garden combines a central location with modest modelled yield. Wingfield contributes the largest assumed capacity, with a longer straight-line rail connection. Neither pattern settles a delivery decision.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Sources: candidate coordinates; 131 OSM station/halt points; original area and density assumptions. Rail presence does not verify an operating service.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 10,
+    "title": "Values change the shortlist.",
+    "kicker": "04 / Ranking lenses",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "The fourteen largest rank movements between the efficiency and spatial-redress weightings.",
+        "size": 10
+      },
+      {
+        "type": "image",
+        "path": "visuals/scenario-rank-shifts.png"
+      },
+      {
+        "type": "heading",
+        "text": "Treat scenario movement as a question for review.",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "Redress adds an explicit spatial-redress weight of 17% and a displacement-risk weight of 6%. Those criterion scores are analyst estimates. A change in rank reveals sensitivity to these choices, not independent evidence of suitability.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Source: outputs/site_rankings.csv and outputs/summary.json. Both lenses rank the same 30 sites. Chart is a selected set of the largest movements.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 11,
+    "title": "A stable rank is not a ready site.",
+    "kicker": "05 / Uncertainty",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "The twelve highest efficiency-ranked precincts. Dots show the base rank; lines show simulated rank intervals.",
+        "size": 10
+      },
+      {
+        "type": "image",
+        "path": "visuals/ranking-uncertainty.png"
+      },
+      {
+        "type": "heading",
+        "text": "7 stable sites under input noise. 9 under weight noise.",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "Stability means retaining a top-ten position in at least 90% of draws. The weight test uses 5,000 draws; the estimated-input test uses 2,000. These are conditional simulations, not probabilities of approval or delivery.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Sources: sensitivity.csv and input_sensitivity.csv. Tests apply to the efficiency ranking. Intervals are the 5th-95th percentiles.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 12,
+    "title": "Founders Garden",
+    "kicker": "06 / Site profile / S07",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "A central, compact opportunity.",
+        "size": 10
+      },
+      {
+        "type": "metric",
+        "value": "1",
+        "label": "efficiency rank"
+      },
+      {
+        "type": "metric",
+        "value": "1",
+        "label": "redress rank"
+      },
+      {
+        "type": "metric",
+        "value": "528",
+        "label": "modelled homes"
+      },
+      {
+        "type": "map",
+        "page": 12,
+        "box": [
+          44,
+          302,
+          245,
+          260
+        ]
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Geographic context",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Nearest mapped station",
+            "Cape Town Station"
+          ],
+          [
+            "Straight-line rail distance",
+            "0.35 km"
+          ],
+          [
+            "Schools / health within 2 km",
+            "24 / 21 features"
+          ],
+          [
+            "Input top-ten stability",
+            "100% of draws"
+          ],
+          [
+            "Assumed area / density",
+            "2.4 ha / 220 units/ha"
+          ]
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Rings: 1 / 2 km. Square: mapped station. Dots: facilities.",
+        "size": 7
+      },
+      {
+        "type": "paragraph",
+        "html": "Its leading score reflects strong access in the existing model. The small assumed area limits the scale of housing contribution.",
+        "size": 9.5
+      },
+      {
+        "type": "heading",
+        "text": "What to verify next",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "Confirm the parcel extent, existing use, tenure and service capacity; check the walking connection to Cape Town Station.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Rail and facility context: saved OSM snapshot. Area, density, ownership and zoning are project inputs. The map shows a candidate point, not a site boundary.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 13,
+    "title": "Bellville CBD",
+    "kicker": "06 / Site profile / S16",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "An employment-centre candidate.",
+        "size": 10
+      },
+      {
+        "type": "metric",
+        "value": "2",
+        "label": "efficiency rank"
+      },
+      {
+        "type": "metric",
+        "value": "3",
+        "label": "redress rank"
+      },
+      {
+        "type": "metric",
+        "value": "3,600",
+        "label": "modelled homes"
+      },
+      {
+        "type": "map",
+        "page": 13,
+        "box": [
+          44,
+          302,
+          245,
+          260
+        ]
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Geographic context",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Nearest mapped station",
+            "Bellville"
+          ],
+          [
+            "Straight-line rail distance",
+            "0.87 km"
+          ],
+          [
+            "Schools / health within 2 km",
+            "18 / 10 features"
+          ],
+          [
+            "Input top-ten stability",
+            "100% of draws"
+          ],
+          [
+            "Assumed area / density",
+            "18.0 ha / 200 units/ha"
+          ]
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Rings: 1 / 2 km. Square: mapped station. Dots: facilities.",
+        "size": 7
+      },
+      {
+        "type": "paragraph",
+        "html": "Bellville CBD combines high modelled suitability with materially more assumed capacity than the small inner-city sites.",
+        "size": 9.5
+      },
+      {
+        "type": "heading",
+        "text": "What to verify next",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "Verify redevelopment availability, existing occupancy, municipal capacity and actual pedestrian links to rail and local employment.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Rail and facility context: saved OSM snapshot. Area, density, ownership and zoning are project inputs. The map shows a candidate point, not a site boundary.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 14,
+    "title": "Wingfield",
+    "kicker": "06 / Site profile / S01",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "Scale brings a larger evidence burden.",
+        "size": 10
+      },
+      {
+        "type": "metric",
+        "value": "8",
+        "label": "efficiency rank"
+      },
+      {
+        "type": "metric",
+        "value": "4",
+        "label": "redress rank"
+      },
+      {
+        "type": "metric",
+        "value": "25,200",
+        "label": "modelled homes"
+      },
+      {
+        "type": "map",
+        "page": 14,
+        "box": [
+          44,
+          302,
+          245,
+          260
+        ]
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Geographic context",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Nearest mapped station",
+            "Century City"
+          ],
+          [
+            "Straight-line rail distance",
+            "1.23 km"
+          ],
+          [
+            "Schools / health within 2 km",
+            "13 / 2 features"
+          ],
+          [
+            "Input top-ten stability",
+            "89% of draws"
+          ],
+          [
+            "Assumed area / density",
+            "180.0 ha / 140 units/ha"
+          ]
+        ]
+      },
+      {
+        "type": "text",
+        "text": "Rings: 1 / 2 km. Square: mapped station. Dots: facilities.",
+        "size": 7
+      },
+      {
+        "type": "paragraph",
+        "html": "Wingfield has the largest assumed developable area and yield in this dataset. Its scale should be assessed alongside tenure, remediation and infrastructure questions.",
+        "size": 9.5
+      },
+      {
+        "type": "heading",
+        "text": "What to verify next",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "Establish land-release feasibility and parcel rights; commission contamination, flood and infrastructure checks before interpreting capacity as deliverable.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Rail and facility context: saved OSM snapshot. Area, density, ownership and zoning are project inputs. The map shows a candidate point, not a site boundary.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 15,
+    "title": "Large sites dominate the total.",
+    "kicker": "07 / Capacity",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "Ten largest modelled yields. Capacity is the product of assumed developable hectares and typology density.",
+        "size": 10
+      },
+      {
+        "type": "image",
+        "path": "visuals/modelled-capacity.png"
+      },
+      {
+        "type": "heading",
+        "text": "The three largest precincts represent 37% of modelled capacity.",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "This concentration means errors in a few area or density assumptions can materially change the portfolio total. Treat the 126,380-home headline as a scenario total, not a supply commitment.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "The social-housing share is also an assumption: the original model assigns 65% of units to its target income band. No demand or funding validation is implied.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Source: outputs/site_rankings.csv. No municipal zoning record or surveyed developable-area polygon was joined to this calculation.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 16,
+    "title": "Where the modelled capacity sits.",
+    "kicker": "Regional portfolio",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "Subregions are the source model groupings. They are not presented as official municipal planning districts.",
+        "size": 10
+      },
+      {
+        "type": "table",
+        "headers": [
+          "SOURCE SUBREGION",
+          "SITES",
+          "HOMES*",
+          "SHARE",
+          "RAIL <1 KM",
+          "STABLE**"
+        ],
+        "rows": [
+          [
+            "Northern Metro",
+            "7",
+            "58,280",
+            "46.1%",
+            "5",
+            "1"
+          ],
+          [
+            "Cape Flats",
+            "6",
+            "25,180",
+            "19.9%",
+            "1",
+            "0"
+          ],
+          [
+            "Blaauwberg",
+            "2",
+            "10,250",
+            "8.1%",
+            "0",
+            "0"
+          ],
+          [
+            "Foreshore",
+            "1",
+            "7,980",
+            "6.3%",
+            "0",
+            "0"
+          ],
+          [
+            "Inner City",
+            "5",
+            "7,954",
+            "6.3%",
+            "5",
+            "4"
+          ],
+          [
+            "Helderberg",
+            "2",
+            "5,850",
+            "4.6%",
+            "0",
+            "0"
+          ],
+          [
+            "Observatory",
+            "1",
+            "4,200",
+            "3.3%",
+            "1",
+            "0"
+          ],
+          [
+            "Pinelands",
+            "1",
+            "3,520",
+            "2.8%",
+            "0",
+            "1"
+          ],
+          [
+            "South Peninsula",
+            "2",
+            "1,480",
+            "1.2%",
+            "1",
+            "0"
+          ],
+          [
+            "Atlantic Seaboard",
+            "2",
+            "1,158",
+            "0.9%",
+            "0",
+            "0"
+          ],
+          [
+            "CBD",
+            "1",
+            "528",
+            "0.4%",
+            "1",
+            "1"
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Northern Metro contains 46.1% of modelled capacity.",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "Its seven candidate precincts contribute 58,280 assumed homes. This concentration reflects which sites and areas entered the model; it does not establish that this is the optimal geographic allocation of housing.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "*Assumed capacity. **Efficiency top-ten membership in at least 90% of input-noise draws. Rail counts refer to precinct points, not homes or residents.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 17,
+    "title": "Separate a score from a decision.",
+    "kicker": "Evidence gaps",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "A practical boundary between what the current screening supports and what remains to be established.",
+        "size": 10
+      },
+      {
+        "type": "table",
+        "headers": [
+          "DECISION AREA",
+          "CURRENT EVIDENCE",
+          "REQUIRED NEXT EVIDENCE",
+          "INTERPRETATION LIMIT"
+        ],
+        "rows": [
+          [
+            "Land extent / availability",
+            "Candidate location and an assumed developable area.",
+            "Verified parcel geometry, ownership and availability.",
+            "Do not treat hectares as confirmed supply."
+          ],
+          [
+            "Planning rights",
+            "An analyst-assigned zone and a modelled capacity split.",
+            "Current municipal zoning records, overlays and applicable rights.",
+            "Do not describe the output as approved yield."
+          ],
+          [
+            "Transport access",
+            "Distance to a mapped station or halt.",
+            "Operating service, pedestrian routes, barriers and frequency.",
+            "Do not report walking or journey times."
+          ],
+          [
+            "Facilities",
+            "Mapped school and health features near the point.",
+            "Capacity, access rules, condition and duplication review.",
+            "Counts do not establish service adequacy."
+          ],
+          [
+            "Hazards / services",
+            "Estimated flood, environmental, contamination and infrastructure scores.",
+            "Official layers, site investigation and engineering assessment.",
+            "Do not substitute the index for a technical study."
+          ],
+          [
+            "People / redress",
+            "Analyst redress and displacement scores.",
+            "Occupancy, tenure, restitution context and community engagement.",
+            "Do not infer consent or social acceptability."
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "html": "A material contradiction should trigger a review of the input and re-run of the model, not an attempt to explain away the new evidence.",
+        "size": 9.5
+      },
+      {
+        "type": "paragraph",
+        "html": "Proposed decision gates for further investigation. No municipality, owner or community has endorsed a site through this report.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 18,
+    "title": "A sequence that can be audited.",
+    "kicker": "Verification programme",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "Suggested responsibilities describe functions, not named or appointed delivery partners.",
+        "size": 10
+      },
+      {
+        "type": "table",
+        "headers": [
+          "GATE",
+          "PROPOSED FUNCTION",
+          "EVIDENCE TO RETAIN",
+          "DECISION RULE"
+        ],
+        "rows": [
+          [
+            "01 / Establish the land",
+            "GIS / land administration",
+            "Parcel overlay; tenure and ownership evidence; verified availability; current zoning record.",
+            "Pause if the assumed area or availability cannot be established."
+          ],
+          [
+            "02 / Check real access",
+            "Transport / social planning",
+            "Station service check; walkable routes and barriers; facility capacity and access review.",
+            "Re-score access if a mapped feature is unusable or misleading."
+          ],
+          [
+            "03 / Test constraints",
+            "Engineering / environmental team",
+            "Flood and environmental overlays; contamination review; servicing assessment; usable area.",
+            "Revise developable extent and costs before refining housing yield."
+          ],
+          [
+            "04 / Review and re-rank",
+            "Planning / community engagement",
+            "Document occupancy, rights and engagement; update assumptions; re-run both lenses and sensitivity.",
+            "Record changes and only then agree the next investigation shortlist."
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Keep a change register.",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "Record site ID, input field, old value, replacement value, source, source date, reviewer and reason. Rebuild maps, charts and the report from the same versioned data.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Sequence is indicative. It is not a project schedule, budget, procurement instruction or substitute for professional and community review.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 19,
+    "title": "The portfolio / 01-15",
+    "kicker": "08 / Site directory",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "Efficiency order. Rail distances are straight-line; stability is the input-noise share in the top ten.",
+        "size": 10
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Rank / site",
+          "Subregion",
+          "Redress rank",
+          "Modelled homes",
+          "Rail km",
+          "Stability"
+        ],
+        "rows": [
+          [
+            "1 / Founders Garden",
+            "CBD",
+            "1",
+            "528",
+            "0.35",
+            "100%"
+          ],
+          [
+            "2 / Bellville CBD",
+            "Northern Metro",
+            "3",
+            "3,600",
+            "0.87",
+            "100%"
+          ],
+          [
+            "3 / District Six",
+            "Inner City",
+            "2",
+            "5,460",
+            "0.85",
+            "100%"
+          ],
+          [
+            "4 / Sir Lowrys Road",
+            "Inner City",
+            "7",
+            "616",
+            "0.60",
+            "100%"
+          ],
+          [
+            "5 / Pickwick Road",
+            "Inner City",
+            "11",
+            "264",
+            "0.63",
+            "100%"
+          ],
+          [
+            "6 / Woodstock Hospital",
+            "Inner City",
+            "12",
+            "494",
+            "0.83",
+            "96%"
+          ],
+          [
+            "7 / Conradie Park",
+            "Pinelands",
+            "5",
+            "3,520",
+            "1.23",
+            "94%"
+          ],
+          [
+            "8 / Wingfield",
+            "Northern Metro",
+            "4",
+            "25,200",
+            "1.23",
+            "89%"
+          ],
+          [
+            "9 / Parow / Elsies River",
+            "Northern Metro",
+            "15",
+            "3,640",
+            "0.13",
+            "88%"
+          ],
+          [
+            "10 / Salt River Market",
+            "Inner City",
+            "14",
+            "1,120",
+            "0.20",
+            "82%"
+          ],
+          [
+            "11 / Prestwich Precinct",
+            "Atlantic Seaboard",
+            "6",
+            "352",
+            "1.30",
+            "33%"
+          ],
+          [
+            "12 / Ysterplaat",
+            "Northern Metro",
+            "9",
+            "13,300",
+            "1.09",
+            "9%"
+          ],
+          [
+            "13 / Epping Market",
+            "Northern Metro",
+            "13",
+            "4,200",
+            "0.82",
+            "5%"
+          ],
+          [
+            "14 / Phoenix / Milnerton",
+            "Blaauwberg",
+            "17",
+            "4,400",
+            "1.59",
+            "2%"
+          ],
+          [
+            "15 / Helen Bowden",
+            "Atlantic Seaboard",
+            "8",
+            "806",
+            "1.83",
+            "1%"
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "html": "A low stability value means the site rarely enters the efficiency top ten under the tested input perturbations. It does not mean a low probability of housing delivery.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Sources: rankings and input-sensitivity outputs; site_context.json. All home counts are modelled, not approved.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 20,
+    "title": "The portfolio / 16-30",
+    "kicker": "08 / Site directory",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "Efficiency order. Rail distances are straight-line; stability is the input-noise share in the top ten.",
+        "size": 10
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Rank / site",
+          "Subregion",
+          "Redress rank",
+          "Modelled homes",
+          "Rail km",
+          "Stability"
+        ],
+        "rows": [
+          [
+            "16 / Ndabeni / Maitland",
+            "Northern Metro",
+            "16",
+            "5,100",
+            "0.09",
+            "1%"
+          ],
+          [
+            "17 / Highlands Drive Mitchells Plain",
+            "Cape Flats",
+            "21",
+            "3,400",
+            "0.95",
+            "1%"
+          ],
+          [
+            "18 / Culemborg",
+            "Foreshore",
+            "10",
+            "7,980",
+            "1.13",
+            "0%"
+          ],
+          [
+            "19 / Atlantis Wesfleur",
+            "Blaauwberg",
+            "24",
+            "5,850",
+            "4.60",
+            "0%"
+          ],
+          [
+            "20 / Wallacedene / Kraaifontein",
+            "Northern Metro",
+            "22",
+            "3,240",
+            "0.57",
+            "0%"
+          ],
+          [
+            "21 / Kuyasa / Khayelitsha",
+            "Cape Flats",
+            "23",
+            "3,300",
+            "1.04",
+            "0%"
+          ],
+          [
+            "22 / Athlone Power Station",
+            "Cape Flats",
+            "20",
+            "6,750",
+            "1.44",
+            "0%"
+          ],
+          [
+            "23 / Blue Downs / Kleinvlei",
+            "Cape Flats",
+            "25",
+            "4,320",
+            "3.05",
+            "0%"
+          ],
+          [
+            "24 / Delft Symphony",
+            "Cape Flats",
+            "26",
+            "3,770",
+            "4.56",
+            "0%"
+          ],
+          [
+            "25 / Two Rivers / Oude Molen",
+            "Observatory",
+            "18",
+            "4,200",
+            "0.61",
+            "0%"
+          ],
+          [
+            "26 / Macassar",
+            "Helderberg",
+            "27",
+            "4,290",
+            "3.55",
+            "0%"
+          ],
+          [
+            "27 / Dido Valley",
+            "South Peninsula",
+            "19",
+            "600",
+            "0.98",
+            "0%"
+          ],
+          [
+            "28 / Philippi East",
+            "Cape Flats",
+            "28",
+            "3,640",
+            "1.44",
+            "0%"
+          ],
+          [
+            "29 / Sir Lowrys Pass Village",
+            "Helderberg",
+            "30",
+            "1,560",
+            "4.19",
+            "0%"
+          ],
+          [
+            "30 / Imizamo Yethu",
+            "South Peninsula",
+            "29",
+            "880",
+            "9.72",
+            "0%"
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "html": "A low stability value means the site rarely enters the efficiency top ten under the tested input perturbations. It does not mean a low probability of housing delivery.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Sources: rankings and input-sensitivity outputs; site_context.json. All home counts are modelled, not approved.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 21,
+    "title": "Better evidence. Better decisions.",
+    "kicker": "09 / Evidence & method",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "A practical reading guide to the data behind the atlas and its remaining gaps.",
+        "size": 10
+      },
+      {
+        "type": "text",
+        "text": "Mapped / measured",
+        "size": 12
+      },
+      {
+        "type": "paragraph",
+        "html": "OSM snapshot, 30 August 2026: 131 railway station/halt points and 1,642 facility features. The new context uses haversine distances, unweighted school and health-feature counts within 1 km / 2 km, and named nearby features. OSM may contain incomplete coverage or overlapping representations.",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Derived / modelled",
+        "size": 12
+      },
+      {
+        "type": "paragraph",
+        "html": "Fourteen normalised criteria, two weighting scenarios and density-based yields. Job access uses eight employment nodes with assumed job weights. The model ranks only these 30 candidates. A score out of 100 is a relative index, not a feasibility percentage.",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Estimated / unverified",
+        "size": 12
+      },
+      {
+        "type": "paragraph",
+        "html": "Flood, environment, contamination, infrastructure, heat, delivery complexity, redress and displacement contain analyst estimates. Area, land value, density, tenure and zoning inputs also need independent validation. Remote-sensing indicators have not been replaced with newly measured imagery here.",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Sensitivity / limitations",
+        "size": 12
+      },
+      {
+        "type": "paragraph",
+        "html": "Weight noise: 5,000 draws, each weight varied by up to 30% and renormalised. Input noise: 2,000 draws varying the estimated criteria by 15% of their range. Neither test covers every uncertainty, including errors in assumed parcel extent, legal rights or future transport service.",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "Next evidence to obtain",
+        "size": 12
+      },
+      {
+        "type": "paragraph",
+        "html": "Join verified cadastral parcels and zoning; review tenure and availability; measure network walking access; obtain flood and environmental layers; assess engineering capacity; and consult affected communities on occupancy, displacement and priorities.",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "SOURCE REGISTER",
+        "size": 8
+      },
+      {
+        "type": "paragraph",
+        "html": "Project files: candidate_sites.csv, site_rankings.csv, criteria_scores.csv, sensitivity.csv, input_sensitivity.csv, summary.json and data/geo/site_context.json. Base geography: OpenStreetMap contributors, ODbL. Original terrain: SRTM measurements retained from the project.",
+        "size": 8
+      },
+      {
+        "type": "text",
+        "text": "openstreetmap.org/copyright",
+        "size": 7
+      }
+    ]
+  },
+  {
+    "page": 22,
+    "title": "Trace the finding to its source.",
+    "kicker": "Sources & references",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "Project evidence and external reference material are separated below. Reference pages were checked on 16 September 2026.",
+        "size": 10
+      },
+      {
+        "type": "table",
+        "headers": [
+          "ID",
+          "PROJECT SOURCE",
+          "WHAT IT SUPPORTS"
+        ],
+        "rows": [
+          [
+            "S01",
+            "data/candidate_sites.csv",
+            "Candidate set, coordinates, attributes and assumptions."
+          ],
+          [
+            "S02",
+            "outputs/site_rankings.csv / summary.json",
+            "Rankings, yields, regional totals and scenario weights."
+          ],
+          [
+            "S03",
+            "outputs/sensitivity.csv / input_sensitivity.csv",
+            "Weight-noise and estimated-input rank simulations."
+          ],
+          [
+            "S04",
+            "data/geo/site_context.json / basemap.json",
+            "Derived OSM geography and proximity calculations; snapshot 30 Aug 2026."
+          ],
+          [
+            "S05",
+            "scripts/suitability_model.py / measure_site_context.py",
+            "Scoring, density assumptions and original measurement method."
+          ]
+        ]
+      },
+      {
+        "type": "text",
+        "text": "R01 / OpenStreetMap copyright and licence",
+        "size": 10
+      },
+      {
+        "type": "link",
+        "text": "R01 / OpenStreetMap copyright and licence",
+        "url": "https://www.openstreetmap.org/copyright"
+      },
+      {
+        "type": "paragraph",
+        "html": "Attribution and licence reference for the OSM-derived geography. The report uses the saved snapshot rather than a newly collected OSM dataset.",
+        "size": 8.5
+      },
+      {
+        "type": "text",
+        "text": "R02 / USGS: SRTM 1 Arc-Second Global",
+        "size": 10
+      },
+      {
+        "type": "link",
+        "text": "R02 / USGS: SRTM 1 Arc-Second Global",
+        "url": "https://www.usgs.gov/centers/eros/science/usgs-eros-archive-digital-elevation-shuttle-radar-topography-mission-srtm-1"
+      },
+      {
+        "type": "paragraph",
+        "html": "Authoritative product description: approximately 30 m postings. Original project terrain values were retained; this revision did not collect new terrain measurements.",
+        "size": 8.5
+      },
+      {
+        "type": "text",
+        "text": "R03 / City of Cape Town: Zoning layer",
+        "size": 10
+      },
+      {
+        "type": "link",
+        "text": "R03 / City of Cape Town: Zoning layer",
+        "url": "https://citymaps.capetown.gov.za/agsext/rest/services/Theme_Based/Open_Data_Service_Zonning/MapServer/0"
+      },
+      {
+        "type": "paragraph",
+        "html": "A relevant source for future parcel verification. The official service describes an integrated zoning view for approved and registered parcels. It was not joined to the model.",
+        "size": 8.5
+      },
+      {
+        "type": "paragraph",
+        "html": "External links are clickable. Municipal zoning is listed as a verification source, not as evidence that any candidate has a particular zoning designation.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 23,
+    "title": "Find a precinct by name.",
+    "kicker": "Alphabetical index",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "Every candidate appears here. Directory entries contain both rankings, modelled homes, rail distance and stability.",
+        "size": 10
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Precinct",
+          "Site ID",
+          "Directory page",
+          "Profile page",
+          "Metro map"
+        ],
+        "rows": [
+          [
+            "Athlone Power Station",
+            "S15",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "Atlantis Wesfleur",
+            "S28",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "Bellville CBD",
+            "S16",
+            "19",
+            "13",
+            "7"
+          ],
+          [
+            "Blue Downs / Kleinvlei",
+            "S27",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "Conradie Park",
+            "S11",
+            "19",
+            "-",
+            "7"
+          ],
+          [
+            "Culemborg",
+            "S03",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "Delft Symphony",
+            "S18",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "Dido Valley",
+            "S22",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "District Six",
+            "S10",
+            "19",
+            "-",
+            "7"
+          ],
+          [
+            "Epping Market",
+            "S14",
+            "19",
+            "-",
+            "7"
+          ],
+          [
+            "Founders Garden",
+            "S07",
+            "19",
+            "12",
+            "7"
+          ],
+          [
+            "Helen Bowden",
+            "S08",
+            "19",
+            "-",
+            "7"
+          ],
+          [
+            "Highlands Drive Mitchells Plain",
+            "S26",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "Imizamo Yethu",
+            "S23",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "Kuyasa / Khayelitsha",
+            "S21",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "Macassar",
+            "S20",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "Ndabeni / Maitland",
+            "S13",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "Parow / Elsies River",
+            "S17",
+            "19",
+            "-",
+            "7"
+          ],
+          [
+            "Philippi East",
+            "S19",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "Phoenix / Milnerton",
+            "S30",
+            "19",
+            "-",
+            "7"
+          ],
+          [
+            "Pickwick Road",
+            "S06",
+            "19",
+            "-",
+            "7"
+          ],
+          [
+            "Prestwich Precinct",
+            "S09",
+            "19",
+            "-",
+            "7"
+          ],
+          [
+            "Salt River Market",
+            "S04",
+            "19",
+            "-",
+            "7"
+          ],
+          [
+            "Sir Lowrys Pass Village",
+            "S25",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "Sir Lowrys Road",
+            "S24",
+            "19",
+            "-",
+            "7"
+          ],
+          [
+            "Two Rivers / Oude Molen",
+            "S12",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "Wallacedene / Kraaifontein",
+            "S29",
+            "20",
+            "-",
+            "7"
+          ],
+          [
+            "Wingfield",
+            "S01",
+            "19",
+            "14",
+            "7"
+          ],
+          [
+            "Woodstock Hospital",
+            "S05",
+            "19",
+            "-",
+            "7"
+          ],
+          [
+            "Ysterplaat",
+            "S02",
+            "19",
+            "-",
+            "7"
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Use the atlas for a geographic search.",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "The interactive version also supports name / site-ID search, map selection, regional filtering and three-site comparison.",
+        "size": 9
+      }
+    ]
+  },
+  {
+    "page": 24,
+    "title": "Find the question that matters.",
+    "kicker": "Subject index",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "Page references link to the relevant discussion. The indexes are also included in the reading editions.",
+        "size": 10
+      },
+      {
+        "type": "table",
+        "headers": [
+          "Subject",
+          "PDF pages"
+        ],
+        "rows": [
+          [
+            "Access to employment",
+            "5, 6, 9"
+          ],
+          [
+            "Affordability / rent and household budgets",
+            "25"
+          ],
+          [
+            "Analyst estimates / provenance",
+            "6, 17, 21"
+          ],
+          [
+            "Capacity / housing yield",
+            "3, 9, 15, 16"
+          ],
+          [
+            "Community engagement / displacement",
+            "4, 17, 18"
+          ],
+          [
+            "Criteria and weighting choices",
+            "5, 6, 10"
+          ],
+          [
+            "Data sources and references",
+            "21, 22"
+          ],
+          [
+            "Developable area assumptions",
+            "5, 15, 17"
+          ],
+          [
+            "Efficiency ranking",
+            "6, 10, 19"
+          ],
+          [
+            "Facility access and counts",
+            "9, 12, 13, 14, 17"
+          ],
+          [
+            "Flood / contamination / servicing",
+            "6, 17, 18"
+          ],
+          [
+            "Geographic scope and maps",
+            "5, 7, 8"
+          ],
+          [
+            "Housing challenges / short-term rentals",
+            "26"
+          ],
+          [
+            "Input uncertainty",
+            "3, 11, 21"
+          ],
+          [
+            "Land ownership / tenure",
+            "4, 17, 18"
+          ],
+          [
+            "Monte Carlo sensitivity",
+            "11, 21"
+          ],
+          [
+            "Policy implementation and monitoring",
+            "29"
+          ],
+          [
+            "Policy sources",
+            "30"
+          ],
+          [
+            "Rail station proximity",
+            "9, 12, 13, 14"
+          ],
+          [
+            "Recommendations and decision gates",
+            "4, 17, 18"
+          ],
+          [
+            "Regional distribution",
+            "16"
+          ],
+          [
+            "Rental protection / rent controls",
+            "28"
+          ],
+          [
+            "Site directory and profiles",
+            "12, 13, 14, 19, 20, 23"
+          ],
+          [
+            "Social housing and supply solutions",
+            "27"
+          ],
+          [
+            "Spatial redress",
+            "4, 6, 10"
+          ],
+          [
+            "Verification sequence",
+            "18"
+          ],
+          [
+            "Zoning and planning rights",
+            "17, 22"
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "html": "Edition 3 / September 2026. A comparative desktop screening report, an interactive atlas and an evidence register should be read together.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 25,
+    "title": "What can households actually afford?",
+    "kicker": "Housing affordability / 25",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "High rent is a household-budget problem as well as a land-supply problem. Add income, transport and recurring charges to the analysis.",
+        "size": 10
+      },
+      {
+        "type": "metric",
+        "value": "R11,894",
+        "label": "Western Cape average rent / Q4 2025"
+      },
+      {
+        "type": "metric",
+        "value": "R9,462",
+        "label": "South Africa average / Q4 2025"
+      },
+      {
+        "type": "paragraph",
+        "html": "PayProp reported these averages for its rental index, published 24 March 2026 [P01]. This is dated provincial context, not a Cape Town neighbourhood rent survey or a current asking-price quote. The provincial figure is 25.7% above the national figure (our calculation).",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "ILLUSTRATIVE BUDGET / NOT SURVEY DATA",
+        "size": 8
+      },
+      {
+        "type": "image",
+        "path": "visuals/household-affordability.png"
+      },
+      {
+        "type": "paragraph",
+        "html": "Example assumptions: R6,000 rent + R1,000 utilities + R1,800 travel per month. At R20,000 gross income, rent alone takes 30%; the combined amount takes 44%. Tax, food, care costs and debt are still excluded. A 30% rent-to-income line is a comparison benchmark here, not a legal cap or a guarantee of affordability.",
+        "size": 9
+      },
+      {
+        "type": "heading",
+        "text": "Add an affordability test to each candidate.",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "Specify target incomes, unit sizes, all-in costs and the subsidy or operating model needed. The existing suitability score does not calculate achievable rents.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "P01: PayProp Q4 2025, published 24 March 2026. Illustration: author assumptions; it is not an observed household or a project rental forecast.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 26,
+    "title": "Why cheaper homes are hard to deliver.",
+    "kicker": "Challenges / 26",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "These are mechanisms to investigate locally. The screening model does not estimate their individual contribution to Cape Town rents.",
+        "size": 10
+      },
+      {
+        "type": "table",
+        "headers": [
+          "CHALLENGE",
+          "WHY IT MATTERS",
+          "EVIDENCE NEEDED"
+        ],
+        "rows": [
+          [
+            "Rents and incomes diverge",
+            "A rent can rise faster than a household can absorb, while deposits and recurring charges add pressure.",
+            "Track agreed rents by unit type, income band, utilities and deposit burden."
+          ],
+          [
+            "Well-located land is difficult to unlock",
+            "Tenure, competing uses, approvals and service capacity can delay delivery even when a map score is strong.",
+            "Verify parcels, ownership, rights, infrastructure budgets and actual milestones."
+          ],
+          [
+            "Building and operating costs must be covered",
+            "Construction finance, maintenance, insurance, rates and vacancies affect viable rents.",
+            "Test whole-life costs and subsidy needs; retain realistic maintenance reserves."
+          ],
+          [
+            "A cheaper address can mean a costly commute",
+            "Distance, transfers, fares and unreliable service can absorb apparent rent savings.",
+            "Measure door-to-door journeys and household transport spending."
+          ],
+          [
+            "Displacement and unequal access",
+            "Existing residents and informal tenants may lose access through redevelopment or poorly targeted allocation.",
+            "Map occupancy and tenure; plan engagement, relocation safeguards and transparent allocation."
+          ],
+          [
+            "Short-term use and vacancies may matter locally",
+            "Tourism-linked use can compete with long-term housing in some areas; listings alone do not prove the scale of conversion.",
+            "Separate entire-home commercial activity from occasional letting and count actual long-term stock changes."
+          ]
+        ]
+      },
+      {
+        "type": "paragraph",
+        "html": "Design implication: show a candidate’s land, service, cost and community evidence beside its score. Keep unknowns explicit rather than giving unmeasured constraints a false precision.",
+        "size": 9.2
+      },
+      {
+        "type": "paragraph",
+        "html": "Analytical framework proposed for this report. See P06 for general housing-policy context; no causal ranking of these pressures is asserted.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 27,
+    "title": "Match the intervention to the problem.",
+    "kicker": "Solutions / 27",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "A combined programme should protect households now while creating and retaining affordable homes over time. Proposed options below require local feasibility and authority checks.",
+        "size": 10
+      },
+      {
+        "type": "table",
+        "headers": [
+          "RESPONSE",
+          "DELIVERY ROUTE",
+          "TRADE-OFF / SAFEGUARD",
+          "MEASURE"
+        ],
+        "rows": [
+          [
+            "Social and affordable rental",
+            "Public land or subsidy with an operating partner; protect affordability through enforceable covenants.",
+            "Long-term funding, maintenance and fair allocation.",
+            "Occupied homes by income band; rent + service costs."
+          ],
+          [
+            "Serviced land and infill",
+            "Resolve title, engineering and approvals; support suitable density and conversions near jobs.",
+            "Environmental, heritage and safety checks; measure delivery, not only land released.",
+            "Time to occupation; net additional homes; service capacity."
+          ],
+          [
+            "Small-scale / backyard rental",
+            "Technical assistance, safe service connections and suitable finance for compliant small landlords.",
+            "Habitability and affordable tenancy terms; avoid displacement during upgrades.",
+            "Safe occupied units; repairs; tenant cost changes."
+          ],
+          [
+            "Targeted tenant support",
+            "Time-limited hardship help, deposit assistance and accessible dispute support.",
+            "Fund eligibility and review; avoid excluding informal-income households.",
+            "Housing retention; arrears resolution; cost per household."
+          ],
+          [
+            "Transparent rental rules",
+            "Clear leases and charges, maintenance enforcement and predictable review processes.",
+            "Capacity to investigate and enforce; keep access fair for new tenants too.",
+            "Dispute time; conditions; entry rents and available stock."
+          ]
+        ]
+      },
+      {
+        "type": "heading",
+        "text": "Track the public pipeline separately.",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "The City reported more than 14,000 units in active land release or packaging on 18 August 2026 [P07]. That announced pipeline is separate from this model and is not a completed-home count.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Proposals: author synthesis, informed by P06. City announcement: P07. Do not add municipal pipeline figures to the modelled precinct capacities.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 28,
+    "title": "Protection today. Supply tomorrow.",
+    "kicker": "Rent controls / 28",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "Rent control is a family of policies. A freeze, an annual increase limit and an affordable-housing covenant work differently.",
+        "size": 10
+      },
+      {
+        "type": "table",
+        "headers": [
+          "APPROACH",
+          "POTENTIAL BENEFIT",
+          "DESIGN RISK"
+        ],
+        "rows": [
+          [
+            "Rent freeze / hard ceiling",
+            "Can give covered tenants immediate payment certainty.",
+            "May reduce maintenance or rental availability if costs cannot be covered; allocation can exclude newcomers."
+          ],
+          [
+            "Rent stabilisation",
+            "Can make increases within a tenancy more predictable.",
+            "Needs rules for new lets, new construction, allowable costs, enforcement and anti-avoidance."
+          ],
+          [
+            "Subsidised affordable rents",
+            "A subsidy or public-land agreement can target below-market rents to eligible households.",
+            "Requires durable funding, operating oversight and a clear affordability period."
+          ]
+        ]
+      },
+      {
+        "type": "text",
+        "text": "WHAT CURRENT SOUTH AFRICAN GUIDANCE SAYS",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "The Rental Housing Act 50 of 1999 repealed the old Rent Control Act [P02]. Western Cape guidance points to the lease or agreed terms for increases and to negotiation where these are unspecified [P03]. Do not treat 10% or CPI as an automatic legal ceiling. The provincial Rental Housing Tribunal offers free dispute-resolution services [P04]. These are current-framework notes, not a ruling on a particular lease.",
+        "size": 9
+      },
+      {
+        "type": "text",
+        "text": "WHAT THE INTERNATIONAL EVIDENCE CAN AND CANNOT TELL US",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Diamond, McQuade and Qian (2019) found less displacement among covered San Francisco tenants, alongside a 15% reduction in rental supply from affected landlords [P05]. That historical finding illustrates a trade-off; it is not a forecast for Cape Town.",
+        "size": 9
+      },
+      {
+        "type": "heading",
+        "text": "If considering stabilisation, test the whole design.",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "Establish legal authority and a rental baseline; consult tenants and landlords; define coverage, vacancy rules and fair cost review; enforce habitability; monitor new supply, conversions and access for newcomers. Pair protection with affordable supply.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Sources P02-P06. Options are proposals for appraisal, not existing Cape Town rules or a recommendation for a particular percentage cap.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 29,
+    "title": "Turn proposals into accountable work.",
+    "kicker": "Implementation / 29",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "An indicative sequence for discussion, not an adopted municipal programme or a funded project schedule.",
+        "size": 10
+      },
+      {
+        "type": "table",
+        "headers": [
+          "INDICATIVE HORIZON",
+          "ACTION",
+          "PROPOSED FUNCTION",
+          "OUTPUT TO RETAIN"
+        ],
+        "rows": [
+          [
+            "First 0-3 months",
+            "Establish the baseline",
+            "Housing / GIS / statistics teams",
+            "Agreed rents, income bands, unit type, tenure, service costs, commuting and stock definitions."
+          ],
+          [
+            "Months 3-12",
+            "Verify and package sites",
+            "Land / planning / engineering teams",
+            "Parcel, rights and services evidence; transparent site status and milestone register."
+          ],
+          [
+            "Months 3-12",
+            "Test targeted protection",
+            "Housing / legal / community teams",
+            "Costed tenant-support or stabilisation design; authority review, consultation and delivery capacity."
+          ],
+          [
+            "Months 12-36",
+            "Deliver and evaluate",
+            "Funders / delivery partners / residents",
+            "Track occupied affordable homes, operating costs, repairs and displacement; compare with the baseline."
+          ]
+        ]
+      },
+      {
+        "type": "text",
+        "text": "A MINIMUM PUBLIC DASHBOARD",
+        "size": 10
+      },
+      {
+        "type": "paragraph",
+        "html": "Publish agreed-rent medians by unit type and area; rent + utilities + travel as an income share; net long-term rental stock; verified and occupied affordable units; approvals-to-occupation time; tenancy disputes and resolution time; maintenance performance; and displacement or relocation outcomes.",
+        "size": 10
+      },
+      {
+        "type": "heading",
+        "text": "Judge outcomes, not announcements.",
+        "size": 14
+      },
+      {
+        "type": "paragraph",
+        "html": "A land release is not an occupied home. A protected existing tenant does not prove access improved for a new tenant. Report both household outcomes and supply changes, with definitions and dates.",
+        "size": 9
+      },
+      {
+        "type": "paragraph",
+        "html": "Governance and monitoring proposals by the author. Protect personal tenant information and publish aggregated statistics; record definitions and missing coverage.",
+        "size": 7.5
+      }
+    ]
+  },
+  {
+    "page": 30,
+    "title": "The evidence behind the discussion.",
+    "kicker": "Policy sources / 30",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "html": "Policy and affordability references checked on 16 September 2026. P01 is a dated market observation; proposed actions remain author analysis.",
+        "size": 10
+      },
+      {
+        "type": "text",
+        "text": "P01 / PayProp: Q4 2025 Rental Index summary",
+        "size": 10
+      },
+      {
+        "type": "link",
+        "text": "P01 / PayProp: Q4 2025 Rental Index summary",
+        "url": "https://www.payprop.com/blog/rental-growth-cooled-in-q4-says-new-payprop-rental-index"
+      },
+      {
+        "type": "paragraph",
+        "html": "Published 24 March 2026. Provincial and national average rent context; not a Cape Town local rent survey.",
+        "size": 8.5
+      },
+      {
+        "type": "text",
+        "text": "P02 / South African Government: Rental Housing Act",
+        "size": 10
+      },
+      {
+        "type": "link",
+        "text": "P02 / South African Government: Rental Housing Act",
+        "url": "https://www.gov.za/documents/rental-housing-act"
+      },
+      {
+        "type": "paragraph",
+        "html": "Act 50 of 1999; repeal of the former Rent Control Act and the rental dispute framework.",
+        "size": 8.5
+      },
+      {
+        "type": "text",
+        "text": "P03 / Western Cape: Tenant frequently asked questions",
+        "size": 10
+      },
+      {
+        "type": "link",
+        "text": "P03 / Western Cape: Tenant frequently asked questions",
+        "url": "https://www.westerncape.gov.za/infrastructure/frequently-asked-questions-tenants"
+      },
+      {
+        "type": "paragraph",
+        "html": "Official guidance on lease terms, negotiated increases and referral for individual disputes.",
+        "size": 8.5
+      },
+      {
+        "type": "text",
+        "text": "P04 / Western Cape: Rental Housing Tribunal",
+        "size": 10
+      },
+      {
+        "type": "link",
+        "text": "P04 / Western Cape: Rental Housing Tribunal",
+        "url": "https://www.westerncape.gov.za/service/rental-housing-tribunal-0"
+      },
+      {
+        "type": "paragraph",
+        "html": "Free tenant / landlord dispute services and the current complaint route.",
+        "size": 8.5
+      },
+      {
+        "type": "text",
+        "text": "P05 / Diamond, McQuade & Qian: Rent control study",
+        "size": 10
+      },
+      {
+        "type": "link",
+        "text": "P05 / Diamond, McQuade & Qian: Rent control study",
+        "url": "https://www.aeaweb.org/articles?id=10.1257/aer.20181289"
+      },
+      {
+        "type": "paragraph",
+        "html": "American Economic Review 109(9), 2019, pp. 3365-3394. San Francisco evidence, not a Cape Town forecast.",
+        "size": 8.5
+      },
+      {
+        "type": "text",
+        "text": "P06 / OECD: An Agenda for Housing Policy Reform",
+        "size": 10
+      },
+      {
+        "type": "link",
+        "text": "P06 / OECD: An Agenda for Housing Policy Reform",
+        "url": "https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/10/an-agenda-for-housing-policy-reform_450b3a9a/ddb57031-en.pdf"
+      },
+      {
+        "type": "paragraph",
+        "html": "2024 policy framework; balancing access, tenant protection, maintenance and rental supply incentives.",
+        "size": 8.5
+      },
+      {
+        "type": "text",
+        "text": "P07 / City: Affordable Housing Investment Connect",
+        "size": 10
+      },
+      {
+        "type": "link",
+        "text": "P07 / City: Affordable Housing Investment Connect",
+        "url": "https://web1.capetown.gov.za/web1/newsandnotices/Home/Release/Cape-Town-s-affordable-housing-investment-summit-seeks-partnerships-for-14-000-u?category=Media+releases"
+      },
+      {
+        "type": "paragraph",
+        "html": "18 August 2026 municipal announcement. Active land-release / packaging pipeline, separately defined from occupied units.",
+        "size": 8.5
+      },
+      {
+        "type": "paragraph",
+        "html": "External references support the stated observations. The affordable-rent examples, proposed programme and monitoring dashboard are analytical suggestions.",
+        "size": 7.5
+      }
+    ]
+  }
+]

@@ -68,6 +68,7 @@ def build_payload():
     return {
         "sites": json.loads(df.to_json(orient="records")),
         "summary": json.loads((ROOT / "outputs" / "summary.json").read_text()),
+        "context": json.loads((ROOT / "data/geo/site_context.json").read_text()),
         "base": json.loads((ROOT / "data" / "geo" / "basemap.json").read_text()),
     }
 
@@ -89,6 +90,10 @@ def main():
     assert not non_ascii, (f"{len(non_ascii)} non-ASCII chars: the Artifact build gets no "
                            "charset meta, so they would render as mojibake")
 
+    for token, name in [("__LEAFLET_CSS__", "leaflet.css"), ("__LEAFLET_JS__", "leaflet.js"), ("__CHART_JS__", "chart.js")]:
+        vendor = (ROOT / "docs/vendor" / name).read_text(encoding="utf-8")
+        vendor = "".join(c if ord(c) < 128 else "\\u%04x" % ord(c) for c in vendor)
+        body = body.replace(token, vendor)
     FRAGMENT.write_text(body, encoding="utf-8")
     STANDALONE.write_text(HEAD + body + FOOT, encoding="utf-8")
     print(f"payload {len(payload):,} bytes")

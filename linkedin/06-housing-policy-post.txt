@@ -1,0 +1,25 @@
+# Alternative LinkedIn post — housing challenges and solutions
+
+Where can Cape Town build more homes — and what would make those homes affordable to the people who need them?
+
+I’ve expanded my Housing Opportunity Atlas report to explore that second question.
+
+The new section covers:
+
+• Expensive rents and the full household budget: rent, utilities and transport.
+• Land, infrastructure, finance and operating-cost barriers.
+• Social and affordable rental, serviced infill and safe small-scale rental.
+• Targeted tenant support and accessible dispute resolution.
+• Rent controls: protection for existing tenants, access for newcomers, maintenance and rental supply.
+
+Rent control is a design question with real trade-offs. A freeze, an annual increase limit and a subsidised affordable rent are different policies. The report separates current South African guidance, published evidence and proposals for evaluation.
+
+The publication now has 30 pages, with maps, an affordability illustration, a candidate directory, indexes and linked references.
+
+This is a portfolio screening study. Site capacity is modelled, several inputs require verification, and the proposed policy programme is not an adopted municipal plan.
+
+It demonstrates how I connect Python, GIS and visual reporting to questions people can examine and act on.
+
+I’m open to remote roles and freelance/contract projects in analytics, GIS, BI modelling and reporting. Message me on LinkedIn for the atlas and report.
+
+#CapeTown #Housing #GIS #DataAnalytics #RemoteWork

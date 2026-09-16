@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "01-data-to-decisions",
+    "kicker": "PORTFOLIO / CAPE TOWN",
+    "title": "From data.<br>To clearer decisions.",
+    "dek": "Python, GIS and visual storytelling<br>in one housing opportunity atlas.",
+    "note": "Desktop screening study. Map context: \u00a9 OpenStreetMap contributors.",
+    "dark": true
+  },
+  {
+    "slug": "02-skillset",
+    "kicker": "THE SKILLSET",
+    "title": "Data. Place.<br>Clear explanation.",
+    "dek": "A connected approach to analytical work.",
+    "note": "",
+    "dark": false
+  },
+  {
+    "slug": "03-spatial-context",
+    "kicker": "GIS / ASK BETTER QUESTIONS",
+    "title": "A point is<br>only the start.",
+    "dek": "Add the surrounding context<br>to make location data useful.",
+    "note": "Straight-line distance. OSM snapshot: 30 August 2026.<br>Facility features can include overlapping campus records.",
+    "dark": false
+  },
+  {
+    "slug": "04-scenarios",
+    "kicker": "SCENARIO ANALYSIS",
+    "title": "One city.<br>Two lenses.",
+    "dek": "How priorities change a model\u2019s shortlist.",
+    "note": "Selected model ranks; 1 is highest. Efficiency and spatial redress lenses.",
+    "dark": false
+  },
+  {
+    "slug": "05-sensitivity",
+    "kicker": "UNCERTAINTY / SENSITIVITY",
+    "title": "How stable is<br>the shortlist?",
+    "dek": "Test the result when assumptions move.",
+    "note": "Inputs perturbed \u00b115%; weights \u00b130% and renormalised.<br>These simulations do not estimate development success.",
+    "dark": false
+  },
+  {
+    "slug": "06-workflow",
+    "kicker": "PYTHON / REPRODUCIBLE WORK",
+    "title": "One workflow.<br>Many useful outputs.",
+    "dek": "Connect the calculation to the formats<br>people need to use.",
+    "note": "Portfolio outputs generated from the project\u2019s tables and spatial context.",
+    "dark": true
+  },
+  {
+    "slug": "07-power-bi",
+    "kicker": "POWER BI / SEMANTIC MODELLING",
+    "title": "Good reports start<br>with a good model.",
+    "dek": "A star schema that makes analytical<br>relationships explicit.",
+    "note": "Conceptual schema view; source-defined model and DAX.<br>Delivery years are assumptions. Production deployment is not claimed.",
+    "dark": false
+  },
+  {
+    "slug": "08-tradeoffs",
+    "kicker": "VISUAL ANALYTICS",
+    "title": "Show the<br>trade-off.",
+    "dek": "Compare modelled housing capacity<br>with proximity to mapped rail.",
+    "note": "30 candidate points. Capacity uses unverified land and density inputs.<br>Modelled homes are not approved or committed housing delivery.",
+    "dark": false
+  },
+  {
+    "slug": "09-publication",
+    "kicker": "REPORT DESIGN / DATA STORYTELLING",
+    "title": "Give the analysis<br>a readable form.",
+    "dek": "An illustrated report with an index,<br>site profiles and a clear evidence trail.",
+    "note": "Schematic cover treatment of the project publication; PDF includes<br>bookmarks and internal navigation.",
+    "dark": false
+  },
+  {
+    "slug": "10-quality",
+    "kicker": "QUALITY / EVIDENCE",
+    "title": "Make the work<br>easy to inspect.",
+    "dek": "Useful analysis has an evidence trail.",
+    "note": "Tests check the implementation. Real-world feasibility and municipal<br>records require independent verification.",
+    "dark": true
+  },
+  {
+    "slug": "11-remote-availability",
+    "kicker": "ANTHONY APOLLIS / LET\u2019S CONNECT",
+    "title": "Open to<br>remote work.",
+    "dek": "Roles, freelance engagements<br>and contract projects.",
+    "note": "",
+    "dark": false
+  },
+  {
+    "slug": "12-work-together",
+    "kicker": "FROM QUESTION TO USEFUL OUTPUT",
+    "title": "Let\u2019s make your<br>data more useful.",
+    "dek": "Bring me the question.<br>Let\u2019s shape the analysis and the output.",
+    "note": "Portfolio case study available on request.",
+    "dark": true
+  },
+  {
+    "slug": "13-household-affordability",
+    "kicker": "HOUSING / HOUSEHOLD AFFORDABILITY",
+    "title": "Rent is only<br>part of the cost.",
+    "dek": "Illustrative monthly budget<br>on R20,000 gross household income.",
+    "note": "Illustration, not survey data. Tax, food, care and debt are excluded.<br>These amounts are assumptions, not a rental forecast.",
+    "dark": false
+  },
+  {
+    "slug": "14-rent-control-tradeoffs",
+    "kicker": "HOUSING POLICY / TRADE-OFFS",
+    "title": "Rent controls:<br>design matters.",
+    "dek": "Evaluate who gains protection,<br>who can find a home, and what gets built.",
+    "note": "Policy design questions, not adopted Cape Town rules.<br>Evidence and legal context: report pages 28 and 30.",
+    "dark": true
+  },
+  {
+    "slug": "15-housing-solutions",
+    "kicker": "HOUSING / FROM CHALLENGE TO ACTION",
+    "title": "Affordable homes<br>need a programme.",
+    "dek": "Combine land, services, finance<br>and tenant protection.",
+    "note": "Proposed programme for appraisal, not an adopted or funded plan.<br>Read the six-page policy section in the updated report.",
+    "dark": false
+  }
+]
