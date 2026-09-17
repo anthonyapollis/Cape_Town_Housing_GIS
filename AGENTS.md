@@ -24,7 +24,7 @@ python -m pytest tests/ -q
 
 | Generated | Edit this instead |
 |---|---|
-| `index.html`, `docs/report.html`, `outputs/*.epub`, `outputs/book-assets/*` | `scripts/build_publication.py` |
+| `index.html`, `library.html`, `docs/report.html`, `outputs/*.epub`, `outputs/book-assets/*` | `scripts/build_publication.py` |
 | `outputs/housing-atlas-ebook.pdf`, `outputs/report-content.json` | `scripts/build_ebook.py` |
 | `docs/index.html` | `docs/_atlas.body.html` |
 | `docs/_atlas.artifact.html` | `docs/_atlas.body.html` |
@@ -55,10 +55,10 @@ against `depth >= NEAR`. Without it a single vertex behind the camera discards a
 entire polygon and the ground vanishes at low tilt â€” which is exactly the view
 worth having. Easy to reintroduce if you refactor the projection.
 
-**Artifact CSP blocks every external host.** The atlas probes for a tile server at
-boot and only offers the four raster basemaps when it can reach one, so the same
-file is correct sandboxed and deployed. Do not add a hard dependency on a CDN,
-a tile server or a mapping library to `_atlas.body.html`.
+**Artifact CSP may block external imagery.** The atlas starts with Esri satellite
+imagery unless the reader saved another basemap. Embedded geography stays available
+and is automatically restored on failed or stalled tile loads. Optional imagery labels
+fail independently. Do not add a hard dependency on a CDN, tile server or mapping library.
 
 **Netlify publishes the repo root, not `docs/`.** The map pages fetch
 `../outputs/` and `../data/geo/` at runtime. Serving `docs/` alone gives a map
@@ -102,4 +102,4 @@ git rev-parse --show-toplevel   # must end in Cape_Town_Housing_GIS
 
 ## Publication edition 3
 
-The root index is the publication landing page; the atlas stays at `docs/index.html`. Build the report with `build_ebook.py`, then run `build_publication.py` for the EPUB and reading editions. These two commands need reportlab, matplotlib and pymupdf in addition to the model dependencies. The publication tests use the standard library and validate the committed artifacts. Rebuild both publication commands after report-content edits.
+The root index is the report reading edition; the download library is `library.html`; the atlas stays at `docs/index.html`. Build the report with `build_ebook.py`, then run `build_publication.py` for the EPUB and reading editions. These two commands need reportlab, matplotlib and pymupdf in addition to the model dependencies. The publication tests use the standard library and validate the committed artifacts. Rebuild both publication commands after report-content edits.

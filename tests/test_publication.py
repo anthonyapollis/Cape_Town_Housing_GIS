@@ -39,10 +39,16 @@ def test_epub_resources_and_spine_are_complete():
         assert len(opf.findall('{http://www.idpf.org/2007/opf}spine/{http://www.idpf.org/2007/opf}itemref'))==30
 
 def test_publication_links_resolve_to_files_and_chapters():
-    for source in [ROOT/'index.html',ROOT/'docs/report.html']:
+    for source in [ROOT/'index.html',ROOT/'library.html',ROOT/'docs/report.html']:
         for link in parse(source).links:
             u=urlsplit(link)
             if u.scheme or u.netloc:continue
             target=(source.parent/unquote(u.path)).resolve() if u.path else source
             assert target.is_file(),(source.name,link)
             if u.fragment and target.suffix=='.html':assert unquote(u.fragment) in parse(target).ids,(source.name,link)
+
+
+def test_homepage_is_report_and_preserves_map_routes():
+    homepage=parse(ROOT/'index.html')
+    assert all(f'page-{n}' in homepage.ids for n in range(1,31))
+    assert {'docs/index.html','docs/legacy.html','library.html'} <= set(homepage.links)

@@ -4,7 +4,8 @@ An indexed report library, reflowable ebook and redesigned map-first atlas for t
 
 ## Open the result
 
-- `index.html`: publication landing page with report index and all downloads.
+- `index.html`: the report reading edition is the site homepage.
+- `library.html`: report index, LinkedIn materials and all downloads.
 - `docs/report.html`: browser reading edition with linked chapter navigation.
 - `outputs/housing-atlas-ebook.epub`: reflowable EPUB ebook with maps, tables and indexes.
 - `docs/index.html`: interactive atlas; opens directly from disk and works offline.
@@ -13,7 +14,7 @@ An indexed report library, reflowable ebook and redesigned map-first atlas for t
 - `docs/legacy.html`: the original atlas, including its conceptual 3D scene.
 - `powerbi/`: the existing Power BI model, preserved from the latest source project.
 
-The main atlas embeds its data and vendored Leaflet 1.9.4 / Chart.js 4.5.1 code. There are no required CDN requests. Streets and satellite layers require internet access; the offline atlas remains available. Library licence notices are retained in `docs/vendor/`.
+The main atlas embeds its data and vendored Leaflet 1.9.4 / Chart.js 4.5.1 code. There are no required CDN requests. Satellite imagery is the default, with optional place labels and a one-click neighbourhood inspection button. Streets and satellite layers require internet access; failed or stalled tile requests automatically restore the offline atlas. A chosen basemap is remembered where browser storage is available. Imagery capture dates and resolution vary; this is visual context, not a live feed or parcel verification. Library licence notices are retained in `docs/vendor/`.
 
 ## Improvements
 
@@ -49,7 +50,7 @@ python -m pytest tests/ -q
 
 Edit `docs/_atlas.body.html`, not the built HTML. `build_atlas_payload.py` injects the payload and vendored libraries. It retains the ASCII artifact build and standalone viewport metadata.
 
-Serve the repository root for companion links: `python -m http.server 8777`. Open `/index.html` for the report library or `/docs/index.html` for the atlas. Netlify publishes the root and opens the report library.
+Serve the repository root for companion links: `python -m http.server 8777`. Open `/index.html` for the report homepage or `/library.html` for downloads or `/docs/index.html` for the atlas. Netlify publishes the root and opens the report. The former homepage remains linked as the original atlas at `/docs/legacy.html`.
 
 ## Validation
 
@@ -79,3 +80,8 @@ The publication is edition 3 (September 2026). Pages 25–30 distinguish dated r
 The companion `docs/satellite_map.html` uses keyless Esri canvas and street tiles, with native zoom limits, following the upstream basemap fix. Its satellite and other layers remain available.
 
 Read [AGENTS.md](AGENTS.md) for build constraints and [CODEX_TASKS.md](CODEX_TASKS.md) for the prioritised improvement backlog.
+
+
+## Browser verification
+
+Install Playwright, then run `node tests/satellite-browser.cjs` and `node tests/publication-browser.cjs` using Microsoft Edge. Set `LIVE_SATELLITE=1` to additionally check provider imagery. `PLAYWRIGHT_MODULE` can point to an existing Playwright installation; `QA_OUTPUT` chooses the screenshot folder. Satellite checks cover fresh startup, saved preferences, layer switching, failed/partial/stalled tiles, independent labels and mobile widths.
