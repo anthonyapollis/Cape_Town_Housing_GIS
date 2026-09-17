@@ -1,0 +1,1 @@
+Edit posters.html to change text, palette or layout. Each .poster is 1080 x 1350 CSS pixels. SVG maps and charts are embedded. Print with background graphics enabled to export the full series. Segoe UI is used on Windows; Arial is the fallback. Preserve the caveats accompanying modelled results. The generated article cover is in assets/editorial-illustration.png.

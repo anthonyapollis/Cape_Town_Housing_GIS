@@ -1,6 +1,6 @@
 # Working in this repo
 
-Guardrails for anyone — human or agent — changing this project. Most of these
+Guardrails for anyone â€” human or agent â€” changing this project. Most of these
 encode a mistake that has already been made once.
 
 **Looking for something to work on?** The prioritised backlog, with acceptance
@@ -20,10 +20,12 @@ python scripts/build_kml.py              # outputs/ -> outputs/*.kml/kmz
 python -m pytest tests/ -q
 ```
 
-## Generated files — never edit these by hand
+## Generated files â€” never edit these by hand
 
 | Generated | Edit this instead |
 |---|---|
+| `index.html`, `library.html`, `docs/report.html`, `outputs/*.epub`, `outputs/book-assets/*` | `scripts/build_publication.py` |
+| `outputs/housing-atlas-ebook.pdf`, `outputs/report-content.json` | `scripts/build_ebook.py` |
 | `docs/index.html` | `docs/_atlas.body.html` |
 | `docs/_atlas.artifact.html` | `docs/_atlas.body.html` |
 | `outputs/*.csv`, `outputs/*.json`, `outputs/*.geojson` | `data/candidate_sites.csv` or `scripts/suitability_model.py` |
@@ -44,25 +46,25 @@ mojibake in the second. Use `\uXXXX` escapes in JS strings and HTML entities in
 markup. `build_atlas_payload.py` asserts this and `tests/` checks it.
 
 **`const DATA = ` is one line ending in `;`.** The payload injector finds the end
-of the declaration by newline, **not** by the first `;` — one of the Group Areas
+of the declaration by newline, **not** by the first `;` â€” one of the Group Areas
 strings contains a semicolon (`"Declared White 1966; ~60 000 removed"`). Do not
 "simplify" that back to a semicolon search.
 
-**The 3D scene needs near-plane clipping.** `clipNear()` is Sutherland–Hodgman
+**The 3D scene needs near-plane clipping.** `clipNear()` is Sutherlandâ€“Hodgman
 against `depth >= NEAR`. Without it a single vertex behind the camera discards an
-entire polygon and the ground vanishes at low tilt — which is exactly the view
+entire polygon and the ground vanishes at low tilt â€” which is exactly the view
 worth having. Easy to reintroduce if you refactor the projection.
 
-**Artifact CSP blocks every external host.** The atlas probes for a tile server at
-boot and only offers the four raster basemaps when it can reach one, so the same
-file is correct sandboxed and deployed. Do not add a hard dependency on a CDN,
-a tile server or a mapping library to `_atlas.body.html`.
+**Artifact CSP may block external imagery.** The atlas starts with Esri satellite
+imagery unless the reader saved another basemap. Embedded geography stays available
+and is automatically restored on failed or stalled tile loads. Optional imagery labels
+fail independently. Do not add a hard dependency on a CDN, tile server or mapping library.
 
 **Netlify publishes the repo root, not `docs/`.** The map pages fetch
 `../outputs/` and `../data/geo/` at runtime. Serving `docs/` alone gives a map
 with no precincts on it.
 
-## Provenance — the thing not to get wrong
+## Provenance â€” the thing not to get wrong
 
 Six of the fourteen criteria are measured or derived. **Eight are desktop analyst
 estimates.** `DimCriterion.provenance` in the Power BI model and the README table
@@ -74,7 +76,7 @@ contamination, bulk infrastructure, delivery complexity, heat anomaly, spatial
 redress, displacement risk.
 
 Group Areas Act designations are historical record. The redress and displacement
-indices built on them are analyst judgements and are meant to be contested — the
+indices built on them are analyst judgements and are meant to be contested â€” the
 `rank_shift` between the two scenarios is the finding, not either ranking alone.
 
 Zone codes come from the City's Development Management Scheme, but the assignment
@@ -83,7 +85,7 @@ City's cadastral zoning layer.
 
 ## Untested
 
-`scripts/build_qgis_project.py` has never been executed — QGIS was not installed
+`scripts/build_qgis_project.py` has never been executed â€” QGIS was not installed
 on the machine that wrote it. It uses stable PyQGIS classes but treat the first
 run as a test. `docs/google_maps.html` has only been exercised without an API
 key (the key prompt path); the Google Maps path itself is unverified.
@@ -97,3 +99,7 @@ but always confirm before staging:
 ```bash
 git rev-parse --show-toplevel   # must end in Cape_Town_Housing_GIS
 ```
+
+## Publication edition 3
+
+The root index is the report reading edition; the download library is `library.html`; the atlas stays at `docs/index.html`. Build the report with `build_ebook.py`, then run `build_publication.py` for the EPUB and reading editions. These two commands need reportlab, matplotlib and pymupdf in addition to the model dependencies. The publication tests use the standard library and validate the committed artifacts. Rebuild both publication commands after report-content edits.
