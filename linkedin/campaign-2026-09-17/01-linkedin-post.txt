@@ -1,0 +1,22 @@
+A map can show a city. Good analysis helps us ask what should happen next.
+
+I’ve published my Cape Town Housing Opportunity Atlas: a portfolio project connecting 30 candidate precincts, 14 screening criteria and two perspectives—efficiency and spatial redress.
+
+Explore satellite imagery, compare neighbourhoods, inspect nearby rail and facilities, and read the findings in a 30-page report with linked indexes.
+
+The work brings together:
+• Python analysis and reproducible data workflows
+• GIS and interactive web mapping
+• Power BI semantic modelling, star schemas and DAX
+• Scenario analysis, testing and visual storytelling
+
+It also examines rental affordability, housing delivery challenges and possible solutions. Assumptions remain visible: this is a screening study, not a development approval or a delivery forecast.
+
+I’m available for remote roles and freelance/contract projects in data analytics, GIS, BI modelling and reporting.
+
+If your team needs someone who can connect the data, the map and the explanation, let’s talk. Message me here on LinkedIn.
+
+Explore the live project:
+https://capetownhousing.netlify.app/
+
+#DataAnalytics #GIS #PowerBI #DataStorytelling #OpenToWork
